@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="origin-when-cross-origin">
+    <meta name="version" content="2.64">
+    <meta name="description" content="A Secure Password Generator and Manager for Enhanced Online Safety">
+    <meta name="keywords" content="password generator, online safety, secure passwords">
+    <meta name="theme-color" content="#eee">
+    <meta name="author" content="Mohammed Ahmed (Tem Revil)">
+    <meta name="company" content="None">
+
+    <title>KyGen</title>
+
+    <link rel="stylesheet" href="CSS/bootstrap.css">
+    <link rel="stylesheet" href="CSS/bootstrap.css.map">
+    <link rel="stylesheet" href="CSS/all.css">
+    <link rel="stylesheet" href="CSS/Nav.css">
+    <link rel="stylesheet" href="CSS/Home.css">
+    <link rel="stylesheet" href="CSS/Media-Home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body class="home-body">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary main-nav">
+        <div class="container-fluid">
+          <a class="navbar-brand nav-kygen" href="Index.html">KyGen</a>
+          <button class="navbar-toggler nav-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-links-ui">
+              <li class="nav-item">
+                <a class="nav-link nav-link1" aria-current="page" href="Index.html" accesskey="H">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-link2" aria-current="page" href="Generator.html">Generator</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-link3" href="WordList.html">Word List</a>
+              </li>
+            </ul>
+            <!-- Button trigger login -->
+            <button type="button" class="btn btn-primary nav-login" data-bs-toggle="modal" data-bs-target="#login">
+              Login
+            </button>
+          </div>
+        </div>
+      </nav>
+      <!-- Login -->
+      <div class="modal fade" id="login" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Login "Only Admin Devolopers"</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body login-content">
+              <form id="login-form">
+                <h2 id="login-text">Login</h2>
+                <div id="success-message"></div>
+                <div id="error-message"></div>
+                <div class="input-container">
+                    <label for="username" id="LLUsername">Username</label>
+                    <input type="text" id="username" name="username" required>
+                    <br>
+                    <label for="password" id="LLPassword">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" id="login-button">Login</button>
+              </form>
+            </div>
+            <div class="modal-footer" style="text-align: center;">
+              <p style="font-family: 'Rubik'; font-size: 18px; font-weight: 300;">Secured By "Still Unkown".</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <header class="h-header">
+        <section class="h-title">
+          <div class="h-title-div">
+            <h1 class="h-TitleCard">KyGen</h1>
+            <p class="h-TitleAlign">"More Complicated More Safety"</p>
+          </div>
+            <div class="h-media-icon">
+              <a class="h-facebook-header" href="https://www.facebook.com/temrevil/" target="_blank"><i class="fa-brands fa-facebook h-facebook-header-icon"></i></a>
+              <a class="h-instagram-header" href="https://www.instagram.com/temrevil/" target="_blank"><i class="fa-brands fa-instagram h-instagram-header-icon"></i></a>
+              <a class="h-github-header" href="https://github.com/TemRevil" target="_blank"><i class="fa-brands fa-github h-github-header-icon"></i></a>
+            </div>
+        </section>
+        <section class="h-gallery">
+            <div class="row row-cols-1 row-cols-md-3 g-4 h-cards">
+              <div class="col">
+                <div class="card h-100">
+                  <div style="overflow: hidden;"><img src="Background/Generator.jpg" class="card-img-top card-generator-img" alt=".Generator Cover"></div>
+                    <div class="card-body">
+                      <h5 class="card-title">Generator</h5>
+                      <p class="card-text">It's a random password generator with 4 charcters to choose between them to get a random password from 8 to 1024 Letters.</p>
+                    </div>
+                    <div class="card-footer card-generator-footer">
+                      <a class="card-generator-link" href="Generator.html" accesskey="G">Generator</a> 
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <div style="overflow: hidden;"><img src="Background/Word List.jpg" class="card-img-top card-wordlist-img" alt="Word List Cover"></div>
+                    <div class="card-body">
+                      <h5 class="card-title">Word List<button type="button" class="btn btn-secondary wordlist-new" data-bs-toggle="NewWordList">New</button></h5>
+                      <p class="card-text">Word List is a passwords file key generator that is used to handshake passwords like crunch programe.</p>
+                    </div>
+                    <div class="card-footer card-wordlist-footer">
+                      <a class="card-wordlist-link" href="WordList.html" accesskey="W">Word List</a> 
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <div style="overflow: hidden;"><img src="Background/Ai.jpg" class="img-fluid rounded-start card-ai-img" alt="Ai Cover"></div>
+                    <div class="card-body">
+                      <h5 class="card-title">Rayan Ai</h5>
+                      <p class="card-text">Ryan is an Artificial Intelligence “Ai” to give you high password security exactly as you require.<br><strong>-Coming Soon-</strong></p>
+                    </div>
+                    <div class="card-footer card-ai-footer">
+                      <a class="card-ai-link" href="#" accesskey="A">Ai</a> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+      </header>
+      <section class="h-main-content">
+        <section class="h-grid-information">
+          <div class="h-information">
+            <p class="h-information-title">What This Site Made For?</p>
+            <div class="container text-center">
+              <div class="row-information">
+                <div class="col">
+                  <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
+                    <div class="card-body information-card-body-1">
+                      <h5 class="card-title">Protection</h5>
+                      <p class="card-text">Is The First Thing You Need When You Make A Password So Our Website Give You A <a href="#" style="font-weight: bold;text-decoration: none;color: var(--bs-card-subtitle-color);">Generator</a></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card text-bg-danger mb-3" style="max-width: 18rem;">
+                    <div class="card-body information-card-body-2">
+                      <h5 class="card-title">Imagination</h5>
+                      <p class="card-text">Is An Important Thing in Passwords. You Have To Imagine Something That Gives You Security Without Straining Yourself To Create One</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card text-bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-body information-card-body-3">
+                      <h5 class="card-title">Word List</h5>
+                      <p class="card-text">A Tool Provide You With A List of Passwords To Use it To Handshake"Hack" A Password Like "Wi-Fi" Using Kali Linux System</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="h-reviews">
+          <section class="h-rating">
+            <span class="h-rating-header">Leave Your Rating</span>
+            <div class="h-rating-stars">
+              <span class="fa fa-star" onclick="rate(1)"></span>
+              <span class="fa fa-star" onclick="rate(2)"></span>
+              <span class="fa fa-star" onclick="rate(3)"></span>
+              <span class="fa fa-star" onclick="rate(4)"></span>
+              <span class="fa fa-star" onclick="rate(5)"></span>
+            </div>
+            <p id="average-rating">0.0 based on 0 reviews.</p>
+            <hr style="border:3px solid #333;border-radius: 15px;">
+            <div class="h-rating-row">
+              <div class="h-rating-side">
+                <div>5</div>
+              </div>
+              <div class="h-rating-middle">
+                <div class="h-rating-bar-container">
+                  <div class="h-rating-bar h-rating-bar-5"></div>
+                </div>
+              </div>
+              <div class="h-rating-side">
+                <div>4</div>
+              </div>
+              <div class="h-rating-middle">
+                <div class="h-rating-bar-container">
+                  <div class="h-rating-bar h-rating-bar-4"></div>
+                </div>
+              </div>
+              <div class="h-rating-side">
+                <div>3</div>
+              </div>
+              <div class="h-rating-middle">
+                <div class="h-rating-bar-container">
+                  <div class="h-rating-bar h-rating-bar-3"></div>
+                </div>
+              </div>
+              <div class="h-rating-side">
+                <div>2</div>
+              </div>
+              <div class="h-rating-middle">
+                <div class="h-rating-bar-container">
+                  <div class="h-rating-bar h-rating-bar-2"></div>
+                </div>
+              </div>
+              <div class="h-rating-side">
+                <div>1</div>
+              </div>
+              <div class="h-rating-middle">
+                <div class="h-rating-bar-container">
+                  <div class="h-rating-bar h-rating-bar-1"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="h-imp-rating">
+            <div id="h-imp-rating-carousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="h-imp-rating-view">
+                    <p class="h-imp-rating-title">Reviews</p>
+                    <img src="Background//Reviewer/Mr.Morgan.jpg" alt="Mr-Morgan" class="h-imp-rating-img">
+                    <hr class="h-imp-rating-hr">
+                    <p class="h-imp-rating-rev-name">Mr.Morgan</p>
+                    <hr class="h-imp-rating-hr-2">
+                    <p class="h-imp-rating-rev-word">This is The Worst Website I Have Visted They Are Don't Rady Yet</p>
+                  </div>          
+                </div>
+                <div class="carousel-item">
+                  <div class="h-imp-rating-view">
+                    <p class="h-imp-rating-title">Reviews</p>
+                    <img src="Background//Reviewer/Mr.Garffield.jpg" alt="Mr-Garffield" class="h-imp-rating-img">
+                    <hr class="h-imp-rating-hr">
+                    <p class="h-imp-rating-rev-name">Mr.Garffield</p>
+                    <hr class="h-imp-rating-hr-2">
+                    <p class="h-imp-rating-rev-word">Not Bad Not Good, I Don't Know What To Say</p>
+                  </div>          
+                </div>
+                <div class="carousel-item">
+                  <div class="h-imp-rating-view">
+                    <p class="h-imp-rating-title">Reviews</p>
+                    <img src="Background//Reviewer/Rocket.png" alt="Rocket Raccoon" class="h-imp-rating-img">
+                    <hr class="h-imp-rating-hr">
+                    <p class="h-imp-rating-rev-name">Rocket "Guardians Of The Galaxy"</p>
+                    <hr class="h-imp-rating-hr-2">
+                    <p class="h-imp-rating-rev-word" style="font-size: 20px;">
+                      Rocket : How much for the gun?
+                      <br>
+                      Winter Soldier : It's not for sale.
+                      <br>
+                      Rocket : Okay, then how much for the arm?
+                      Winter Soldier : ...
+                      <br>
+                      Rocket : Oh, I'll get that arm.
+                      </p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#h-imp-rating-carousel" data-bs-slide="prev">
+                <i class="fa-solid fa-chevron-right fa-rotate-180" style="color: #333; font-size: 40px;"></i>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#h-imp-rating-carousel" data-bs-slide="next">
+                <i class="fa-solid fa-chevron-right" style="color: #333; font-size: 40px;"></i>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </section>
+        </section>
+        <section class="h-grid-team">
+          <div class="h-team">
+            <p class="h-team-title">Meet The Team</p>
+            <div id="h-team-carousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="h-team-carousel-inner">
+                <div class="carousel-item active">
+                  <p class="h-team-1" style="font-size: 164px;color: #333;">A</p>
+                </div>
+                <div class="carousel-item">
+                  <p class="h-team-2" style="font-size: 164px;color: #333;">B</p>
+                </div>
+                <div class="carousel-item">
+                  <p class="h-team-3" style="font-size: 164px;color: #333;">C</p>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#h-team-carousel" data-bs-slide="prev">
+                <i class="fa-solid fa-chevron-right fa-rotate-180" style="color: #333; font-size: 40px;"></i>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#h-team-carousel" data-bs-slide="next">
+                <i class="fa-solid fa-chevron-right" style="color: #333; font-size: 40px;"></i>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </section>
+      <footer class="h-footer">
+        <p class="h-footer-title">Footer</p>
+      </footer>
+    <script src="JavaScripts/jquery-3.7.1.min.js"></script>
+    <script src="JavaScripts/bootstrap.js"></script>
+    <script src="JavaScripts/all.js"></script>
+    <script src="JavaScripts/Home.js"></script>
+</body>
+</html>
