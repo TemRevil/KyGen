@@ -441,7 +441,7 @@ body::-webkit-scrollbar-thumb {
     transition: 0.3s 0s linear;
 }
 .h-imp-rating-img:hover {
-    scale: 1.2;
+    scale: 1.1;
 }
 .h-imp-rating-hr {
     grid-area: hr1;
@@ -468,4 +468,5 @@ body::-webkit-scrollbar-thumb {
     font-size: 20px;
     color: #333;
     margin-bottom: 0px;
+    text-align: center;
 }
