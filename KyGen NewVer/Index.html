@@ -15,45 +15,85 @@
 
     <link rel="stylesheet" href="CSS/bootstrap.css">
     <link rel="stylesheet" href="CSS/bootstrap.css.map">
-    <link rel="stylesheet" href="CSS/all.css">
+    <link rel="stylesheet" href="CSS/all.min.css">
     <link rel="stylesheet" href="CSS/Nav.css">
     <link rel="stylesheet" href="CSS/Home.css">
     <link rel="stylesheet" href="CSS/Media-Home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" >
 </head>
 <body class="home-body">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary main-nav">
-        <div class="container-fluid">
-          <a class="navbar-brand nav-kygen" href="Index.html">KyGen</a>
-          <button class="navbar-toggler nav-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-links-ui">
-              <li class="nav-item">
-                <a class="nav-link nav-link1" aria-current="page" href="Index.html" accesskey="H">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-link2" aria-current="page" href="Generator.html">Generator</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-link3" href="WordList.html">Word List</a>
-              </li>
-            </ul>
-            <!-- Button trigger login -->
-            <button type="button" class="btn btn-primary nav-login" data-bs-toggle="modal" data-bs-target="#login">
-              Login
-            </button>
+    <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary main-nav">
+        <div class="container">
+          <div class="row">
+            <div class="col-2">
+              <h3><a class="navbar-brand nav-kygen" href="Index.html">KyGen</a></h3>
+            </div>
+            <span class="navbar-toggler nav-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </span>
+            <div class="col-8">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-links-ui">
+                  <li class="nav-item">
+                    <a class="nav-link nav-link1" aria-current="page" href="Index.html" accesskey="H">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-link2" aria-current="page" href="Generator.html">Generator</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-link3" href="WordList.html">Word List</a>
+                  </li>
+                </ul> -->
+                <!-- Button trigger login -->
+              <!-- </div>
+            </div>
+            <div class="col-2">
+              <button type="button" class="btn btn-primary nav-login" data-bs-toggle="modal" data-bs-target="#login">Login</button>
+            </div>
           </div>
         </div>
+      </nav> -->
+      <nav class="navbar navbar-fixed-top">
+        <div class="container">
+          <div class="row">
+            <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <div class="col-md-2">
+              <a class="navbar-brand" href="#"><span>Ky</span>gen</a>
+            </div>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="col-md-8">
+              <ul class="nav navbar-nav navbar-right ">
+                <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+                <li><a href="Generator.html">Generator</a></li>
+                <li><a href="WordList.html">Word List</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+            
+            <div class="col-md-2">
+              <button type="button" class="btn btn-primary nav-login" data-bs-toggle="modal" data-target="#login-header-button">Login</button>
+            </div>
+          </div>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
       </nav>
       <!-- Login -->
-      <div class="modal fade" id="login" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal fade" id="login-header-button" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -307,9 +347,9 @@
       <footer class="h-footer">
         <h1 class="h-footer-title">Footer</h1>
       </footer>
-    <script src="JavaScripts/jquery-3.7.1.min.js"></script>
-    <script src="JavaScripts/bootstrap.js"></script>
-    <script src="JavaScripts/all.js"></script>
+    <script src="JavaScripts/jquery-3.6.2.min.js"></script>
+    <script src="JavaScripts/bootstrap.min.js"></script>
+    <script src="JavaScripts/all.min.js"></script>
     <script src="JavaScripts/Home.js"></script>
 </body>
 </html>

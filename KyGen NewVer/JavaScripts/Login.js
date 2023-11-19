@@ -1,7 +1,7 @@
-const loginHeaderButton = document.getElementById('login-header-button');
-const loginContainer = document.getElementById('login-container');
-const loginOpacity = document.getElementById('LoginOpacity');
-const loginForm = document.getElementById('login-form');
+const loginHeaderButton = document.getElementById('#login-header-button');
+const loginContainer = document.getElementById('#login-container');
+const loginOpacity = document.getElementById('#LoginOpacity');
+const loginForm = document.getElementById('#login-form');
 
 let isLoginContainerVisible = false;
 
