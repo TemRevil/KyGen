@@ -16,6 +16,9 @@
     font-weight: normal;
     font-style: normal;
 }
+html {
+    scroll-behavior: smooth;
+}
 * {
     box-sizing: border-box;
 }
@@ -26,7 +29,7 @@
 }
 
 body::-webkit-scrollbar {
-    width: 5px;
+    width: 6px;
 }
   
 body::-webkit-scrollbar-track {
@@ -34,7 +37,7 @@ body::-webkit-scrollbar-track {
 }
   
 body::-webkit-scrollbar-thumb {
-    background-color: #365679b4;
+    background-color: #007bffb4;
     border-radius: 20px;
 }
 
@@ -53,12 +56,12 @@ body::-webkit-scrollbar-thumb {
 .h-header {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    grid-template-areas:"htitle""gallery";
+    grid-template-areas:"h-title""gallery";
     justify-items: center;
 }
 
 .h-title {
-    grid-area: htitle;
+    grid-area: h-title;
     display: grid;
     align-content: stretch;
     align-items: end;
@@ -478,53 +481,241 @@ body::-webkit-scrollbar-thumb {
 .h-team {
     width: 1430px;
     height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 7px 25px #1234564b;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 50px repeat(1, 1fr);
 }
 .h-team-title {
     font-family: 'Rubik', Arial, sans-serif;
     font-size: 42px;
+    text-align: center;
     color: #333;
-}
-#h-team-carousel {
-    width: 100%;
+    margin: 0;
 }
 .h-team-carousel-inner {
     position: relative;
-    width: 100%;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+.h-team-carousel-buttons {
+    width: 5% !important;
+}
+.h-team-div {
+    display: grid;
+    grid-template-columns: 250px repeat(1, 1fr);
+    grid-template-rows: 80px 50px 190px;
+    gap: 10px;
+    grid-template-areas: 
+    "h-team-div-img h-team-name h-team-title"
+    "h-team-div-img h-team-work h-team-work"
+    "h-team-div-img h-team-word h-team-word";
+}
+.h-team-div-img {
+    grid-area: h-team-div-img;
+}
+.h-team-img {
+    width: 250px;
+    height: 360px;
+    transition: 0.3s 0s linear;
+}
+.h-team-img:hover {
+    scale: 1.2;
+}
+.h-team-name {
+    grid-area: h-team-name;
+    margin: 25px 0px;
+}
+.h-team-mohammed-title {
+    font-size: 22px;
+    font-weight: 600;
+}
+.h-team-work {
+    grid-area: h-team-work;
+    margin: 10px 0px;
+}
+.h-team-word {
+    grid-area: h-team-word;
+    font-size: 25px;
+    font-weight: 400;
 }
 
 /* --------------------------------------------- */
 /* Footer */
 
 .h-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(20deg, #007bff 1%, #00b8ff 99%);
+    display: grid;
+    grid-template-columns: 250px 420px 950px;
+    /* grid-template-rows: 60px 240px 70px; */
+    grid-template-areas:
+        "h-foter-title h-foter-title h-foter-title"
+        ". h-footer-ui h-footer-form"
+        "h-footer-version . .";
     width: 100%;
-    height: 413px;
+    height: 500px;
+    padding: 20px;
+    background-color: #343a40;
     box-shadow: 0px -10px 160px 0px #DDDDF3;
-    animation: colorChangeFooter 1s linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%) infinite;
 }
 .h-footer-title {
+    grid-area: h-foter-title;
     font-family: 'Rubik', Arial, sans-serif;
     font-size: 72px;
     color: white;
+    pointer-events: none;
 }
-@keyframes colorChangeFooter {
-    0% { background-image: linear-gradient(11deg, #00a1ff -2%, #007BFF 38%,#007BFF 14%,#1633ff 109%); }
-    20% { background-image: linear-gradient(111deg, #00a1ff -2%, #007BFF 38%,#007BFF 14%,#1633ff 109%); }
-    40% { background-image: linear-gradient(262deg, #00a1ff -2%, #007BFF 38%,#007BFF 14%,#1633ff 109%); }
-    60% { background-image: linear-gradient(282deg, #00a1ff -2%, #007BFF 38%,#007BFF 14%,#1633ff 109%); }
-    80% { background-image: linear-gradient(342deg, #00a1ff -2%, #007BFF 38%,#007BFF 14%,#1633ff 109%); }
-    100% { background-image: linear-gradient(350deg, #00a1ff -2%, #007BFF 38%,#007BFF 14%,#1633ff 109%); }
+.h-footer-ui {
+    grid-area: h-footer-ui;
+    margin-top: 30px;
+    padding: 0;
+    list-style: none;
+}
+.h-footer-ui-1, .h-footer-ui-2 {
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 100;
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s 0s linear;
+}
+.h-footer-ui-1:hover, .h-footer-ui-2:hover, .h-footer-ui-1:focus-visible, .h-footer-ui-2:focus-visible, .h-footer-ui-1:active, h-footer-ui-2:active {
+    background-color: transparent !important;
+    border: none;
+    box-shadow: none;
+    color: #0d6efd;
+}
+.h-footer-ui-3, .h-footer-ui-4 {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+/* --------------------------------------------- */
+/* Feedpack Form */
+
+.h-footer-form {
+    grid-area: h-footer-form;
+    font-family: 'Rubik', Arial, sans-serif;
+}
+#h-footer-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 40px 50px 40px 50px 40px 50px;
+    grid-template-areas:
+        "req req ."
+        "email email message"
+        "opt opt ."
+        "number number ."
+        "feedback contact ."
+        "send upload .";
+    gap: 5px;
+}
+
+.h-footer-form-required {
+    grid-area: req;
+    font-size: 26px;
+    color: white;
+    margin-bottom: 0;
+}
+.h-footer-form-optional {
+    grid-area: opt;
+    font-size: 26px;
+    color: white;
+    margin-bottom: 0;
+}
+
+#h-footer-form-email {
+    grid-area: email;
+    width: 450px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 22px;
+    outline: none;
+}
+#h-footer-form-number {
+    grid-area: number;
+    width: 450px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 22px;
+    outline: none;
+}
+
+.h-footer-form-div-feedback {
+    grid-area: feedback;
+}
+.h-footer-form-div-contact {
+    grid-area: contact;
+}
+
+.h-footer-form-message {
+    grid-area: message;
+    min-width: 450px;
+    min-height: 250px;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    font-size: 26px;
+    outline: none;
+}
+.h-footer-form-message::-webkit-scrollbar {
+    width: 6px;
+}
+.h-footer-form-message::-webkit-scrollbar-track {
+    background: #eee;
+}
+.h-footer-form-message::-webkit-scrollbar-thumb {
+    background-color: #007bffb4;
+    border-radius: 20px;
+}
+
+#h-footer-form-upload {
+    display: none;
+}
+#h-footer-form-uploadl {
+    grid-area: upload;
+    width: 160px;
+    padding: 0px 20px;
+    background-color: #0d6efd;
+    color: white;
+    font-size: 32px;
+    font-weight: 300;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s 0s linear;
+}
+#h-footer-form-uploadl:hover {
+    background-color: #0955c7;
+}
+#h-footer-form-send {
+    grid-area: send;
+    width: 160px;
+    padding: 0px 40px;
+    background-color: #0d6efd;
+    color: white;
+    font-size: 26px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s 0s linear;
+}
+#h-footer-form-send:hover {
+    background-color: #0955c7;
+}
+
+/* --------------------------------------------- */
+
+.h-footer-version {
+    grid-area: h-footer-version;
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 22px;
+    opacity: 0.3;
+    color: white;
 }

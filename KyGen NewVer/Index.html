@@ -136,7 +136,7 @@
         <section class="h-gallery">
             <div class="row row-cols-1 row-cols-md-3 g-4 h-cards">
               <div class="col">
-                <div class="card h-100">
+                <div class="card h-100" id="Generator-Card">
                   <div style="overflow: hidden;"><img src="Background/Generator.jpg" class="card-img-top card-generator-img" alt=".Generator Cover"></div>
                     <div class="card-body">
                       <h5 class="card-title">Generator</h5>
@@ -184,7 +184,7 @@
                   <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
                     <div class="card-body information-card-body-1">
                       <h5 class="card-title">Protection</h5>
-                      <p class="card-text">Is The First Thing You Need When You Make A Password So Our Website Give You A <a href="#" style="font-weight: bold;text-decoration: none;color: var(--bs-card-subtitle-color);">Generator</a></p>
+                      <p class="card-text">Is The First Thing You Need When You Make A Password So Our Website Give You A <a href="#Generator-Card" style="font-weight: bold;text-decoration: none;color: var(--bs-card-subtitle-color);">Generator</a></p>
                     </div>
                   </div>
                 </div>
@@ -307,11 +307,11 @@
                 </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#h-imp-rating-carousel" data-bs-slide="prev">
-                <i class="fa-solid fa-chevron-right fa-rotate-180" style="color: #333; font-size: 40px;"></i>
+                <i class="fa-solid fa-chevron-right fa-rotate-180 visually-hidden" style="color: #333; font-size: 40px;"></i>
                 <span class="visually-hidden">Previous</span>
               </button>
               <button class="carousel-control-next" type="button" data-bs-target="#h-imp-rating-carousel" data-bs-slide="next">
-                <i class="fa-solid fa-chevron-right" style="color: #333; font-size: 40px;"></i>
+                <i class="fa-solid fa-chevron-right visually-hidden" style="color: #333; font-size: 40px;"></i>
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
@@ -320,36 +320,185 @@
         <section class="h-grid-team">
           <div class="h-team">
             <p class="h-team-title">Meet The Team</p>
+            <hr style="margin: 0.5rem 0px 0px 0px;">
             <div id="h-team-carousel" class="carousel slide" data-bs-ride="carousel">
               <div class="h-team-carousel-inner">
                 <div class="carousel-item active">
-                  <p class="h-team-1" style="font-size: 164px;color: #333;">A</p>
+                  <div class="h-team-div">
+                    <div class="h-team-div-img" style="overflow: hidden;"><img src="Background/Team/Mohammed.JPG" alt="Mohammed Ahmed" class="h-team-img"></div>
+                    <h3 class="h-team-name">Mohammed Ahmed<p class="h-team-mohammed-title">aka "Tem Revil"</p></h3>
+                    <h4 class="h-team-work"><i class="fa fa-code" style="color: #333;"></i>Fronted End Devoloper / Freelancer</h4>
+                    <p class="h-team-word">
+                      <Q>Who Fears Of Climbing The Mountains Lives Forever Between The Holes</Q>
+                      <br>
+                      i'm a freelancer fornted end devoloper with a lot of ideas
+                    </p>
+                  </div>
                 </div>
                 <div class="carousel-item">
-                  <p class="h-team-2" style="font-size: 164px;color: #333;">B</p>
+                  <div class="h-team-div">
+                    <div class="h-team-div-img" style="overflow: hidden;"><img src="..." alt="Eslam Fathy" class="h-team-img"></div>
+                    <h3 class="h-team-name">Eslam Fathy</h3>
+                    <h4 class="h-team-work"><i class="fa fa-code" style="color: #333;"></i>Fronted End Devoloper / Freelancer</h4>
+                    <p class="h-team-word">
+                      Your Words Here
+                    </p>
+                  </div>
                 </div>
-                <div class="carousel-item">
-                  <p class="h-team-3" style="font-size: 164px;color: #333;">C</p>
-                </div>
+                <!-- <div class="carousel-item">
+                  <div class="h-team">
+                    <div class="h-team-div-img" style="overflow: hidden;"><img src="Background/Team/Mohammed.JPG" alt="Mohammed Ahmed" class="h-team-img"></div>
+                    <h3 class="h-team-name">Mohammed Ahmed<p class="h-team-title">aka "Tem Revil"</p></h3>
+                    <h4 class="h-team-work"><i class="fa fa-code" style="color: #333;"></i>Fronted End Devoloper / Freelancer</h4>
+                    <p class="h-team-word">
+                      <Q>Who Fears Of Climbing The Mountains Lives Forever Between The Holes</Q>
+                      <br>
+                      Hi i'm a freelancer fornted end devoloper with a lot of ideas
+                    </p>
+                  </div>
+                </div> -->
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#h-team-carousel" data-bs-slide="prev">
-                <i class="fa-solid fa-chevron-right fa-rotate-180" style="color: #333; font-size: 40px;"></i>
+              <button class="carousel-control-prev h-team-carousel-buttons" type="button" data-bs-target="#h-team-carousel" data-bs-slide="prev">
+                <i class="fa-solid fa-chevron-right fa-rotate-180 visually-hidden" style="color: #333; font-size: 40px;"></i>
                 <span class="visually-hidden">Previous</span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#h-team-carousel" data-bs-slide="next">
-                <i class="fa-solid fa-chevron-right" style="color: #333; font-size: 40px;"></i>
+              <button class="carousel-control-next h-team-carousel-buttons" type="button" data-bs-target="#h-team-carousel" data-bs-slide="next">
+                <i class="fa-solid fa-chevron-right visually-hidden" style="color: #333; font-size: 40px;"></i>
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
           </div>
         </section>
       </section>
+      <section class="Rights Modal Boxes">
+        <div class="modal fade" id="PrivacyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Privacy & Policies For KyGen©</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Not Ready Yet
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="CopyRightModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="--bs-modal-margin: 0.75rem;">
+          <div class="modal-dialog" style="max-width: 80%;">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">KyGen© All Rights Reserved</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <P>
+                  <h2>KyGen Private Software License</h2>
+                  <h5>Copyright © 2023, Mohamed Ahmed aka "Tem Revil"
+                  All rights reserved.</h5>
+                  <hr>
+                  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+                  <br>
+                  - Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+                  <br>
+                  - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the <br> / documentation and/or other materials provided with the distribution.
+                  <br>
+                  - Neither the name of Mohamed Ahmed nor the names of its contributors may be used to endorse or promote products derived from this software <br> / without specific prior written permission
+                  <hr>
+                  - In addition to the above, users and redistributors of this software must agree to the following:
+                  <br>
+                  - Users and redistributors may not create or distribute copies or modified versions of this software or any of its components without prior written <br> / permission from the copyright holder.
+                  <br>
+                  - Users and redistributors may not sell, rent, or assign any rights or privileges in this software or any of its components without prior written <br> / permission from the copyright holder.
+                  <br>
+                  - Users and redistributors may not publish or distribute this software or any of its components in a way that may harm the reputation of the copyright holder.
+                  <br>
+                  - Users and redistributors may not use the name or logo of KyGen in any way that may confuse consumers or suggest a connection with the <br> / copyright hold
+                  <br>
+                  - Users and redistributors may not use the name or logo of KyGen in any way that may harm the reputation of the copyright holder
+                  <br>
+                  - Users and redistributors may not use the name or logo of KyGen in any way that may violate the copyright holder's intellectual property rights.
+                  <br>
+                  - Any person who violates any of the terms of this license shall be liable for damages to the copyright holder, including, but not limited to, legal <br> / fees, expenses and actual damages.
+                  <br>
+                  By using this software, you agree to these terms.
+                  <hr>
+                  <strong>Disclaimer:</strong>
+                  <br>
+                  This software is provided by the copyright holders and contributors "as is" and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall Mohamed Ahmed be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.
+                  <hr>
+                  <strong>Interpretation:</strong>
+                  <br>
+                  In the event of any conflict between the terms of this license and any other terms applicable to the use of this software, the terms of this license shall prevail.
+                  <hr>
+                  <strong>Governing Law:</strong>
+                  <br>
+                  This license is governed by and construed in accordance with the laws of the Arab Republic of Egypt.
+                  <hr>
+                  <strong>Consent:</strong>
+                  <br>
+                  By using this software, you agree to these terms.
+                  <hr>
+                  <p style="text-align: center;">
+                      Signature of Copyright Holder : Mohamed Ahmed
+                      <br>
+                      Date : 2023-10-04
+                  </p>
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <footer class="h-footer">
-        <h1 class="h-footer-title">Footer</h1>
+        <h1 class="h-footer-title">KyGen<i class="fa-solid fa-copyright" style="font-size: 32px;margin-bottom: 30px;"></i></h1>
+        <ul class="h-footer-ui">
+          <li style="margin-bottom: 10px;">
+            <button type="button" class="btn btn-primary h-footer-ui-1" data-bs-toggle="modal" data-bs-target="#PrivacyModal">Privacy & Policies For KyGen©</button>
+          </li>
+          <li style="margin-bottom: 10px;">
+            <button type="button" class="btn btn-primary h-footer-ui-2" data-bs-toggle="modal" data-bs-target="#CopyRightModal">KyGen© License All Rights Reserved</button>
+          </li>
+          <hr style="width: 90%;border: 2px white solid;">
+          <li style="margin-bottom: 10px;">
+            <a href="mailto:temrevil@gmail.com" class="h-footer-ui-3">temrevil@gmail.com</a>
+            <p class="h-footer-ui-4">+201001308280</p>
+          </li>
+        </ul>
+        <div class="h-footer-form">
+          <form id="h-footer-form">
+            <p class="h-footer-form-required">Required</p>
+            <input type="email" id="h-footer-form-email" placeholder="Email" aria-required="true">
+            <p class="h-footer-form-optional">Optional</p>
+            <input type="text" min="8" id="h-footer-form-number" placeholder="Number" aria-required="false">
+            <br>
+            <textarea type="text" class="h-footer-form-message" placeholder="Your Message" minlength="10" maxlength="1000"></textarea>
+            <div class="h-footer-form-div-feedback">
+              <input type="radio" id="h-footer-form-feedback" aria-required="true">
+              <label for="h-footer-form-feedback" style="font-size: 26px;color: white;" aria-required="true">Feedback</label>
+            </div>
+            <div class="h-footer-form-div-contact">
+              <input type="radio" id="h-footer-form-contact" aria-required="true">
+              <label for="h-footer-form-contact" style="font-size: 26px;color: white;" aria-required="true">Contact Us</label>
+            </div>
+            <input type="file" id="h-footer-form-upload" accept=".pdf .png .jpg .jpeg .mp4">
+            <label for="h-footer-form-upload" id="h-footer-form-uploadl">Upload</label>
+            <input type="submit" id="h-footer-form-send" value="Send">
+          </form>
+        </div>
+        <p class="h-footer-version">v4.67.3 Dev Edition</p>
       </footer>
-    <script src="JavaScripts/jquery-3.6.2.min.js"></script>
-    <script src="JavaScripts/bootstrap.min.js"></script>
-    <script src="JavaScripts/all.min.js"></script>
+    <script src="JavaScripts/jquery-3.7.1.min.js"></script>
+    <script src="JavaScripts/bootstrap.js"></script>
+    <script src="JavaScripts/all.js"></script>
     <script src="JavaScripts/Home.js"></script>
+    <script src="JavaScripts/Footer.js"></script>
 </body>
 </html>
