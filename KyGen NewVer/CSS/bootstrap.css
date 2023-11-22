@@ -793,16 +793,6 @@ progress {
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
-.row-information {
-  --bs-gutter-x: 12.5rem;
-  --bs-gutter-y: 0;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  justify-items: center;
-  margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-0.5 * var(--bs-gutter-x));
-  margin-left: calc(-0.5 * var(--bs-gutter-x));
-}
 .row > * {
   flex-shrink: 0;
   width: 100%;
@@ -813,9 +803,6 @@ progress {
 }
 
 .col {
-  flex: 1 0 50%;
-}
-.col2 {
   flex: 1 0 0%;
 }
 
@@ -5618,7 +5605,7 @@ textarea.form-control-lg {
   flex-shrink: 0;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   padding: calc(var(--bs-modal-padding) - var(--bs-modal-footer-gap) * 0.5);
   background-color: var(--bs-modal-footer-bg);
   border-top: var(--bs-modal-footer-border-width) solid var(--bs-modal-footer-border-color);
@@ -5631,7 +5618,7 @@ textarea.form-control-lg {
 
 @media (min-width: 576px) {
   .modal {
-    --bs-modal-margin: 10.75rem;
+    --bs-modal-margin: 1.75rem;
     --bs-modal-box-shadow: var(--bs-box-shadow);
   }
   .modal-dialog {

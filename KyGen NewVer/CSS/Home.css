@@ -252,6 +252,16 @@ body::-webkit-scrollbar-thumb {
     display: grid;
     justify-content: center;
 }
+.row-information {
+    --bs-gutter-x: 12.5rem;
+    --bs-gutter-y: 0;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-items: center;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
 
 .h-information {
     width: 1430px;
