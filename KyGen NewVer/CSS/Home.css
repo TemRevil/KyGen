@@ -30,12 +30,10 @@ html {
 
 body::-webkit-scrollbar {
     width: 6px;
-}
-  
+} 
 body::-webkit-scrollbar-track {
     background: #eee;
 }
-  
 body::-webkit-scrollbar-thumb {
     background-color: #007bffb4;
     border-radius: 20px;
@@ -45,9 +43,10 @@ body::-webkit-scrollbar-thumb {
     background-color: aliceblue;
     color: #3395ff;
 }
+
 /* flex */
-.col {
-    flex: 1 0 33% !important;
+.col-gallery, .col-information {
+    flex: 1 0 33%;
 }
 
 /* -------------------------------------------------------------------------------------------------- */
@@ -137,7 +136,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .h-cards {
-    margin: 100px !important;
+    margin: 100px;
 }
 
 /* --------------------------------------------- */
@@ -253,7 +252,7 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
 }
 .row-information {
-    --bs-gutter-x: 12.5rem;
+    --bs-gutter-x: -2.5rem;
     --bs-gutter-y: 0;
     display: grid;
     grid-template-columns: auto auto auto;
@@ -308,7 +307,7 @@ body::-webkit-scrollbar-thumb {
   }
 
 .h-information-card-1-text {
-    top: 215px !important;
+    top: 215px;
 }
 .h-information-card-2 {
     outline: none;
@@ -339,7 +338,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .h-information-card-2-text {
-    top: 215px !important;
+    top: 215px;
 }
 .h-information-card-3 {
     outline: none;
@@ -369,7 +368,7 @@ body::-webkit-scrollbar-thumb {
     opacity: 0.5;
 }
 .h-information-card-3-text {
-    top: 215px !important;
+    top: 215px;
 }
 .h-information-card-title {
     font-family: 'Rubik', Arial, sans-serif;
@@ -572,17 +571,19 @@ body::-webkit-scrollbar-thumb {
     overflow: hidden;
 }
 .h-team-carousel-buttons {
-    width: 5% !important;
+    width: 5%;
+    height: 80%;
 }
 .h-team-div {
     display: grid;
     grid-template-columns: 250px repeat(1, 1fr);
-    grid-template-rows: 80px 50px 190px;
+    grid-template-rows: 80px 50px 120px 59px;
     gap: 10px;
-    grid-template-areas: 
-    "h-team-div-img h-team-name h-team-title"
-    "h-team-div-img h-team-work h-team-work"
-    "h-team-div-img h-team-word h-team-word";
+    grid-template-areas:
+        "h-team-div-img h-team-name h-team-title"
+        "h-team-div-img h-team-work h-team-work"
+        "h-team-div-img h-team-word h-team-word"
+        "h-team-div-img . h-team-url";
 }
 .h-team-div-img {
     grid-area: h-team-div-img;
@@ -612,6 +613,31 @@ body::-webkit-scrollbar-thumb {
     font-size: 25px;
     font-weight: 400;
 }
+
+.h-team-1-url {
+    grid-area: h-team-url;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.h-team-2-url {
+    grid-area: h-team-url;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.h-facebook-team-icon, .h-instagram-team-icon, .h-github-team-icon {
+    color: #333;
+    font-size: 52px;
+    transition: 0.3s 0s linear;
+}
+.h-facebook-team-icon:hover, .h-instagram-team-icon:hover, .h-github-team-icon:hover {
+    color: #494949;
+    font-size: 52px;
+}
+
 
 /* --------------------------------------------- */
 /* Footer */
