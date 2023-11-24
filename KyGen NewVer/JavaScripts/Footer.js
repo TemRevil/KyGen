@@ -28,3 +28,11 @@ contactRadio.addEventListener("change", function () {
 });
 
 //--------------------------------------------------------------------------------------------
+// Phone Numbers Form
+
+const phoneInputField = document.querySelector("#h-footer-form-number");
+const phoneInput = window.intlTelInput(phoneInputField, {
+    preferredCountries: ["eg", "us"],
+    utilsScript:
+        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+});

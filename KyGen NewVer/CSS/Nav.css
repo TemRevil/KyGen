@@ -26,40 +26,21 @@
 }
 
 /* -------------------------------------------------------------------------------------------------- */
-.navbar
-{
-    margin-bottom: 0;
-    background: #CCC;
-    height: 50px;
-    box-shadow: 0 7px 25px rgb(0,0,0,0.2);
-}
-.navbar .navbar-brand
-{
-    font-size: 35px;
-    font-weight: bold;
-    color: #DDD;
-    font-family: 'Rubik';
-}
-.navbar .navbar-brand span
-{
-    color: #007BFF;
-}
-
 
 /* Nav Bar */
 .main-nav {
     background-color: #eee !important;
-    box-shadow: 0px 0px 25px 0px lightslategray;
+    box-shadow: 0px 0px 20px 0px white;
 }
-.nav-kygen {
+.nav-enc {
     font-family: 'Rubik', Arial, sans-serif;
     font-weight: bold;
-    font-size: 42px;
+    font-size: 32px;
     margin-left: 15px;
     margin-right: 15px;
     transition: 0.3s 0s linear;
 }
-.nav-kygen:hover {
+.nav-enc:hover {
     color: #007BFF;
 }
 .nav-links-ui {
@@ -76,11 +57,11 @@
     color: #007BFF;
 }
 .nav-login {
-    /* padding: 10px; */
+    padding: 10px;
     font-size: 22px;
     color: white;
     background-color: #333;
-    border: 1px white solid;
+    border: 4px white solid;
     transition: 0.3s 0s cubic-bezier(0.6, -0.28, 0.74, 0.05);
     border-radius: 8px;
 }
@@ -99,6 +80,9 @@
     border: 4px solid #fff;
 }
 
+.login-place {
+    --bs-modal-margin: 12.75rem !important;
+}
 .login-content {
     display: flex;
     flex-direction: column;
@@ -142,6 +126,7 @@
     font-family: 'Rubik';
     padding: 10px 35px;
     margin-top: 10px;
+    transition: 0.3s 0s linear;
 }
 #login-button:hover {
     background-color: black;

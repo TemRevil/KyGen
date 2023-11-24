@@ -23,7 +23,7 @@ html {
     box-sizing: border-box;
 }
 .home-body {
-    background-color: white;
+    background-color: #EDF2F7;
     max-width: 100%;
     overflow-x: hidden;
 }
@@ -64,21 +64,12 @@ body::-webkit-scrollbar-thumb {
     display: grid;
     align-content: center;
     align-items: end;
-    height: 826px;
+    height: 840px;
     width: 100%;
     transition: 0.19s 0s linear;
     background-color: #007BFF;
     box-shadow: 1px 0px 110px 4px lightslategrey, inset 0px 0px 150px 30px #004eff;
-    /* animation: colorChange 1s linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%) infinite; */
 }
-/* @keyframes colorChange {
-    0% { background-image: linear-gradient(11deg, #00a1ff -2%, #007BFF 38%,#007BFF 14%,#1633ff 109%); }
-    20% { background-image: linear-gradient(111deg, #00a1ff -2%, #007BFF 38%,#007BFF 14%,#1633ff 109%); }
-    40% { background-image: linear-gradient(262deg, #00a1ff -2%, #007BFF 38%,#007BFF 14%,#1633ff 109%); }
-    60% { background-image: linear-gradient(282deg, #00a1ff -2%, #007BFF 38%,#007BFF 14%,#1633ff 109%); }
-    80% { background-image: linear-gradient(342deg, #00a1ff -2%, #007BFF 38%,#007BFF 14%,#1633ff 109%); }
-    100% { background-image: linear-gradient(350deg, #00a1ff -2%, #007BFF 38%,#007BFF 14%,#1633ff 109%); }
-} */
 .h-title:hover {
     box-shadow: 1px 0px 130px 4px lightslategrey, inset 8px 12px 150px 130px #004eff;
 }
@@ -92,12 +83,14 @@ body::-webkit-scrollbar-thumb {
     font-size: 182px;
     color: white;
     pointer-events: none;
+    animation: backInLeft;
 }
 .h-TitleAlign {
     font-family: 'Rubik', Arial, sans-serif;
     font-size: 52px;
     color: white;
     pointer-events: none;
+    animation: fadeIn;
 }
 
 .h-media-icon {
@@ -230,7 +223,7 @@ body::-webkit-scrollbar-thumb {
     font-family: 'Rubik', Arial, sans-serif;
     font-size: 26px;
     color: white;
-    padding: 12px 169px;
+    padding: 12px 57px;
 }
 
 /* -------------------------------------------------------------------------------------------------- */
@@ -595,13 +588,13 @@ body::-webkit-scrollbar-thumb {
 .h-team-div {
     display: grid;
     grid-template-columns: 250px repeat(1, 1fr);
-    grid-template-rows: 80px 50px 120px 59px;
+    grid-template-rows: 80px 50px 110px 70px;
     gap: 10px;
     grid-template-areas:
         "h-team-div-img h-team-name h-team-title"
         "h-team-div-img h-team-work h-team-work"
         "h-team-div-img h-team-word h-team-word"
-        "h-team-div-img . h-team-url";
+        "h-team-div-img h-team-skills h-team-url";
 }
 .h-team-div-img {
     grid-area: h-team-div-img;
@@ -631,22 +624,34 @@ body::-webkit-scrollbar-thumb {
     font-size: 25px;
     font-weight: 400;
 }
+.h-team-1-skills {
+    grid-area: h-team-skills;
+    display: grid;
+    grid-template-columns: repeat(2, 50px);
+    gap: 10px;
+    font-size: 72px;
+}
+.h-team-2-skills {
+    grid-area: h-team-skills;
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    gap: 10px;
+    font-size: 72px;
+}
 
 .h-team-1-url {
     grid-area: h-team-url;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
 }
-
 .h-team-2-url {
     grid-area: h-team-url;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
 }
 
 .h-facebook-team-icon, .h-instagram-team-icon, .h-github-team-icon {
+    margin-right: 10px;
     color: #333;
     font-size: 52px;
     transition: 0.3s 0s linear;
@@ -677,7 +682,7 @@ body::-webkit-scrollbar-thumb {
 .h-footer-title {
     grid-area: h-foter-title;
     font-family: 'Rubik', Arial, sans-serif;
-    font-size: 72px;
+    font-size: 52px;
     color: white;
     pointer-events: none;
 }
@@ -687,7 +692,7 @@ body::-webkit-scrollbar-thumb {
     padding: 0;
     list-style: none;
 }
-.h-footer-ui-1, .h-footer-ui-2 {
+.h-footer-ui-1, .h-footer-ui-2, .h-footer-ui-3 {
     font-family: 'Rubik', Arial, sans-serif;
     font-size: 22px;
     font-weight: 100;
@@ -698,13 +703,13 @@ body::-webkit-scrollbar-thumb {
     text-decoration: none;
     transition: 0.3s 0s linear;
 }
-.h-footer-ui-1:hover, .h-footer-ui-2:hover, .h-footer-ui-1:focus-visible, .h-footer-ui-2:focus-visible, .h-footer-ui-1:active, h-footer-ui-2:active {
+.h-footer-ui-1:hover, .h-footer-ui-2:hover, .h-footer-ui-3:hover, .h-footer-ui-1:focus-visible, .h-footer-ui-2:focus-visible, .h-footer-ui-3:focus-visible, .h-footer-ui-1:active, h-footer-ui-2:active, h-footer-ui-3:active {
     background-color: transparent !important;
     border: none;
     box-shadow: none;
     color: #0d6efd;
 }
-.h-footer-ui-3, .h-footer-ui-4 {
+.h-footer-ui-4, .h-footer-ui-5 {
     color: white;
     font-size: 18px;
     text-decoration: none;
@@ -754,10 +759,14 @@ body::-webkit-scrollbar-thumb {
     font-size: 22px;
     outline: none;
 }
+.iti {
+    grid-area: number;
+}
 #h-footer-form-number {
     grid-area: number;
     width: 450px;
     padding: 10px;
+    padding-left: 50px;
     border: none;
     border-radius: 8px;
     font-size: 22px;
