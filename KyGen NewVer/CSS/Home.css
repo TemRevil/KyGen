@@ -62,7 +62,7 @@ body::-webkit-scrollbar-thumb {
 .h-title {
     grid-area: h-title;
     display: grid;
-    align-content: stretch;
+    align-content: center;
     align-items: end;
     height: 826px;
     width: 100%;
@@ -120,7 +120,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* -------------------------------------------------------------------------------------------------- */
-/* header 2 */
+/* Gallery Cards */
 
 .h-gallery {
     grid-area: gallery;
@@ -129,7 +129,6 @@ body::-webkit-scrollbar-thumb {
     width: 1366px;
 }
 
-/* Header 2 Cards */
 .card {
     background-color: aliceblue;
     box-shadow: 4px 6px 75px 0px #DDDDF3;
@@ -165,7 +164,6 @@ body::-webkit-scrollbar-thumb {
     color: white;
     padding: 12px 120px;
 }
-/* --------------------------------------------- */
 
 /* --------------------------------------------- */
 /* Word List Card */
@@ -206,11 +204,11 @@ body::-webkit-scrollbar-thumb {
     color: white;
     padding: 12px 125px;
 }
-/* --------------------------------------------- */
 
 /* --------------------------------------------- */
 /* Artificial Intelligence Card */
 .card-ai-img {
+
     width: 365px;
     height: 260px;
     transition: 0.3s 0s linear;
@@ -233,6 +231,22 @@ body::-webkit-scrollbar-thumb {
     font-size: 26px;
     color: white;
     padding: 12px 169px;
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* Gallery Phone Cards */
+
+.h-gallery-phone {
+    margin-bottom: 110px;
+    width: 367px;
+    height: 451px;
+}
+
+.h-gallery-phone-inner {
+    height: 520px;
+}
+.h-gallery-phone-card-1, .h-gallery-phone-card-2, .h-gallery-phone-card-3 {
+    height: 500px;
 }
 
 /* -------------------------------------------------------------------------------------------------- */
