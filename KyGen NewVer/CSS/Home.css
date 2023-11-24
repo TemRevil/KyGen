@@ -265,6 +265,10 @@ body::-webkit-scrollbar-thumb {
     display: grid;
     justify-content: center;
 }
+.h-grid-information-phone {
+    height: 400px;
+    width: 350px;
+}
 .row-information {
     --bs-gutter-x: -2.5rem;
     --bs-gutter-y: 0;
