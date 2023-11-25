@@ -25,64 +25,64 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
-<body aria-label="KyGen Password Generator" class="generator-body">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary main-nav">
-        <div class="container-fluid">
-          <a class="navbar-brand nav-kygen" href="Index.html">KyGen</a>
-          <button class="navbar-toggler nav-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-links-ui">
-              <li class="nav-item">
-                <a class="nav-link nav-link1" aria-current="page" href="Index.html" accesskey="H">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-link2" aria-current="page" href="Generator.html">Generator</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-link3" href="WordList.html">Word List</a>
-              </li>
-            </ul>
-            <!-- Button trigger login -->
-            <button type="button" class="btn btn-primary nav-login" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Login
-            </button>
-          </div>
+<body aria-label="Encryptor Password Generator" class="generator-body">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary main-nav">
+    <div class="container-fluid">
+      <a class="navbar-brand nav-enc" href="Index.html">Encryptor</a>
+      <button class="navbar-toggler nav-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-links-ui">
+          <li class="nav-item">
+            <a class="nav-link nav-link1" aria-current="page" href="Index.html" accesskey="H">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link2" aria-current="page" href="Generator.html">Generator</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link3" href="WordList.html">Word List</a>
+          </li>
+        </ul>
+        <!-- Button trigger login -->
+        <button type="button" class="btn btn-primary nav-login" data-bs-toggle="modal" data-bs-target="#login">
+          Login
+        </button>
+      </div>
+    </div>
+  </nav>
+  <!-- Login -->
+  <div class="modal fade login-place" id="login" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Login "Only Admin Devolopers"</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      </nav>
-      <!-- Login -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Login "Only Admin Devolopers"</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-body login-content">
+          <form id="login-form">
+            <h2 id="login-text">Login</h2>
+            <div id="success-message"></div>
+            <div id="error-message"></div>
+            <div class="input-container">
+                <label for="username" id="LLUsername">Username</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <label for="password" id="LLPassword">Password</label>
+                <input type="password" id="password" name="password" required>
             </div>
-            <div class="modal-body login-content">
-              <form id="login-form">
-                <h2 id="login-text">Login</h2>
-                <div id="success-message"></div>
-                <div id="error-message"></div>
-                <div class="input-container">
-                    <label for="username" id="LLUsername">Username</label>
-                    <input type="text" id="username" name="username" required>
-                    <br>
-                    <label for="password" id="LLPassword">Password</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" id="login-button">Login</button>
-              </form>
-            </div>
-            <div class="modal-footer" style="text-align: center;">
-              <p style="font-family: 'Rubik'; font-size: 18px; font-weight: 300;">Secured By Lavarix.</p>
-            </div>
-          </div>
+            <button type="submit" id="login-button">Login</button>
+          </form>
+        </div>
+        <div class="modal-footer" style="text-align: center;">
+          <p style="font-family: 'Rubik'; font-size: 18px; font-weight: 300;">Secured By "Still Unkown".</p>
         </div>
       </div>
+    </div>
+  </div>
       <header>
         <section class="g-title">
-            <h1 class="g-TitleCard">KyGen</h1>
+            <h1 class="g-TitleCard">Encryptor</h1>
             <p class="g-TitleAlign">"More Complicated More Safety"</p>
         </section>
       </header>
