@@ -787,8 +787,8 @@ body::-webkit-scrollbar-thumb {
 
 .h-footer-form-message {
     grid-area: message;
-    max-width: 450px;
-    max-height: 250px;
+    min-width: 450px;
+    min-height: 250px;
     padding: 5px;
     border: none;
     border-radius: 8px;
