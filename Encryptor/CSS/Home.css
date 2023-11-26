@@ -83,14 +83,12 @@ body::-webkit-scrollbar-thumb {
     font-size: 182px;
     color: white;
     pointer-events: none;
-    animation: backInLeft;
 }
 .h-TitleAlign {
     font-family: 'Rubik', Arial, sans-serif;
     font-size: 52px;
     color: white;
     pointer-events: none;
-    animation: fadeIn;
 }
 
 .h-media-icon {
@@ -230,7 +228,8 @@ body::-webkit-scrollbar-thumb {
 /* Gallery Phone Cards */
 
 .h-gallery-phone {
-    margin-bottom: 110px;
+    display: none;
+    margin: 50px 0;
     width: 367px;
     height: 451px;
 }
@@ -259,6 +258,7 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
 }
 .h-grid-information-phone {
+    display: none;
     height: 400px;
     width: 350px;
 }
@@ -604,7 +604,12 @@ body::-webkit-scrollbar-thumb {
     height: 360px;
     transition: 0.3s 0s linear;
 }
-.h-team-img:hover {
+.h-team-img-2 {
+    display: none;
+    width: 430px;
+    transition: 0.3s 0s linear;
+}
+.h-team-img:hover, .h-team-img-2:hover {
     scale: 1.2;
 }
 .h-team-name {
@@ -782,8 +787,8 @@ body::-webkit-scrollbar-thumb {
 
 .h-footer-form-message {
     grid-area: message;
-    min-width: 450px;
-    min-height: 250px;
+    max-width: 450px;
+    max-height: 250px;
     padding: 5px;
     border: none;
     border-radius: 8px;
