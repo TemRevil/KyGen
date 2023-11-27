@@ -1,123 +1,123 @@
 @media (max-width: 700px) {
-  .h-rating-side, .h-rating-middle {
-    width: 100%;
-  }
-  .right {
-    display: none;
-  }
-  /* ------------------------------------ */
-  .login-place {
-    --bs-modal-margin: 5.75rem !important;
-  }
-  .h-header {
-    grid-template-rows: repeat(1, 1fr) 620px;
-  }
-  .h-title {
-    width: 674px;
-  }
-  .h-TitleCard {
-    font-size: 112px;
-  }
-  .h-TitleAlign {
-    font-size: 38px;
-  }
+    .h-rating-side, .h-rating-middle {
+      width: 100%;
+    }
+    .right {
+      display: none;
+    }
+    /* ------------------------------------ */
+    .login-place {
+      --bs-modal-margin: 5.75rem !important;
+    }
+    .h-header {
+      grid-template-rows: repeat(1, 1fr) 620px;
+    }
+    .h-title {
+      width: 674px;
+    }
+    .h-TitleCard {
+      font-size: 112px;
+    }
+    .h-TitleAlign {
+      font-size: 38px;
+    }
 
-  .h-gallery {
-    display: none;
-  }
-  .h-gallery-phone {
-    display: block;
-  }
-  
-  .h-grid-information {
-    display: none;
-  }
-  .h-grid-information-phone {
-    display: block;
-  }
+    .h-gallery {
+      display: none;
+    }
+    .h-gallery-phone {
+      display: block;
+    }
+    
+    .h-grid-information {
+      display: none;
+    }
+    .h-grid-information-phone {
+      display: block;
+    }
 
-  .h-reviews {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 510px 400px;
-    width: 640px;
-  }
-  .h-rating {
-    width: 467px;
-  }
-  .h-imp-rating {
-    width: 467px;
-  }
+    .h-reviews {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: 510px 400px;
+      width: 640px;
+    }
+    .h-rating {
+      width: 467px;
+    }
+    .h-imp-rating {
+      width: 467px;
+    }
 
-  .h-team {
-    width: 430px;
-    height: 700px;
-    grid-template-columns: repeat(1, 430px);
-    grid-template-rows: 50px 15px 635px;
-  }
-  .h-team-div {
-    justify-items: center;
-    align-items: center;
-    grid-template-rows: 250px 65px 0px 40px 100px 70px 50px;
-    grid-template-areas: 
-    "h-team-div-img h-team-div-img h-team-div-img"
-    "h-team-name h-team-name h-team-name"
-    "h-team-title h-team-title h-team-title"
-    "h-team-work h-team-work h-team-work"
-    "h-team-word h-team-word h-team-word"
-    "h-team-skills h-team-skills h-team-skills"
-    "h-team-url h-team-url h-team-url";
-  }
-  .h-team-div-img {
-    height: 250px;
-  }
-  .h-team-img {
-    display: none;
-  }
-  .h-team-img-2 {
-    display: block;
-  }
-  .h-team-name {
-    margin: 0;
-    text-align: center;
-  }
-  .h-team-word {
-    text-align: center;
-  }
+    .h-team {
+      width: 430px;
+      height: 700px;
+      grid-template-columns: repeat(1, 430px);
+      grid-template-rows: 50px 15px 635px;
+    }
+    .h-team-div {
+      justify-items: center;
+      align-items: center;
+      grid-template-rows: 250px 65px 0px 40px 100px 70px 50px;
+      grid-template-areas: 
+      "h-team-div-img h-team-div-img h-team-div-img"
+      "h-team-name h-team-name h-team-name"
+      "h-team-title h-team-title h-team-title"
+      "h-team-work h-team-work h-team-work"
+      "h-team-word h-team-word h-team-word"
+      "h-team-skills h-team-skills h-team-skills"
+      "h-team-url h-team-url h-team-url";
+    }
+    .h-team-div-img {
+      height: 250px;
+    }
+    .h-team-img {
+      display: none;
+    }
+    .h-team-img-2 {
+      display: block;
+    }
+    .h-team-name {
+      margin: 0;
+      text-align: center;
+    }
+    .h-team-word {
+      text-align: center;
+    }
 
-  .h-footer {
-    justify-items: center;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 80px 250px 600px 30px;
-    grid-template-areas:
-        "h-foter-title h-foter-title h-foter-title"
-        "h-footer-ui h-footer-ui h-footer-ui"
-        "h-footer-form h-footer-form h-footer-form"
-        "h-footer-version . .";
-    width: 674px;
-    height: 1000px;
-  }
-  #h-footer-form {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 40px 50px 40px 50px 250px 40px;
-    grid-template-areas: 
-    "req req req"
-    "email email email"
-    "opt opt opt"
-    "number number nymber" 
-    "message message message"
-    "feedback contact ."
-    "send upload .";
-    gap: 10px;
-    width: 450px;
-  }
-  .h-footer-ui {
-    text-align: center;
-  }
-  .h-footer-form-required, .h-footer-form-optional {
-    text-align: center;
-  }
-  .h-footer-form-message {
-    max-width: 450px;
-    max-height: 200px;
-  }
+    .h-footer {
+      justify-items: center;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: 80px 250px 600px 30px;
+      grid-template-areas:
+          "h-foter-title h-foter-title h-foter-title"
+          "h-footer-ui h-footer-ui h-footer-ui"
+          "h-footer-form h-footer-form h-footer-form"
+          "h-footer-version . .";
+      width: 674px;
+      height: 1000px;
+    }
+    #h-footer-form {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: 40px 50px 40px 50px 250px 40px;
+      grid-template-areas: 
+      "req req req"
+      "email email email"
+      "opt opt opt"
+      "number number nymber" 
+      "message message message"
+      "feedback contact ."
+      "send upload .";
+      gap: 10px;
+      width: 450px;
+    }
+    .h-footer-ui {
+      text-align: center;
+    }
+    .h-footer-form-required, .h-footer-form-optional {
+      text-align: center;
+    }
+    .h-footer-form-message {
+      max-width: 450px;
+      max-height: 200px;
+    }
 }

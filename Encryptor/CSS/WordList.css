@@ -21,26 +21,25 @@
 }
 
 .wordlist-body {
-    background-color: #2484cc;
+    background-color: white;
 }
 
 body::-webkit-scrollbar {
-    width: 5px;
-}
-  
+    width: 6px;
+} 
 body::-webkit-scrollbar-track {
     background: #eee;
 }
-  
 body::-webkit-scrollbar-thumb {
-    background-color: #365679b4;
+    background-color: #9233ff;
     border-radius: 20px;
 }
 
 ::selection {
     background-color: aliceblue;
-    color: #3395ff;
+    color: #9233ff;
 }
+
 /* flex */
 .col {
     flex: 1 0 50% !important;
@@ -48,19 +47,55 @@ body::-webkit-scrollbar-thumb {
 
 /* -------------------------------------------------------------------------------------------------- */
 /* Header */
-
+.w-header {
+    height: 850px;
+    padding: 50px;
+    background-image: url("../Background/Word List/WordList\ Back.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.w-header-title {
+    width: 800px;
+    height: 650px;
+    background-image: url("../Background/Word List/WordListCard.jpg");
+    border-radius: 15px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(1, 1fr) 500px;
+    grid-template-areas: "TitleCard TitleWord";
+    gap: 100px;
+}
 .w-TitleCard {
+    grid-area: TitleCard;
+    width: 800px;
+    height: 650px;
     display: flex;
-    font-family: 'fa-regular-400', Arial, sans-serif;
-    font-size: 250px;
-    filter: blur(3px);
-    color: white;
     flex-direction: column;
     align-items: center;
+    font-family: 'fa-regular-400', Arial, sans-serif;
+    padding: 20px;
+    font-size: 232px;
+    color: #5e0388;
+    border: 2px #fdf8ff solid;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
     transition: 0.2s 0s linear;
 }
-.w-TitleCard:hover {
-    filter: blur(0px);
+.w-titleword-card {
+    grid-area: TitleWord;
+    width: 500px;
+    height: 400px;
+    background-image: url("../Background/Word\ List/TitleWord.jpg");
+}
+.w-TitleWord {
+    padding: 20px;
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 28px;
+    color: white;
+    backdrop-filter: blur(10px);
 }
 
 /* --------------------------------------------- */

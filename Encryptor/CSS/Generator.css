@@ -27,23 +27,22 @@
     background-attachment: fixed;
 }
 
- body::-webkit-scrollbar {
-    width: 5px;
-}
-  
+body::-webkit-scrollbar {
+    width: 6px;
+} 
 body::-webkit-scrollbar-track {
     background: #eee;
 }
-  
 body::-webkit-scrollbar-thumb {
-    background-color: #365679b4;
+    background-color: #007bffb4;
     border-radius: 20px;
 }
 
- ::selection {
+::selection {
     background-color: aliceblue;
     color: #3395ff;
 }
+
 /* flex */
 .col {
     flex: 1 0 50% !important;

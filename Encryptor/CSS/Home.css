@@ -61,22 +61,24 @@ body::-webkit-scrollbar-thumb {
 
 .h-title {
     grid-area: h-title;
-    display: grid;
-    align-content: center;
-    align-items: end;
     height: 840px;
     width: 100%;
     transition: 0.19s 0s linear;
-    background-color: #007BFF;
-    box-shadow: 1px 0px 110px 4px lightslategrey, inset 0px 0px 150px 30px #004eff;
-}
-.h-title:hover {
-    box-shadow: 1px 0px 130px 4px lightslategrey, inset 8px 12px 150px 130px #004eff;
+    background-image: url("../Background/Home/Header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .h-title-div {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 840px;
+    backdrop-filter: brightness(0.5);
+    transition: 0.3s 0s linear;
+}
+.h-title-div:hover {
+    backdrop-filter: brightness(0.7);
 }
 .h-TitleCard {
     font-family: 'Rubik', Arial, sans-serif;
@@ -299,7 +301,7 @@ body::-webkit-scrollbar-thumb {
 .h-information-card-1-img {
     height: 100%;
     width: 100%;
-    background-image: url("../Background/Informations/Card\ 1.png");
+    background-image: url("../Background/Home/Informations/Card\ 1.png");
     transition: 0.3s 0s linear;
 }
 .h-information-card-1-img:hover {
@@ -330,7 +332,7 @@ body::-webkit-scrollbar-thumb {
 .h-information-card-2-img {
     height: 100%;
     width: 100%;
-    background-image: url("../Background/Informations/Card\ 2.png");
+    background-image: url("../Background/Home/Informations/Card\ 2.png");
     transition: 0.3s 0s linear;
 }
 .h-information-card-2-img:hover {
@@ -361,7 +363,7 @@ body::-webkit-scrollbar-thumb {
 .h-information-card-3-img {
     height: 100%;
     width: 100%;
-    background-image: url("../Background/Informations/Card\ 3.png");
+    background-image: url("../Background/Home/Informations/Card\ 3.png");
     transition: 0.3s 0s linear;
 }
 .h-information-card-3-img:hover {
