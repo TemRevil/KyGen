@@ -80,69 +80,78 @@
       </div>
     </div>
   </div>
-      <header>
+      <header class="g-header">
         <section class="g-title">
+          <div class="g-title-backdrop">
             <h1 class="g-TitleCard">Encryptor</h1>
+            <h2 class="g-TitleModel">Generator Area</h2>
             <p class="g-TitleAlign">"More Complicated More Safety"</p>
+          </div>
         </section>
+        <div class="g-title-div-img">
+          <img class="g-title-img" src="Background/Generator/Vectors/Header.png" alt="Full Safety">
+        </div>
       </header>
-      <hr style="border:2px solid white; border-radius: 5px;">
       <section class="g-main-content">
-        <div class="container text-center">
-          <div class="row">
-            <div class="col checks">
-              <div class="container text-center">
-                <div class="row row-cols-2">
-                  <div class="col">
-                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                      <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" accesskey="1" checked>
-                      <label class="btn btn-outline-primary main-checks" for="btncheck1">12345678...</label>
-                    </div>
+        <div class="g-main-div-img" style="margin-left: 130px;"><img class="g-main-img" src="Background/Generator/Vectors/Vector 1.png" alt="Main Back"></div>
+        <div class="g-main-div-img"><img class="g-main-img" src="Background/Generator/Vectors/Vector 1.png" alt="Main Back 2"></div>
+        <section class="g-check-widgets">
+          <button class="g-check-1">
+            <p class="g-check-text">12345678...</p>
+          </button>
+          <button class="g-check-2">
+            <p class="g-check-text">abcd... Small</p>
+          </button>
+          <button class="g-check-3">
+            <p class="g-check-text">ABCD... Captial</p>
+          </button>
+          <button class="g-check-4">
+            <p class="g-check-text">!@#$%^&...</p>
+          </button>
+        </section>
+        <section class="g-range">
+          <p class="g-range-number">16</p>
+          <input type="range" class="g-range-input" value="16" min="8" max="1024">
+          <button class="g-range-gen" accesskey="G">Generate</button>
+        </section>
+        <div class="g-div-img"><img class="g-img" src="Background/Generator/Vectors/Password.png" alt="Password Here"></div>
+        <section class="g-password">
+          <input type="text" class="g-password-input">
+          <button class="btn btn-primary g-password-copy">Copy</button>
+          <button type="button" class="btn btn-primary g-password-save" data-bs-toggle="modal" data-bs-target="#SaveModal">Save</button>
+          <button class="btn btn-primary g-password-gen" accesskey="G">Generate</button>
+        </section>
+        <section class="g-save-modal">
+          <div class="modal fade" id="SaveModal" tabindex="-1" aria-labelledby="SaveModal" aria-hidden="true" style="--bs-modal-margin: 17.75rem;">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="SaveModalLabel">Save Your Password</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="mb-3">
+                    <label for="g-save-email" class="form-label">Email, Username, Number...etc</label>
+                    <input type="text" class="form-control g-save-email" name="Email Or Username" aria-describedby="helpId" placeholder="Email, Username, Number...etc">
+                    <label for="g-password-save-input" class="form-label" style="margin: 0;">Password</label>
+                    <input type="text" class="g-password-save-input">
                   </div>
-                  <div class="col">
-                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                      <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" accesskey="2">
-                      <label class="btn btn-outline-primary main-checks" for="btncheck2">ABCD...Capital</label>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                      <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" accesskey="3">
-                      <label class="btn btn-outline-primary main-checks" for="btncheck3">abcd...Small</label>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                      <input type="checkbox" class="btn-check" id="btncheck4" utocaomplete="off" accesskey="4">
-                      <label class="btn btn-outline-primary main-checks" for="btncheck4">!@#$%^&*...</label>
-                    </div>
-                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary g-password-save-modal">Save</button>
                 </div>
               </div>
             </div>
-            <div class="col range">
-              <div id="RangeContainer">
-                <label for="range" id="LRange">Password Length</label>
-                <input type="range" id="range" name="range" min="8" max="1024" value="16">
-                <p id="rangeValue">16</p>
-              </div>
-            </div>
-            <div class="col password">
-              <div id="PasswordContainer">
-                <input type="text" id="Password" value="" placeholder="Password" aria-required="true">
-                <button id="Generate" accesskey="g" aria-label="Generate Password" aria-controls="Password" aria-disabled="true">Generate</button>
-                <button id="CopyButton" accesskey="c">Copy</button>
-              </div>
-              <span id="CopyMessage"></span>
-            </div>
           </div>
-        </div>
+        </section>
+        <div class="g-div-img-2"><img class="g-img-2" src="Background/Generator/Vectors/Password 2.svg" alt="Vector 1"></div>
+        <div class="g-div-img-3"><img class="g-img-3" src="Background/Generator/Vectors/Password 3.svg" alt="Vector 2"></div>
       </section>
 <script src="JavaScripts/jquery-3.7.1.min.js"></script>
 <script src="JavaScripts/bootstrap.js"></script>
 <script src="JavaScripts/all.js"></script>
 <script src="JavaScripts/Generator.js"></script>
 <script src="JavaScripts/Login.js"></script>
-<script src="JavaScripts/Clipboard.js"></script>
 </body>
 </html>

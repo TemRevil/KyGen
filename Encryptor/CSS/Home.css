@@ -134,7 +134,7 @@ body::-webkit-scrollbar-thumb {
 /* --------------------------------------------- */
 /* Generetor Cards */
 .card-generator-img {
-    width: 365px;
+    width: 400px;
     height: 260px;
     transition: 0.3s 0s linear;
 }
@@ -143,12 +143,12 @@ body::-webkit-scrollbar-thumb {
 }
 .card-generator-footer {
     text-align: center;
-    background-color: #6610f2;
+    background-color: #575be0;
     padding: 7px 0px;
     transition: 0.3s 0s linear;
 }
 .card-generator-footer:hover {
-    background-color: #8540f5;
+    background-color: #777ae3;
 }
 .card-generator-link {
     text-decoration: none;
