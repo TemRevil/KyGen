@@ -1,0 +1,203 @@
+/* Home */
+@media (max-width: 768px) {
+  .login-place {
+      --bs-modal-margin: 5.75rem !important;
+    }
+    .h-header {
+      grid-template-rows: repeat(1, 1fr) 620px;
+    }
+    .h-title {
+      width: 100%;
+    }
+    .h-TitleCard {
+      font-size: 112px;
+    }
+    .h-TitleAlign {
+      font-size: 38px;
+    }
+
+    .h-gallery {
+      display: none;
+    }
+    .h-gallery-phone {
+      display: block;
+    }
+    
+    .h-grid-information {
+      display: none;
+    }
+    .h-grid-information-phone {
+      display: block;
+    }
+    
+    .h-reviews {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: 510px 400px;
+      width: 640px;
+    }
+    .h-rating {
+      width: 467px;
+    }
+    .h-rating-side, .h-rating-middle {
+      width: 100%;
+    }
+    .right {
+      display: none;
+    }
+    .h-imp-rating {
+      width: 467px;
+    }
+
+    .h-team {
+      width: 430px;
+      height: 700px;
+      grid-template-columns: repeat(1, 430px);
+      grid-template-rows: 50px 15px 635px;
+    }
+    .h-team-div {
+      justify-items: center;
+      align-items: center;
+      grid-template-rows: 250px 65px 0px 40px 100px 70px 50px;
+      grid-template-areas: 
+      "h-team-div-img h-team-div-img h-team-div-img"
+      "h-team-name h-team-name h-team-name"
+      "h-team-title h-team-title h-team-title"
+      "h-team-work h-team-work h-team-work"
+      "h-team-word h-team-word h-team-word"
+      "h-team-skills h-team-skills h-team-skills"
+      "h-team-url h-team-url h-team-url";
+    }
+    .h-team-div-img {
+      height: 250px;
+    }
+    .h-team-img {
+      display: none;
+    }
+    .h-team-img-2 {
+      display: block;
+    }
+    .h-team-name {
+      margin: 0;
+      text-align: center;
+    }
+    .h-team-word {
+      text-align: center;
+    }
+}
+/* ---------------------------------------------------------------------- */
+/* Generator */
+@media (max-width: 768px) {
+  .login-place {
+    --bs-modal-margin: -5px !important;
+  }
+  
+  .g-title-div-img, .g-main-div-img, .g-div-img-2, .g-div-img-3 {
+    display: none;
+  }
+
+  /* ---------------------------------------- */
+      .g-header {
+        grid-template-columns: 100%;
+        width: 100%;
+        height: 450px;
+    }
+    .g-title {
+      width: 90%;
+      height: 350px;
+      margin: 20px;
+    }
+    .g-title-backdrop {
+      width: 100%;
+      height: 350px;
+    }
+    .g-TitleCard {
+      font-size: 58px;
+      height: 70px;
+      }
+    .g-TitleModel {
+        font-size: 14px;
+    }
+    .g-TitleAlign {
+      font-size: 16px;
+    }
+
+    .g-main-content {
+      grid-template-columns: 100%;
+      grid-template-rows: 350px 280px 400px;
+      grid-template-areas:
+          "g-check-widgets g-check-widgets g-check-widgets"
+          "g-range g-range g-range"
+          "g-password g-password g-password";
+      justify-items: center;
+      width: 100%;
+      margin-top: 100px;
+    }
+
+    .g-check-widgets {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 150px 160px;
+      width: 80%;
+      height: 150px;
+      margin: 0;
+      gap: 10px;
+    }
+    .g-check-1, .g-check-2, .g-check-3, .g-check-4 {
+      font-size: 32px;
+      width: 100%;
+      height: 150px;
+    }
+    .g-check-text {
+      font-size: 25px;
+    }
+
+    .g-range {
+      width: 90%;
+      height: 220px;
+      margin: 0;
+    }
+    .g-range-gen {
+      width: 50%;
+    }
+
+    .g-password {
+      grid-template-columns: 33% 33% 33%;
+      grid-template-rows: 80px 50px 50px 45px;
+      grid-template-areas:
+          "g-password-input g-password-input g-password-input"
+          "g-password-copy g-password-copy g-password-copy"
+          "g-password-gen g-password-gen g-password-gen"
+          "g-password-save g-password-save g-password-save"
+          "g-save-text g-save-text g-save-text";
+      height: 250px;
+      width: 90%;
+      margin: 0;
+    }
+    .g-password-input {
+      font-size: 32px;
+      margin-top: 10px;
+      width: 90%;
+    }
+    .g-password span {
+        font-size: 20px;
+    }
+    .g-password-copy {
+      border-radius: 5px;
+      font-size: 20px;
+      width: 80%;
+      margin: 0;
+    }
+    .g-password-save {
+      border-radius: 5px;
+      font-size: 20px;
+      width: 80%;
+    }
+    .g-password-gen {
+      border-radius: 5px;
+      font-size: 20px;
+      width: 80%;
+      margin: 0;
+    }
+    #SaveModal {
+      --bs-modal-margin: 0.75rem;
+    }
+}

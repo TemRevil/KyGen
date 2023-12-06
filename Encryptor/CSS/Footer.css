@@ -1,0 +1,305 @@
+@font-face {
+    font-family: 'Rubik';
+    src: local('Rubik'), url('../Fonts/Rubik/Rubik-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Bebas Neue';
+    src: local('Bebas Neue'), url('/Fonts/BebasNeue/BebasNeueRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'fa-regular-400';
+    src: url(/WebFonts/fa-brands-400.ttf) format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+
+::selection {
+    background-color: aliceblue;
+    color: #3395ff;
+}
+
+/* --------------------------------------------- */
+/* Footer */
+
+.h-footer {
+    display: grid;
+    grid-template-columns: 250px 420px 950px;
+    /* grid-template-rows: 60px 240px 70px; */
+    grid-template-areas:
+        "h-foter-title h-foter-title h-foter-title"
+        ". h-footer-ui h-footer-form"
+        "h-footer-version . .";
+    width: 100%;
+    height: 500px;
+    padding: 20px;
+    background-color: #343a40;
+    box-shadow: 0px -10px 160px 0px #DDDDF3;
+}
+.h-footer-title {
+    grid-area: h-foter-title;
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 52px;
+    color: white;
+    pointer-events: none;
+}
+.h-footer-ui {
+    grid-area: h-footer-ui;
+    margin-top: 30px;
+    padding: 0;
+    list-style: none;
+}
+.h-footer-ui-1, .h-footer-ui-2, .h-footer-ui-3 {
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 100;
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s 0s linear;
+}
+.h-footer-ui-1:hover, .h-footer-ui-2:hover, .h-footer-ui-3:hover, .h-footer-ui-1:focus-visible, .h-footer-ui-2:focus-visible, .h-footer-ui-3:focus-visible, .h-footer-ui-1:active, h-footer-ui-2:active, h-footer-ui-3:active {
+    background-color: transparent !important;
+    border: none;
+    box-shadow: none;
+    color: #0d6efd;
+}
+.h-footer-ui-4, .h-footer-ui-5 {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+/* --------------------------------------------- */
+/* Feedpack Form */
+
+.h-footer-form {
+    grid-area: h-footer-form;
+    font-family: 'Rubik', Arial, sans-serif;
+}
+#h-footer-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 40px 50px 40px 50px 40px 50px;
+    grid-template-areas:
+        "req req ."
+        "email email message"
+        "opt opt ."
+        "number number ."
+        "feedback contact ."
+        "send upload .";
+    gap: 5px;
+}
+
+.h-footer-form-required {
+    grid-area: req;
+    font-size: 26px;
+    color: white;
+    margin-bottom: 0;
+}
+.h-footer-form-optional {
+    grid-area: opt;
+    font-size: 26px;
+    color: white;
+    margin-bottom: 0;
+}
+
+#h-footer-form-email {
+    grid-area: email;
+    width: 450px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 22px;
+    outline: none;
+}
+.iti {
+    grid-area: number;
+}
+#h-footer-form-number {
+    grid-area: number;
+    width: 450px;
+    padding: 10px;
+    padding-left: 50px;
+    border: none;
+    border-radius: 8px;
+    font-size: 22px;
+    outline: none;
+}
+
+.h-footer-form-div-feedback {
+    grid-area: feedback;
+    font-size: 26px;
+    color: white;
+}
+.h-footer-form-div-contact {
+    grid-area: contact;
+    font-size: 26px;
+    color: white;
+}
+
+.h-footer-form-message {
+    grid-area: message;
+    width: 450px;
+    height: 250px;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    font-size: 26px;
+    outline: none;
+}
+.h-footer-form-message::-webkit-scrollbar {
+    width: 6px;
+}
+.h-footer-form-message::-webkit-scrollbar-track {
+    background: #eee;
+}
+.h-footer-form-message::-webkit-scrollbar-thumb {
+    background-color: #007bffb4;
+    border-radius: 20px;
+}
+
+#h-footer-form-upload {
+    display: none;
+}
+#h-footer-form-uploadl {
+    grid-area: upload;
+    width: 160px;
+    padding: 0px 20px;
+    background-color: #0d6efd;
+    color: white;
+    font-size: 32px;
+    font-weight: 300;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s 0s linear;
+}
+#h-footer-form-uploadl:hover {
+    background-color: #0955c7;
+}
+#h-footer-form-send {
+    grid-area: send;
+    width: 160px;
+    padding: 0px 40px;
+    background-color: #0d6efd;
+    color: white;
+    font-size: 26px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s 0s linear;
+}
+#h-footer-form-send:hover {
+    background-color: #0955c7;
+}
+
+/* --------------------------------------------- */
+
+.h-footer-version {
+    grid-area: h-footer-version;
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 22px;
+    opacity: 0.3;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .h-footer {
+        justify-items: center;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 80px 250px 600px 30px;
+        grid-template-areas:
+            "h-foter-title h-foter-title h-foter-title"
+            "h-footer-ui h-footer-ui h-footer-ui"
+            "h-footer-form h-footer-form h-footer-form"
+            "h-footer-version . .";
+        width: 100%;
+        height: 1000px;
+      }
+      #h-footer-form {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 40px 50px 40px 50px 250px 40px;
+        grid-template-areas: 
+        "req req req"
+        "email email email"
+        "opt opt opt"
+        "number number nymber" 
+        "message message message"
+        "feedback contact ."
+        "send upload .";
+        gap: 10px;
+        width: 450px;
+      }
+      .h-footer-ui {
+        text-align: center;
+      }
+      .h-footer-form-required, .h-footer-form-optional {
+        text-align: center;
+      }
+      .h-footer-form-message {
+        max-width: 450px;
+        max-height: 200px;
+      }
+}
+/* ------------------------------------------------------------------- */
+@media (max-width: 468px){
+    .h-footer {
+        grid-template-rows: 80px 250px 600px 30px;
+        grid-template-areas:
+            "h-foter-title h-foter-title h-foter-title"
+            "h-footer-ui h-footer-ui h-footer-ui"
+            "h-footer-form h-footer-form h-footer-form"
+            "h-footer-version . .";
+        width: 100%;
+        height: 1000px;
+    }
+    .h-footer-ui-1, .h-footer-ui-2, .h-footer-ui-3 {
+        font-size: 15px;
+    }
+    #h-footer-form {
+        grid-template-rows: 40px 50px 40px 50px 250px 40px;
+        grid-template-areas:
+            "req req req"
+            "email email email"
+            "opt opt opt"
+            "number number nymber"
+            "message message message"
+            "feedback contact ."
+            "send upload .";
+        width: 320px;
+        justify-items: center;
+        align-items: center;
+    }
+    #h-footer-form-email {
+        width: 300px;
+        font-size: 22px;
+    }
+    #h-footer-form-number {
+        width: 300px;
+        font-size: 22px;
+        margin-left: 10px;
+    }
+    .h-footer-form-message {
+        max-width: 300px;
+        max-height: 200px;
+    }
+    .h-footer-form-div-feedback, .h-footer-form-div-contact {
+        font-size: 22px;
+    }
+    #h-footer-form-uploadl {
+        width: 135px;
+        padding: 0px 20px;
+        font-size: 27px;
+    }
+    #h-footer-form-send {
+        width: 120px;
+        font-size: 26px;
+        border-radius: 5px;
+    }
+}

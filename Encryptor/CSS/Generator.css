@@ -5,7 +5,7 @@
     font-style: normal;
 }
 @font-face {
-    font-family: 'Bebas Neue';
+    font-family: 'BebasNeue';
     src: local('Bebas Neue'), url('/Fonts/BebasNeue/BebasNeueRegular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -35,7 +35,7 @@ body::-webkit-scrollbar-track {
     background: #eee;
 }
 body::-webkit-scrollbar-thumb {
-    background-color: #007bffb4;
+    background-color: #407bff;
     border-radius: 20px;
 }
 
@@ -53,9 +53,8 @@ body::-webkit-scrollbar-thumb {
 /* Header */
 .g-header {
     display: grid;
-    grid-template-columns: 800px 600px;
+    grid-template-columns: 850px 793px;
     grid-template-areas: "g-title g-img";
-    gap: 30px;
     background-image: url(../Background/Generator/Geometric.jpg);
     width: 1674px;
 }
@@ -76,13 +75,13 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     width: 800px;
     height: 650px;
-    backdrop-filter: brightness(0.8);
+    backdrop-filter: brightness(0.8) blur(6px);
 }
 .g-TitleCard {
     text-align: center;
     font-weight: bold;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 212px;
+    font-family: 'Bebas Neue', 'Rubik', Arial, sans-serif;
+    font-size: 162px;
     color: white;
     height: 212px;
 }
@@ -102,6 +101,7 @@ body::-webkit-scrollbar-thumb {
     width: 870px;
     height: 450px;
     margin-top: 215px;
+    pointer-events: none ;
 }
 .g-title-img {
     width: 870px;
@@ -117,7 +117,7 @@ body::-webkit-scrollbar-thumb {
     grid-template-rows: 550px 150px 350px;
     grid-template-areas:
         "g-check-widgets g-range g-img-2"
-        ". g-img g-img-3"
+        ". . g-img-3"
         "g-password g-password g-img-3";
 }
 .g-main-div-img {
@@ -142,7 +142,7 @@ body::-webkit-scrollbar-thumb {
     background-color: white;
     border-radius: 15px;
     border: none;
-    box-shadow: 0 0 75px -30px #DDDDF3;
+    box-shadow: 0 0 75px -50px #212529;
     transition: 0.1s 0s linear;
     font-size: 32px;
     color: #0d6efd;
@@ -153,6 +153,7 @@ body::-webkit-scrollbar-thumb {
 }
 .g-check-1[data-checked="true"], .g-check-2[data-checked="true"], .g-check-3[data-checked="true"], .g-check-4[data-checked="true"] {
     background-color: rgb(29, 134, 255);
+    box-shadow: 0 0 75px -20px #DDDDF9;
     color: white;
 }
 
@@ -170,7 +171,11 @@ body::-webkit-scrollbar-thumb {
 }
 .g-range-number {
     font-size: 28px;
+    text-align: center;
     color: #333;
+    background-color: #f8f8f8;
+    border: #eee 3px solid;
+    border-radius: 5px;
 }
 .g-range-input {
     width: 90%;
@@ -189,17 +194,6 @@ body::-webkit-scrollbar-thumb {
     background-color: #0b50b8; 
 }
 
-.g-div-img {
-    grid-area: g-img;
-    width: 250px;
-    height: 100px;
-    margin-left: 80px;
-}
-.g-img {
-    width: 360px;
-    height: 250px;
-    pointer-events: none;
-}
 .g-password {
     grid-area: g-password;
     display: grid;
@@ -225,14 +219,15 @@ body::-webkit-scrollbar-thumb {
     width: 90%;
     background-color: transparent;
     outline: none;
-    border: #0d6efd none;
-    border-radius: 5px;
+    border: none;
+    border-bottom: #0d6efd 2px solid;
     font-size: 48px;
     transition: 0.3s 0s linear;
     margin-top: 40px;
 }
 .g-password-input:focus-within, .g-password-input:hover {
     border-bottom: #0d6efd 1px solid;
+    border-radius: 5px;
     background-color: #eee;
 }
 .g-password-copy {
@@ -304,6 +299,9 @@ body::-webkit-scrollbar-thumb {
     pointer-events: none;
 }
 
+#SaveModal {
+    --bs-modal-margin: 17.75rem;
+}
 .g-password-save-input {
     display: block;
     width: 100%;
@@ -326,5 +324,5 @@ body::-webkit-scrollbar-thumb {
     background-color: var(--bs-body-bg);
     border-color: #86b7fe;
     outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    box-shadow: 0 0 0 0.25rem #0d6efd40;
 }
