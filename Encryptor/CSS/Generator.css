@@ -114,10 +114,9 @@ body::-webkit-scrollbar-thumb {
 .g-main-content {
     display: grid;
     grid-template-columns: 700px 500px 470px;
-    grid-template-rows: 550px 150px 350px;
+    grid-template-rows: 610px 440px;
     grid-template-areas:
         "g-check-widgets g-range g-img-2"
-        ". . g-img-3"
         "g-password g-password g-img-3";
 }
 .g-main-div-img {
@@ -125,6 +124,12 @@ body::-webkit-scrollbar-thumb {
     z-index: -1;
     margin-top: 100px;
     margin-left: 450px;
+}
+.g-main-div-img-2 {
+    position: absolute;
+    z-index: -1;
+    margin-top: 100px;
+    margin-left: 130px;  
 }
 
 .g-check-widgets {
@@ -260,6 +265,7 @@ body::-webkit-scrollbar-thumb {
 .g-password span {
     grid-area: g-save-text;
     font-size: 32px;
+    margin: 10px auto;
     font-weight: bold;
     color: #0d6efd;
     transition: 0.3s 0s linear;
@@ -281,11 +287,11 @@ body::-webkit-scrollbar-thumb {
 .g-div-img-2 {
     grid-area: g-img-2;
     width: 480px;
-    height: 500px;
+    height: 630px;
 }
 .g-img-2 {
     width: 480px;
-    height: 500px;
+    height: 630px;
     pointer-events: none;
 }
 .g-div-img-3 {

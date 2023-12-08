@@ -209,6 +209,84 @@
     color: white;
 }
 
+/* ------------------------------------------------------------------- */
+@media (min-width: 1050px) and (max-width: 1366px) {
+    .h-footer {
+        gap: 10px;
+        grid-template-columns: 31% 69%;
+        grid-template-areas:
+            "h-foter-title h-foter-title h-foter-title"
+            "h-footer-ui h-footer-form h-footer-form"
+            "h-footer-version . .";
+    }
+    .h-footer-ui-1, .h-footer-ui-2, .h-footer-ui-3 {
+        font-size: 17px;
+    }
+    #h-footer-form {
+        grid-template-columns: 24% 24% 49%;
+        grid-template-rows: 40px 50px 40px 50px 40px 50px;
+        grid-template-areas:
+            "req req ."
+            "email email message"
+            "opt opt ."
+            "number number ."
+            "feedback contact ."
+            "send upload .";
+    }
+    #h-footer-form-email {
+        width: 95%;
+    }
+    #h-footer-form-number {
+        width: 95%;
+    }
+    .h-footer-form-message {
+        width: 100%;
+    }
+}
+/* ------------------------------------------------------------------- */
+@media (min-width: 769px) and (max-width: 1049px) {
+    .h-footer {
+        gap: 10px;
+        grid-template-columns: 31% 69%;
+        grid-template-areas:
+            "h-foter-title h-foter-title h-foter-title"
+            "h-footer-ui h-footer-form h-footer-form"
+            "h-footer-version . .";
+    }
+
+    .h-footer-ui-1, .h-footer-ui-2, .h-footer-ui-3 {
+        font-size: 15px;
+    }
+    
+    #h-footer-form {
+        grid-template-columns: 24% 24% 49%;
+        grid-template-rows: 40px 50px 40px 50px 40px 50px;
+        grid-template-areas:
+            "req req ."
+            "email email message"
+            "opt opt ."
+            "number number ."
+            "feedback contact ."
+            "send upload .";
+    }
+    #h-footer-form-email {
+        width: 95%;
+    }
+    #h-footer-form-number {
+        width: 95%;
+    }
+    .h-footer-form-message {
+        width: 100%;
+    }
+    .h-footer-form-div-feedback, .h-footer-form-div-contact {
+        font-size: 20px;
+    }
+    #h-footer-form-send, #h-footer-form-uploadl {
+        width: 90%;
+        padding: 0;
+    }
+}
+/* ------------------------------------------------------------------- */
 @media (max-width: 768px) {
     .h-footer {
         justify-items: center;

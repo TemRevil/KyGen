@@ -86,39 +86,250 @@
 }
 /* ---------------------------------------------------------------------- */
 /* Generator */
+@media (min-width: 1050px) and (max-width: 1366px) {
+  
+  .login-place {
+    --bs-modal-margin: 6.75rem !important;
+  }
+
+  .g-header {
+    grid-template-columns: 60% 40%;
+    width: 100%;
+    height: 600px;
+  }
+  .g-title {
+    width: 90%;
+    height: 500px;
+  }
+  .g-title-backdrop {
+    width: 100%;
+    height: 500px;
+  }
+  .g-TitleCard {
+    font-size: 158px;
+    height: 162px;
+  }
+  .g-TitleModel {
+    font-size: 32px;
+  }
+  .g-TitleAlign {
+    font-size: 34px;
+  }
+
+  .g-title-div-img {
+    width: 90%;
+    height: 385px;
+  }
+  .g-title-img {
+    width: 100%;
+    height: 240px;
+    scale: 1.3;
+    margin-top: -50px;
+  }
+
+  .g-main-content {
+    grid-template-columns: 48% 27% 25%;
+    grid-template-rows: 590px 370px;
+  }
+
+  .g-main-div-img {
+    margin-left: 350px;
+  }
+  .g-main-div-img-2 {
+    margin-left: 35px;
+  }
+
+  .g-check-widgets {
+    width: 80%;
+    height: 520px;
+    margin-left: 50px;
+  }
+  .g-check-1, .g-check-2, .g-check-3, .g-check-4 {
+    height: 220px;
+  }
+
+  .g-range {
+    width: 100%;
+    height: 520px;
+    margin-left: 0;
+  }
+  .g-range-gen {
+    width: 60%;
+  }
+
+  .g-password {
+    width: 95%;
+    margin-left: 50px;
+  }
+  .g-password-copy {
+    width: 60%;
+    position: relative;
+    left: 30%;
+    margin: 0;
+  }
+  .g-password-save {
+    width: 60%;
+  }
+  .g-password-gen {
+    width: 60%;
+    position: relative;
+    right: 30%;
+    margin: 0;
+  }
+
+  .g-div-img-2, .g-div-img-3 {
+    width: 100%;
+    height: 360px;
+  }
+  .g-img-2, .g-img-3 {
+    width: 120%;
+    height: 360px;
+  }
+}
+/* ---------------------------------------- */
+@media (min-width: 769px) and (max-width: 1049px) {
+     
+  .login-place {
+    --bs-modal-margin: 2.75rem !important;
+  }
+
+  .g-header {
+    grid-template-columns: 60% 40%;
+    width: 100%;
+    height: 500px;
+  }
+  .g-title {
+    width: 90%;
+    height: 400px;
+    margin: 40px;
+  }
+  .g-title-backdrop {
+    width: 100%;
+    height: 400px;
+  }
+  .g-TitleCard {
+    font-size: 100px;
+    height: 100px;
+  }
+  .g-TitleModel {
+    font-size: 22px;
+  }
+  .g-TitleAlign {
+    font-size: 24px;
+  }
+
+  .g-title-div-img {
+    width: 90%;
+    height: 250px;
+  }
+  .g-title-img {
+      width: 100%;
+      height: 200px;
+      scale: 1.2;
+   }
+
+  .g-main-content {
+    grid-template-columns: 48% 27% 25%;
+    grid-template-rows: 430px 245px 370px;
+    grid-template-areas:
+    "g-check-widgets g-range g-range"
+    "g-img-2 g-img-3 ."
+    "g-password g-password g-password";
+  }
+
+  .g-main-div-img, .g-main-div-img-2 {
+    display: none;
+  }
+
+  .g-check-widgets {
+    width: 100%;
+    height: 420px;
+    grid-template-rows: 200px 200px;
+    margin-left: 50px;
+    gap: 0px;
+  }
+  .g-check-1, .g-check-2, .g-check-3, .g-check-4 {
+    width: 80%;
+    height: 170px;
+  }
+  .g-check-text {
+    font-size: 27px;
+  }
+
+  .g-range {
+    width: 80%;
+    height: 370px;
+    margin-left: 50px;
+  }
+  .g-range-gen {
+    width: 60%;
+  }
+
+  .g-password {
+    width: 90%;
+    margin-left: 50px;
+    margin-top: 50px;
+  }
+  .g-password-copy {
+    width: 60%;
+    position: relative;
+    left: 30%;
+    margin: 0;
+  }
+  .g-password-save {
+    width: 60%;
+  }
+  .g-password-gen {
+    width: 60%;
+    position: relative;
+    right: 30%;
+    margin: 0;
+  }
+
+  .g-div-img-2, .g-div-img-3 {
+    width: 300px;
+    height: 280px;
+    margin-left: 120px;
+  }
+  .g-img-2, .g-img-3 {
+    width: 100%;
+    height: 280px;
+  } 
+}
+/* ---------------------------------------- */
 @media (max-width: 768px) {
   .login-place {
     --bs-modal-margin: -5px !important;
   }
   
-  .g-title-div-img, .g-main-div-img, .g-div-img-2, .g-div-img-3 {
+  .g-title-div-img, .g-main-div-img, .g-main-div-img-2, .g-div-img-2, .g-div-img-3 {
     display: none;
   }
 
   /* ---------------------------------------- */
-      .g-header {
-        grid-template-columns: 100%;
-        width: 100%;
-        height: 450px;
+    .g-header {
+      grid-template-columns: 100%;
+      width: 100%;
+      height: 480px;
     }
     .g-title {
       width: 90%;
-      height: 350px;
+      height: 420px;
       margin: 20px;
     }
     .g-title-backdrop {
       width: 100%;
-      height: 350px;
+      height: 420px;
     }
     .g-TitleCard {
-      font-size: 58px;
+      font-size: 74px;
       height: 70px;
       }
     .g-TitleModel {
-        font-size: 14px;
+        font-size: 18px;
     }
     .g-TitleAlign {
-      font-size: 16px;
+      font-size: 19px;
     }
 
     .g-main-content {
@@ -168,7 +379,7 @@
           "g-password-gen g-password-gen g-password-gen"
           "g-password-save g-password-save g-password-save"
           "g-save-text g-save-text g-save-text";
-      height: 250px;
+      height: 270px;
       width: 90%;
       margin: 0;
     }
@@ -201,3 +412,40 @@
       --bs-modal-margin: 0.75rem;
     }
 }
+/* ---------------------------------------- */
+@media (min-width: 490px) and (max-width: 768px) {
+    .g-header {
+      height: 550px;
+    }
+    .g-title {
+      height: 450px;
+      margin: 20px;
+    }
+    .g-title-backdrop {
+      height: 450px;
+    }
+    .g-TitleCard {
+      font-size: 126px;
+      height: 140px;
+      }
+    .g-TitleModel {
+        font-size: 22px;
+    }
+    .g-TitleAlign {
+      font-size: 28px;
+    }
+
+    .g-check-text {
+      font-size: 27px;
+    }
+
+    .g-password {
+      grid-template-rows: 85px 42px 72px;
+      grid-template-areas:
+          "g-password-input g-password-input g-password-input"
+          "g-password-copy g-password-gen g-password-save"
+          "g-save-text g-save-text g-save-text";
+      height: 200px;
+    }
+}
+/* ---------------------------------------- */
