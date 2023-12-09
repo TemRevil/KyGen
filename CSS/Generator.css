@@ -55,7 +55,7 @@ body::-webkit-scrollbar-thumb {
     display: grid;
     grid-template-columns: 850px 793px;
     grid-template-areas: "g-title g-img";
-    background-image: url(../Background/Generator/Geometric.jpg);
+    background-image: url(../Background/Generator/Geometric.svg);
     width: 100%;
 }
 

@@ -95,7 +95,7 @@
   .g-header {
     grid-template-columns: 60% 40%;
     width: 100%;
-    height: 600px;
+    height: 700px;
   }
   .g-title {
     width: 90%;
@@ -192,7 +192,7 @@
   .g-header {
     grid-template-columns: 60% 40%;
     width: 100%;
-    height: 600px;
+    height: 650px;
   }
   .g-title {
     width: 90%;
@@ -215,11 +215,12 @@
 
   .g-title-div-img {
     width: 90%;
-    height: 385px;
+    height: 210px;
+    margin-top: 280px;
   }
   .g-title-img {
     width: 95%;
-    height: 240px;
+    height: 210px;
     scale: 1.3;
     margin-top: -50px;
   }
@@ -313,22 +314,22 @@
 
   .g-title-div-img {
     width: 90%;
-    height: 250px;
+    height: 150px;
     margin-top: 150px;
   }
   .g-title-img {
-      width: 100%;
-      height: 200px;
-      scale: 1.2;
-   }
+    width: 100%;
+    height: 200px;
+    scale: 1.3;
+  }
 
   .g-main-content {
     grid-template-columns: 48% 27% 25%;
     grid-template-rows: 430px 245px 370px;
     grid-template-areas:
-    "g-check-widgets g-range g-range"
-    "g-img-2 g-img-3 ."
-    "g-password g-password g-password";
+        "g-check-widgets g-range g-range"
+        ". g-img-2 g-img-3"
+        "g-password g-password g-password";
   }
 
   .g-check-widgets {
