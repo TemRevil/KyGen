@@ -119,18 +119,6 @@ body::-webkit-scrollbar-thumb {
         "g-check-widgets g-range g-img-2"
         "g-password g-password g-img-3";
 }
-.g-main-div-img {
-    position: absolute;
-    z-index: -1;
-    margin-top: 100px;
-    margin-left: 450px;
-}
-.g-main-div-img-2 {
-    position: absolute;
-    z-index: -1;
-    margin-top: 100px;
-    margin-left: 130px;  
-}
 
 .g-check-widgets {
     grid-area: g-check-widgets;

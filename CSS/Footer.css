@@ -210,6 +210,40 @@
 }
 
 /* ------------------------------------------------------------------- */
+@media (min-width: 1367px) and (max-width: 1679px) {
+    .h-footer {
+        gap: 10px;
+        grid-template-columns: 31% 69%;
+        grid-template-areas:
+            "h-foter-title h-foter-title h-foter-title"
+            "h-footer-ui h-footer-form h-footer-form"
+            "h-footer-version . .";
+    }
+    .h-footer-ui-1, .h-footer-ui-2, .h-footer-ui-3 {
+        font-size: 17px;
+    }
+    #h-footer-form {
+        grid-template-columns: 24% 24% 49%;
+        grid-template-rows: 40px 50px 40px 50px 40px 50px;
+        grid-template-areas:
+            "req req ."
+            "email email message"
+            "opt opt ."
+            "number number ."
+            "feedback contact ."
+            "send upload .";
+    }
+    #h-footer-form-email {
+        width: 95%;
+    }
+    #h-footer-form-number {
+        width: 95%;
+    }
+    .h-footer-form-message {
+        width: 100%;
+    }
+}
+/* ------------------------------------------------------------------- */
 @media (min-width: 1050px) and (max-width: 1366px) {
     .h-footer {
         gap: 10px;
@@ -336,6 +370,9 @@
             "h-footer-version . .";
         width: 100%;
         height: 1000px;
+    }
+    .h-footer-title {
+        font-size: 50px;
     }
     .h-footer-ui-1, .h-footer-ui-2, .h-footer-ui-3 {
         font-size: 15px;
