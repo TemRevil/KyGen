@@ -4,16 +4,23 @@
       --bs-modal-margin: 5.75rem !important;
     }
     .h-header {
-      grid-template-rows: repeat(1, 1fr) 620px;
+      grid-template-rows: repeat(2, 500px);
+      width: 100%;
+      height: 500px;
     }
     .h-title {
       width: 100%;
+      height: 100%;
+    }
+    .h-title-div {
+      width: 100%;
+      height: 100%;
     }
     .h-TitleCard {
-      font-size: 112px;
+      font-size: 58px;
     }
     .h-TitleAlign {
-      font-size: 38px;
+      font-size: 20px;
     }
 
     .h-gallery {
@@ -21,6 +28,10 @@
     }
     .h-gallery-phone {
       display: block;
+    }
+    .carousel-control-prev {
+      left: 0rem;
+      top: 20rem;
     }
     
     .h-grid-information {
@@ -93,17 +104,17 @@
   }
 
   .g-header {
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 55% 45%;
     width: 100%;
     height: 700px;
   }
   .g-title {
     width: 90%;
-    height: 500px;
+    height: 600px;
   }
   .g-title-backdrop {
     width: 100%;
-    height: 500px;
+    height: 100%;
   }
   .g-TitleCard {
     font-size: 158px;
@@ -117,14 +128,13 @@
   }
 
   .g-title-div-img {
-    width: 90%;
-    height: 385px;
+    width: 100%;
+    height: 100%;
   }
   .g-title-img {
-    width: 95%;
-    height: 300px;
-    scale: 1.3;
-    margin-top: -50px;
+    width: 100%;
+    height: 50%;
+    margin-top: 30%;
   }
 
   .g-main-content {
@@ -190,39 +200,37 @@
   }
 
   .g-header {
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 55% 45%;
     width: 100%;
-    height: 650px;
+    height: 600px;
   }
   .g-title {
     width: 90%;
-    height: 500px;
+    height: 84%;
   }
   .g-title-backdrop {
     width: 100%;
-    height: 500px;
+    height: 100%;
   }
   .g-TitleCard {
-    font-size: 158px;
+    font-size: 148px;
     height: 162px;
   }
   .g-TitleModel {
-    font-size: 32px;
+    font-size: 24px;
   }
   .g-TitleAlign {
-    font-size: 34px;
+    font-size: 26px;
   }
 
   .g-title-div-img {
-    width: 90%;
-    height: 210px;
-    margin-top: 280px;
+    width: 100%;
+    height: 100%;
   }
   .g-title-img {
-    width: 95%;
-    height: 210px;
-    scale: 1.3;
-    margin-top: -50px;
+    width: 100%;
+    height: 45%;
+    margin-top: 30%;
   }
 
   .g-main-content {
@@ -288,39 +296,38 @@
   }
 
   .g-header {
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 55% 45%;
     width: 100%;
     height: 500px;
   }
   .g-title {
     width: 90%;
-    height: 400px;
+    height: 80%;
     margin: 40px;
   }
   .g-title-backdrop {
     width: 100%;
-    height: 400px;
+    height: 100%;
   }
   .g-TitleCard {
     font-size: 100px;
     height: 100px;
   }
   .g-TitleModel {
-    font-size: 22px;
+    font-size: 18px;
   }
   .g-TitleAlign {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .g-title-div-img {
-    width: 90%;
-    height: 150px;
-    margin-top: 150px;
+    width: 100%;
+    height: 100%;
   }
   .g-title-img {
     width: 100%;
-    height: 200px;
-    scale: 1.3;
+    height: 50%;
+    margin-top: 30%;
   }
 
   .g-main-content {
@@ -409,7 +416,7 @@
     }
     .g-title-backdrop {
       width: 100%;
-      height: 420px;
+      height: 100%;
     }
     .g-TitleCard {
       font-size: 74px;
@@ -548,7 +555,7 @@
       margin: 20px;
     }
     .g-title-backdrop {
-      height: 450px;
+      height: 100%;
     }
     .g-TitleCard {
       font-size: 126px;

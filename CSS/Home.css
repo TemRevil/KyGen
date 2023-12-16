@@ -232,8 +232,8 @@ body::-webkit-scrollbar-thumb {
 .h-gallery-phone {
     display: none;
     margin: 50px 0;
-    width: 367px;
-    height: 451px;
+    width: 95%;
+    height: 500px;
 }
 
 .h-gallery-phone-inner {
