@@ -1,10 +1,10 @@
 /* Home */
+
 @media (max-width: 768px) {
   .login-place {
       --bs-modal-margin: 5.75rem !important;
     }
     .h-header {
-      grid-template-rows: repeat(2, 500px);
       width: 100%;
       height: 500px;
     }
@@ -33,21 +33,67 @@
       left: 0rem;
       top: 20rem;
     }
-    
+    .card-generator-img, .card-wordlist-img, .card-ai-img {
+      width: 100%;
+      height: 220px;
+    }
+    .card-generator-link {
+      padding: 12px 29.89%;
+    }
+    .card-wordlist-link {
+      padding: 12px 31.6%;
+    }
+    .card-ai-link {
+      padding: 12px 9.1%;
+    }
+
+    .carousel-control-prev-card {
+      left: 0%;
+      top: 50%;
+    }
+    .carousel-control-next-card {
+      left: 86%;
+      top: 50%;
+    }
+
+    .h-main-content {
+      width: 100%;
+    }
+
     .h-grid-information {
       display: none;
     }
     .h-grid-information-phone {
       display: block;
+      width: 90%;
+    }
+    #h-grid-information-phone {
+      width: 100%;
+    }
+
+    .h-information-card-1, .h-information-card-2, .h-information-card-3 {
+      width: 100%;
+      height: 420px;
+      overflow: hidden;
+    }
+    .h-information-card-1-text, .h-information-card-2-text, .h-information-card-3-text {
+      top: 58%;
+    }
+    .carousel-control-prev-info {
+      left: 0%;
+      top: 0;
+    }
+    .carousel-control-next-info {
+      left: 85%;
     }
     
     .h-reviews {
       grid-template-columns: repeat(1, 1fr);
       grid-template-rows: 510px 400px;
-      width: 640px;
+      width: 100%;
     }
     .h-rating {
-      width: 467px;
+      width: 90%;
     }
     .h-rating-side, .h-rating-middle {
       width: 100%;
@@ -56,18 +102,24 @@
       display: none;
     }
     .h-imp-rating {
-      width: 467px;
+      width: 90%;
     }
 
+    .h-grid-team {
+      width: 90%;
+      display: grid;
+      justify-items: center;
+    }
     .h-team {
-      width: 430px;
-      height: 700px;
-      grid-template-columns: repeat(1, 430px);
+      width: 100%;
+      height: 720px;
       grid-template-rows: 50px 15px 635px;
     }
     .h-team-div {
+      width: 100%;
       justify-items: center;
       align-items: center;
+      text-align: center;
       grid-template-rows: 250px 65px 0px 40px 100px 70px 50px;
       grid-template-areas: 
       "h-team-div-img h-team-div-img h-team-div-img"
@@ -86,6 +138,7 @@
     }
     .h-team-img-2 {
       display: block;
+      width: 100%;
     }
     .h-team-name {
       margin: 0;
@@ -95,7 +148,39 @@
       text-align: center;
     }
 }
+/* ---------------------------------------- Edit Design */
+@media (min-width: 600px) and (max-width: 768px) {
+    .h-main-content {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: repeat(2, 50%);
+      gap: 10px;
+      grid-template-areas:
+          "h-gallery-phone h-grid-information-phone"
+          "h-reviews h-reviews"
+          "h-grid-team h-grid-team";
+    }
+
+    .h-reviews {
+      display: grid;
+      grid-area: h-reviews;
+      grid-template-columns: repeat(1, 50%);
+      grid-template-areas: "h-rating h-imp-rating";
+    }
+    .h-rating {
+      grid-area: h-rating;
+    }
+    .h-imp-rating {
+      grid-area: h-imp-rating;
+    }
+
+    .h-grid-team {
+      grid-area: h-grid-team;
+    }
+}
+
 /* ---------------------------------------------------------------------- */
+
 /* Generator */
 @media (min-width: 1367px) and (max-width: 1679px) {
   
@@ -581,4 +666,5 @@
       height: 200px;
     }
 }
-/* ---------------------------------------- */
+
+/* ---------------------------------------------------------------------- */
