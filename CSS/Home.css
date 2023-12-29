@@ -192,7 +192,6 @@ body::-webkit-scrollbar-thumb {
 /* --------------------------------------------- */
 /* Artificial Intelligence Card */
 .card-ai-img {
-
     width: 365px;
     height: 260px;
     transition: 0.3s 0s linear;
@@ -220,7 +219,6 @@ body::-webkit-scrollbar-thumb {
 
 .h-gallery-phone {
     display: none;
-    margin: 50px 0;
     width: 95%;
     height: 500px;
 }
