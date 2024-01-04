@@ -1,6 +1,68 @@
 /* Home */
+@media (min-width: 1101px) and (max-width: 1366px) {
+  .h-main-content {
+    width: 100%;
+  }
 
+  .h-gallery {
+    width: 100%;
+  }
+  .col-gallery {
+    height: 580px;
+  }
+  .card-generator-img, .card-wordlist-img, .card-ai-img {
+    width: 100%;
+  }
+  .card-generator-footer, .card-wordlist-footer, .card-ai-footer {
+    font-size: 25px;
+  }
+
+  .h-grid-information {
+    width: 85%;
+  }
+  .h-information {
+    width: 100%;
+  }
+  /* .h-information-card-1, .h-information-card-2, .h-information-card-3 {
+    width: 100%;
+  } */
+  .container {
+    max-width: none;
+  }
+  .col-information {
+    width: 99%;
+  }
+
+  .h-reviews {
+    width: 85%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "h-rating h-rating h-imp-rating";
+  }
+  .h-rating {
+    grid-area: h-rating;
+    width: 100%;
+  }
+  .h-imp-rating {
+    grid-area: h-imp-rating;
+    width: 100%;
+  }
+  .h-imp-rating-rev-word {
+    font-size: 18px;
+  }
+  
+  .h-grid-team {
+    width: 85%;
+  }
+  .h-team {
+    width: 100%;
+  }
+}
+/* ---------------------------------------- Laptops Small 10.inch */
 @media (min-width: 769px) and (max-width: 1100px) {
+  .h-header {
+    height: 500px;
+  }
+
   .h-TitleCard {
     font-size: 148px;
   }
@@ -13,7 +75,7 @@
     height: 1760px;
     justify-items: center;
     grid-template-columns: repeat(2, 50%);
-    grid-template-rows: 580px 580px 580px;
+    grid-template-rows: 700px 580px 430px;
     gap: 10px;
     grid-template-areas:
         "h-gallery-phone h-grid-information-phone"
@@ -27,25 +89,29 @@
   .h-gallery-phone {
     display: block;
     margin: 0;
-    height: 400px;
+    height: 600px;
   }
   #h-gallery-phone-carousel {
-    height: 450px;
+    height: 600px;
+  }
+  .h-gallery-phone-inner {
+    height: 620px;
   }
   .h-gallery-phone-card-1, .h-gallery-phone-card-2, .h-gallery-phone-card-3 {
-    height: 450px;
+    height: 600px;
   }
   .card-generator-img, .card-wordlist-img, .card-ai-img {
     width: 100%;
+    height: 300px;
   }
   .carousel-control-prev-card {
     left: 0%;
-    top: 74%;
+    top: 81%;
     height: 52px;
   }
   .carousel-control-next-card {
     left: 85%;
-    top: 74%;
+    top: 81%;
     height: 52px;
   }
 
@@ -54,12 +120,20 @@
   }
   .h-grid-information-phone {
     display: block;
-    height: 400px;
+    height: 600px;
+    width: 90%;
+  }
+  .h-grid-information-phone-inner {
+    border-radius: 15px;
   }
   .h-information-card-1, .h-information-card-2, .h-information-card-3 {
-    height: 450px;
+    height: 600px;
+    width: 100%;
   }
-  .carousel-control-prev {
+  .h-information-card-1-text, .h-information-card-2-text, .h-information-card-3-text {
+    top: 68%;
+  }
+  .carousel-control-prev-info {
     left: 0;
   }
   .carousel-control-next-info {
@@ -72,13 +146,16 @@
     grid-template-columns: repeat(1, 50%);
     grid-template-rows: 0;
     grid-template-areas: "h-rating h-imp-rating";
-    width: 100%;
+    width: 97%;
     height: 530px;
   }
   .h-rating {
     grid-area: h-rating;
     height: 500px;
     width: 90%;
+  }
+  .h-rating-header {
+    font-size: 28px;
   }
   .h-rating-side {
     width: 14%;
@@ -135,13 +212,13 @@
       display: block;
       margin: 50px 0px;
     }
-    .carousel-control-prev {
+    .carousel-control-prev-card {
       left: 0rem;
       top: 20rem;
     }
     .card-generator-img, .card-wordlist-img, .card-ai-img {
       width: 100%;
-      height: 220px;
+      height: 195px;
     }
     .card-generator-link {
       padding: 12px 29.89%;
@@ -184,7 +261,7 @@
       overflow: hidden;
     }
     .h-information-card-1-text, .h-information-card-2-text, .h-information-card-3-text {
-      top: 58%;
+      top: 55%;
     }
     .carousel-control-prev-info {
       left: 0%;
@@ -202,6 +279,9 @@
     .h-rating {
       width: 90%;
     }
+    .h-rating-header {
+      font-size: 28px;
+    }
     .h-rating-side, .h-rating-middle {
       width: 100%;
     }
@@ -210,6 +290,9 @@
     }
     .h-imp-rating {
       width: 90%;
+    }
+    .h-imp-rating-rev-word {
+      font-size: 18px;
     }
 
     .h-grid-team {
@@ -257,6 +340,14 @@
 }
 /* ---------------------------------------- Edit Design */
 @media (min-width: 600px) and (max-width: 768px) {
+
+    .h-TitleCard {
+      font-size: 112px;
+    }
+    .h-TitleAlign {
+      font-size: 34px;
+    }
+
     .h-main-content {
       display: grid;
       height: 1940px;
@@ -322,6 +413,49 @@
       grid-area: h-grid-team;
     }
 }
+/* ---------------------------------------- Edit Fonts Design */
+@media (min-width: 600px) and (max-width: 668px) {
+  .card-generator-img, .card-wordlist-img, .card-ai-img {
+    height: 180px;
+  }
+  .card-generator-footer {
+    font-size: 22px;
+  }
+  .card-wordlist-footer {
+    font-size: 24px;
+  }
+  .card-ai-footer {
+    font-size: 22px;
+  }
+
+  .h-rating-header {
+    font-size: 24px;
+  }
+
+}
+@media (min-width: 500px) and (max-width: 599px) {
+  .h-gallery-phone {
+    height: 570px;
+  }
+  .h-gallery-phone-inner {
+    height: 570px;
+  }
+  .h-gallery-phone-card-1, .h-gallery-phone-card-2, .h-gallery-phone-card-3 {
+    height: 570px;
+  }
+  .card-generator-img, .card-wordlist-img, .card-ai-img {
+    height: 270px;
+  }
+}
+@media (min-width: 450px) and (max-width: 599px) {
+  .h-TitleCard {
+    font-size: 90px;
+  }
+  .h-TitleAlign {
+    font-size: 30px;
+  }
+}
+
 
 /* ---------------------------------------------------------------------- */
 
@@ -809,6 +943,40 @@
           "g-save-text g-save-text g-save-text";
       height: 200px;
     }
+}
+
+/* ---------------------------------------------------------------------- */
+
+/* Wordlist */
+@media (max-width: 768px) {
+  .w-header {
+    grid-template-columns: 100%;
+    width: 100%;
+    height: 480px;
+  }
+  .w-title {
+    width: 90%;
+    height: 420px;
+    margin: 18px;
+  }
+  .w-title-backdrop {
+    width: 100%;
+    height: 100%;
+  }
+  .w-TitleCard {
+    font-size: 74px;
+    height: 70px;
+    }
+  .w-TitleModel {
+      font-size: 18px;
+  }
+  .w-TitleAlign {
+    font-size: 19px;
+  }
+
+  .w-title-div-img {
+    display: none;
+  }
 }
 
 /* ---------------------------------------------------------------------- */

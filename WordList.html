@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="CSS/Nav.css">
     <link rel="stylesheet" href="CSS/WordList.css">
     <link rel="stylesheet" href="CSS/Footer.css">
-    <link rel="stylesheet" href="CSS/Meida.css">
+    <link rel="stylesheet" href="CSS/Media.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -39,13 +39,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-links-ui">
               <li class="nav-item">
-                <a class="nav-link nav-link1" aria-current="page" href="Index.html" accesskey="H">Home</a>
+                <a class="nav-link nav-link1" aria-current="page" accesskey="H" href="Index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-link2" aria-current="page" href="Generator.html">Generator</a>
+                <a class="nav-link nav-link2" aria-current="page" accesskey="G" href="Generator.html">Generator</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-link3" href="WordList.html">Word List</a>
+                <a class="nav-link nav-link3" aria-current="page" accesskey="W" href="WordList.html" style="color: #007BFF;">Word List</a>
               </li>
             </ul>
             <!-- Button trigger login -->
@@ -84,19 +84,53 @@
           </div>
         </div>
       </div>  
-     <section class="w-header">
-        <section class="w-header-title">
-          <h1 class="w-TitleCard">Word List</h1>
-        <div class="w-titleword-card">
-          <p class="w-TitleWord">
-            "Word List" is a new software introduced by Wineractir
-            <br> 
-            designed to generate password lists that contribute to enhancing network and password security.
-            <br>
-            This program serves as an effective tool for testing password strength and improving digital security.
-          </p>
-        </div>
+      <header class="w-header">
+        <section class="w-title">
+          <div class="w-title-backdrop">
+            <h1 class="w-TitleCard">Encryptor</h1>
+            <h2 class="w-TitleModel">Wordlist Area</h2>
+            <p class="w-TitleAlign">"More Complicated More Safety"</p>
+          </div>
         </section>
+        <div class="w-title-div-img">
+          <img class="w-title-img" src="Background/Word List/" alt="Full Safety">
+        </div>
+      </header>
+      <section class="w-main-content">
+        <section class="w-wordlist">
+          <div class="w-wordlist-div-char">
+            <p class="w-wordlist-char-l">Characters</p>
+            <input type="text" minlength="1" maxlength="32" class="w-wordlist-char" placeholder="Characters">
+        </div>
+          <div class="w-wordlist-div-range">
+            <p class="w-wordlist-range-l">Range</p>
+            <!-- Only Numbers in text range -->
+            <input type="text" value="8" min="1" class="w-wordlist-range-min">
+            <input type="text" value="8" min="8" class="w-wordlist-range-max">
+        </div>
+        <div class="w-wordlist-div-buttons">
+          <!-- Generate Wordlist in the list text box -->
+          <button class="w-wordlist-buttons-gen" onclick="generateWordlist()">Generate</button>
+          <!-- Download Now Without Writing in the list text box and show loading percent and it's disabeld until there is options in chracter-->
+          <button class="w-wordlist-buttons-down" onclick="downloadWordlist()">Download Now</button>
+        </div>
+        <div class="w-wordlist-div-alerts">
+          <p class="w-wordlist-alert-loading">Loading <span class="w-wordlist-alert-loading-percent">57%</span></p>
+          <p class="w-wordlist-alert-error-1">Max Can't Be Less Than Min</p>
+          <p class="w-wordlist-alert-error-2">Min Can't Be More Than Max</p>
+          <!-- when there is no Characters or there is a same Characters -->
+          <p class="w-wordlist-alert-error-3">There is a Problem in Characters</p>
+          <p class="w-wordlist-alert-error-4">There is no Characters</p>
+          <p class="w-wordlist-alert-error-5">There is a Problem in Settings and Generator isn't Ready</p>
+          <p class="w-wordlist-alert-error-6">Wait Until the Wordlist end</p>
+        </div>
+        <div class="w-wordlist-div-list">
+            <p class="w-wordlist-list-l">The List</p>
+            <textarea type="text" class="w-wordlist-list" placeholder="The List" contenteditable="false" readonly></textarea>
+        </div>
+        <!-- disabled until list Generate done -->
+        <button class="w-wordlist-list-down" disabled onclick="downloadWordlist()">Download</button>
+      </section>
       </section>
       <section class="Rights Modal Boxes">
         <div class="modal fade" id="PrivacyModal" tabindex="-1" aria-labelledby="PrivacyModal" aria-hidden="true" style="--bs-modal-margin: 0.75rem;">
@@ -273,11 +307,11 @@
             <textarea type="text" class="h-footer-form-message" placeholder="Your Message" minlength="10" maxlength="1000"></textarea>
             <div class="h-footer-form-div-feedback">
               <input type="radio" id="h-footer-form-feedback" aria-required="true">
-              <label for="h-footer-form-feedback" style="font-size: 26px;color: white;" aria-required="true">Feedback</label>
+              <label for="h-footer-form-feedback" aria-required="true">Feedback</label>
             </div>
             <div class="h-footer-form-div-contact">
               <input type="radio" id="h-footer-form-contact" aria-required="true">
-              <label for="h-footer-form-contact" style="font-size: 26px;color: white;" aria-required="true">Contact Us</label>
+              <label for="h-footer-form-contact" aria-required="true">Contact Us</label>
             </div>
             <input type="file" id="h-footer-form-upload" accept=".pdf .png .jpg .jpeg .mp4">
             <label for="h-footer-form-upload" id="h-footer-form-uploadl">Upload</label>
@@ -289,6 +323,7 @@
     <script src="JavaScripts/jquery-3.7.1.min.js"></script>
     <script src="JavaScripts/bootstrap.js"></script>
     <script src="JavaScripts/all.js"></script>
+    <script src="JavaScripts/Wordlist.js"></script>
     <script src="JavaScripts/Footer.js"></script>
   </body>
 </html>

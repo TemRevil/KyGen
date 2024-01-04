@@ -52,8 +52,13 @@ body::-webkit-scrollbar-thumb {
 /* -------------------------------------------------------------------------------------------------- */
 /* header */
 
+.h-header {
+    width: 100%;
+    height: 800px;
+}
+
 .h-title {
-    height: 840px;
+    height: 100%;
     width: 100%;
     transition: 0.19s 0s linear;
     background-image: url("../Background/Home/Header.jpg");
@@ -65,7 +70,7 @@ body::-webkit-scrollbar-thumb {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 840px;
+    height: 100%;
     backdrop-filter: brightness(0.5);
     transition: 0.3s 0s linear;
 }
@@ -596,7 +601,7 @@ body::-webkit-scrollbar-thumb {
 .h-team-div {
     display: grid;
     grid-template-columns: 250px repeat(1, 1fr);
-    grid-template-rows: 80px 50px 110px 70px;
+    grid-template-rows: 80px 45px 110px 70px;
     gap: 10px;
     grid-template-areas:
         "h-team-div-img h-team-name h-team-title"

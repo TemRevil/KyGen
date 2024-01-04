@@ -21,7 +21,11 @@
 }
 
 .wordlist-body {
-    background-color: white;
+    background-color: #EDF2F7;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -31,7 +35,7 @@ body::-webkit-scrollbar-track {
     background: #eee;
 }
 body::-webkit-scrollbar-thumb {
-    background-color: #9233ff;
+    background-color: #407bff;
     border-radius: 20px;
 }
 
@@ -48,54 +52,254 @@ body::-webkit-scrollbar-thumb {
 /* -------------------------------------------------------------------------------------------------- */
 /* Header */
 .w-header {
-    height: 850px;
-    padding: 50px;
-    background-image: url("../Background/Word List/WordList\ Back.jpg");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 51% 49%;
+    grid-template-areas: "w-title w-img";
+    background-image: url(../Background/Word\ List/);
+    width: 100%;
+    height: 800px;
+    align-items: center;
+    justify-items: center;
 }
-.w-header-title {
+
+.w-title {
+    grid-area: w-title;
     width: 800px;
     height: 650px;
-    background-image: url("../Background/Word List/WordListCard.jpg");
-    border-radius: 15px;
-    display: grid;
+    margin: 50px;
+    background-image: url("../Background/Word\ List/");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.w-title-backdrop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    grid-template-columns: repeat(1, 1fr) 500px;
-    grid-template-areas: "TitleCard TitleWord";
-    gap: 100px;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: brightness(0.8) blur(6px);
 }
 .w-TitleCard {
-    grid-area: TitleCard;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Bebas Neue', 'Rubik', Arial, sans-serif;
+    font-size: 162px;
+    color: white;
+    height: 212px;
+}
+.w-TitleModel {
+    color: white;
+    font-size: 32px;
+}
+.w-TitleAlign {
+    text-align: center;
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 42px;
+    color: white;
+}
+
+.w-title-div-img {
+    grid-area: w-img;
     width: 800px;
-    height: 650px;
+    height: 800px;
+    pointer-events: none;
+}
+.w-title-img {
+    width: 100%;
+    height: 55%;
+    margin-top: 145px;
+    pointer-events: none;
+}
+/* --------------------------------------------- */
+/* Main Content */
+
+.w-main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'fa-regular-400', Arial, sans-serif;
-    padding: 20px;
-    font-size: 232px;
-    color: #5e0388;
-    border: 2px #fdf8ff solid;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    transition: 0.2s 0s linear;
-}
-.w-titleword-card {
-    grid-area: TitleWord;
-    width: 500px;
-    height: 400px;
-    background-image: url("../Background/Word\ List/TitleWord.jpg");
-}
-.w-TitleWord {
-    padding: 20px;
-    margin-bottom: 0px;
-    display: flex;
-    align-items: center;
-    font-family: 'Rubik', Arial, sans-serif;
-    font-size: 28px;
-    color: white;
-    backdrop-filter: blur(10px);
+    width: 1660px;
+    padding: 60px;
 }
 
-/* --------------------------------------------- */
+.w-wordlist {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 40px 60px 100px 110px 325px 50px;
+    gap: 10px;
+    grid-template-areas:
+        "div-char div-list"
+        "div-char div-list"
+        "div-range div-list"
+        "buttons div-list"
+        "div-alerts div-list"
+        ". down";
+}
+
+.w-wordlist-div-char {
+    grid-area: div-char;
+}
+.w-wordlist-char-l {
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 32px;
+    margin-left: 30px;
+}
+.w-wordlist-char {
+    margin-left: 10px;
+    width: 95%;
+    height: 40px;
+    padding: 5px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 0 120px #DDDDF9;
+}
+
+.w-wordlist-div-range {
+    grid-area: div-range;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50px 45px;
+    grid-template-areas:
+        "l-range l-range"
+        "range-min range-max";
+    width: 100%;
+}
+.w-wordlist-range-l {
+    grid-area: l-range;
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 32px;
+    margin-left: 30px;
+}
+.w-wordlist-range-min {
+    grid-area: range-min;
+    width: 60px;
+    height: 40px;
+    padding: 5px;
+    margin-left: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 0 120px #DDDDF9;
+}
+.w-wordlist-range-max {
+    grid-area: range-max;
+    width: 60px;
+    height: 40px;
+    padding: 5px;
+    margin-left: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 0 120px #DDDDF9;
+}
+
+.w-wordlist-div-buttons {
+    grid-area: buttons;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.w-wordlist-buttons-gen, .w-wordlist-buttons-down {
+    width: 95%;
+    background-color: #0d6efd;
+    color: white;
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 100;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s 0s linear;
+}
+.w-wordlist-buttons-gen:hover, .w-wordlist-buttons-down:hover {
+    background-color: #0b50b8;
+}
+
+.w-wordlist-div-alerts {
+    grid-template-areas: div-alerts;
+}
+.w-wordlist-alert-loading {
+    display: none;
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 22px;
+    margin-left: 10px;
+}
+.w-wordlist-alert-error-1 , .w-wordlist-alert-error-2, .w-wordlist-alert-error-3, .w-wordlist-alert-error-4, .w-wordlist-alert-error-5, .w-wordlist-alert-error-6 {
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 18px;
+    margin-left: 10px;
+    color: #dc3545;
+}
+.w-wordlist-alert-error-1 {
+    display: none;
+}
+.w-wordlist-alert-error-2 {
+    display: none;
+}
+.w-wordlist-alert-error-3 {
+    display: none;
+}
+.w-wordlist-alert-error-4 {
+    display: none;
+}
+.w-wordlist-alert-error-5 {
+    display: none;
+}
+.w-wordlist-alert-error-6 {
+    display: none;
+}
+
+.w-wordlist-div-list {
+    grid-area: div-list;
+}
+.w-wordlist-list-l {
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 32px;
+    margin-left: 30px;
+}
+.w-wordlist-list {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 600px;
+    max-height: 600px;
+    min-height: 600px;
+    padding: 10px;
+    background-color: white;
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 22px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 0 30px #DDDDF9;
+}
+.w-wordlist-list::-webkit-scrollbar {
+    width: 6px;
+} 
+.w-wordlist-list::-webkit-scrollbar-track {
+    background: #eee;
+}
+.w-wordlist-list::-webkit-scrollbar-thumb {
+    background-color: #407bff;
+    border-radius: 20px;
+}
+.w-wordlist-list-down {
+    grid-area: down;
+    width: 100%;
+    background-color: #0d6efd;
+    color: white;
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 100;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s 0s linear;
+}
+.w-wordlist-list-down:hover {
+    background-color: #0b50b8;
+}
