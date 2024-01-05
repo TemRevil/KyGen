@@ -1,5 +1,74 @@
 /* Home */
-@media (min-width: 1101px) and (max-width: 1366px) {
+@media (min-width: 1367px) and (max-width: 1679px) {
+  .h-header {
+    width: 100%;
+    height: 600px;
+  }
+
+  .h-main-content {
+    width: 100%;
+  }
+
+  .h-gallery {
+    width: 100%;
+  }
+  .col-gallery {
+    height: 580px;
+  }
+  .card-generator-img, .card-wordlist-img, .card-ai-img {
+    width: 100%;
+  }
+  .card-generator-footer, .card-wordlist-footer, .card-ai-footer {
+    font-size: 25px;
+  }
+
+  .h-grid-information {
+    width: 85%;
+  }
+  .h-information {
+    width: 100%;
+  }
+  /* .h-information-card-1, .h-information-card-2, .h-information-card-3 {
+    width: 100%;
+  } */
+  .container {
+    max-width: none;
+  }
+  .col-information {
+    width: 99%;
+  }
+
+  .h-reviews {
+    width: 85%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "h-rating h-rating h-imp-rating";
+  }
+  .h-rating {
+    grid-area: h-rating;
+    width: 100%;
+  }
+  .h-imp-rating {
+    grid-area: h-imp-rating;
+    width: 100%;
+  }
+  .h-imp-rating-rev-word {
+    font-size: 18px;
+  }
+  
+  .h-grid-team {
+    width: 85%;
+  }
+  .h-team {
+    width: 100%;
+  }
+}
+/* ---------------------------------------- Laptops 1366px 14.inch */
+@media (min-width: 1101px) and (max-width: 1366px) {  
+  .h-header {
+    width: 100%;
+    height: 600px;
+  }
+
   .h-main-content {
     width: 100%;
   }
@@ -339,6 +408,14 @@
     }
 }
 /* ---------------------------------------- Edit Design */
+@media (min-width: 1500px) and (max-width: 1679px) {
+  .col-gallery {
+    height: 660px;
+  }
+  .card-generator-img,  .card-wordlist-img,  .card-ai-img {
+    height: 300px;
+  }
+}
 @media (min-width: 600px) and (max-width: 768px) {
 
     .h-TitleCard {

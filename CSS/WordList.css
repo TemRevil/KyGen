@@ -160,11 +160,12 @@ body::-webkit-scrollbar-thumb {
 .w-wordlist-div-range {
     grid-area: div-range;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 16% 25% 18% 41%;
     grid-template-rows: 50px 45px;
     grid-template-areas:
-        "l-range l-range"
-        "range-min range-max";
+        "l-range l-range l-range l-range"
+        "label-min range-min label-max range-max";
+    align-items: center;
     width: 100%;
 }
 .w-wordlist-range-l {
@@ -185,6 +186,12 @@ body::-webkit-scrollbar-thumb {
     outline: none;
     box-shadow: 0 0 120px #DDDDF9;
 }
+.w-wordlist-range-min-l {
+    grid-area: label-min;
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 22px;
+    margin-left: 10px;
+}
 .w-wordlist-range-max {
     grid-area: range-max;
     width: 60px;
@@ -196,6 +203,12 @@ body::-webkit-scrollbar-thumb {
     border-radius: 5px;
     outline: none;
     box-shadow: 0 0 120px #DDDDF9;
+}
+.w-wordlist-range-max-l {
+    grid-area: label-max;
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 22px;
+    margin-left: 10px;
 }
 
 .w-wordlist-div-buttons {

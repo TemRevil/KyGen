@@ -1,3 +1,9 @@
+// Wordlist.js
+// ...
+
+// Create a new Web Worker
+const worker = new Worker('JavaScripts/Worker.js');
+
 function generateWordlist() {
     const characters = document.querySelector(".w-wordlist-char").value;
     const minLength = parseInt(document.querySelector(".w-wordlist-range-min").value);
@@ -8,7 +14,14 @@ function generateWordlist() {
         return;
     }
 
-    const wordlist = generateWordlistHelper(characters, minLength, maxLength);
+    // Send a message to the Web Worker
+    worker.postMessage({ characters, minLength, maxLength });
+}
+
+// Handle the message received from the Web Worker
+worker.onmessage = function (e) {
+    const wordlist = e.data;
+
     const wordlistTextarea = document.querySelector(".w-wordlist-list");
     const downloadButton = document.querySelector(".w-wordlist-list-down");
 
@@ -21,39 +34,4 @@ function generateWordlist() {
     downloadButton.disabled = false;
 }
 
-function displayWordsGradually(words, textarea, index) {
-    if (index < words.length) {
-        textarea.value += words[index] + '\n';
-        index++;
-        setTimeout(function () {
-            displayWordsGradually(words, textarea, index);
-        }, 100); // يمكنك تعديل الوقت حسب متطلباتك
-    }
-}
-
-function generateWordlistHelper(characters, minLength, maxLength) {
-    let result = "";
-
-    function generate(current, length) {
-        if (length >= minLength && length <= maxLength) {
-            result += current + '\n';
-        }
-        if (length < maxLength) {
-            for (let i = 0; i < characters.length; i++) {
-                generate(current + characters[i], length + 1);
-            }
-        }
-    }
-
-    generate("", 0);
-    return result;
-}
-
-function downloadWordlist() {
-    const wordlist = document.querySelector(".w-wordlist-list").value;
-    const blob = new Blob([wordlist], { type: "text/plain" });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "wordlist.txt";
-    link.click();
-}
+// ...
