@@ -97,40 +97,35 @@
         </div>
       </header>
       <section class="w-main-content">
-        <section class="w-wordlist">
-          <div class="w-wordlist-div-char">
-            <p class="w-wordlist-char-l">Characters</p>
-            <input type="text" minlength="1" maxlength="36" class="w-wordlist-char" placeholder="Characters">
-        </div>
-          <div class="w-wordlist-div-range">
-            <p class="w-wordlist-range-l">Range</p>
-            <!-- Only Numbers in text range -->
-            <label for="w-wordlist-range-min" class="w-wordlist-range-min-l">Min</label> <input type="text" value="8" min="1" class="w-wordlist-range-min">
-            <label for="w-wordlist-range-max" class="w-wordlist-range-max-l">Max</label> <input type="text" value="8" min="8" class="w-wordlist-range-max">
-        </div>
-        <div class="w-wordlist-div-buttons">
-          <!-- Generate Wordlist in the list text box -->
-          <button class="w-wordlist-buttons-gen" onclick="generateWordlist()">Generate</button>
-          <!-- Download Now Without Writing in the list text box and show loading percent and it's disabeld until there is options in chracter-->
-          <button class="w-wordlist-buttons-down" onclick="downloadWordlist()">Download Now</button>
-        </div>
-        <div class="w-wordlist-div-alerts">
-          <p class="w-wordlist-alert-loading">Loading <span class="w-wordlist-alert-loading-percent">57%</span></p>
-          <p class="w-wordlist-alert-error-1">Max Can't Be Less Than Min</p>
-          <p class="w-wordlist-alert-error-2">Min Can't Be More Than Max</p>
-          <!-- when there is no Characters or there is a same Characters -->
-          <p class="w-wordlist-alert-error-3">There is no min or max</p>
-          <p class="w-wordlist-alert-error-4">There is no Characters</p>
-          <p class="w-wordlist-alert-error-5">There is a Problem in Characters</p>
-          <p class="w-wordlist-alert-error-6">Wait Until the Wordlist end</p>
-        </div>
-        <div class="w-wordlist-div-list">
-            <p class="w-wordlist-list-l">The List</p>
-            <textarea type="text" class="w-wordlist-list" placeholder="The List" contenteditable="false" readonly></textarea>
-        </div>
-        <!-- disabled until list Generate done -->
-        <button class="w-wordlist-list-down" disabled onclick="downloadWordlist()">Download</button>
-      </section>
+        <section class="w-main-center" style="width: 25%;">
+          <section class="w-wordlist">
+              <div class="w-wordlist-div-char">
+                <p class="w-wordlist-char-l">Characters</p>
+                <input type="text" minlength="1" maxlength="36" class="w-wordlist-char" placeholder="Characters">
+            </div>
+              <div class="w-wordlist-div-range">
+                <p class="w-wordlist-range-l">Range</p>
+                <!-- Only Numbers in Text Range Disabel any Chracter Except Numbers -->
+                <label for="w-wordlist-range-min" class="w-wordlist-range-min-l">Min</label> <input type="text" value="8" min="1" class="w-wordlist-range-min">
+                <label for="w-wordlist-range-max" class="w-wordlist-range-max-l">Max</label> <input type="text" value="8" min="8" class="w-wordlist-range-max">
+            </div>
+            <div class="w-wordlist-div-buttons">
+              <!-- Generate Wordlist one Time and disabel it Untill the List Done -->
+              <button class="w-wordlist-buttons-gen">Generate</button>
+              <button class="w-wordlist-buttons-down" onclick="downloadWordlist()" disabled>Download</button>
+            </div>
+            <div class="w-wordlist-div-alerts">
+              <p class="w-wordlist-alert-loading">Loading <span class="w-wordlist-alert-loading-percent"><!-- Percentage --></span></p>
+              <p class="w-wordlist-alert-error-1">Max Can't Be Less Than Min</p>
+              <p class="w-wordlist-alert-error-2">Min Can't Be More Than Max</p>
+              <p class="w-wordlist-alert-error-3">There is no min or max</p>
+              <p class="w-wordlist-alert-error-4">There is no Characters</p>
+              <!-- when there is no Characters or there is a same Characters -->
+              <p class="w-wordlist-alert-error-5">There is a Problem in Characters</p>
+              <p class="w-wordlist-alert-error-6">Wait Until the List is Done</p>
+            </div>
+          </section>
+        </section>
       </section>
       <section class="Rights Modal Boxes">
         <div class="modal fade" id="PrivacyModal" tabindex="-1" aria-labelledby="PrivacyModal" aria-hidden="true" style="--bs-modal-margin: 0.75rem;">
@@ -324,7 +319,6 @@
     <script src="JavaScripts/bootstrap.js"></script>
     <script src="JavaScripts/all.js"></script>
     <script src="JavaScripts/Wordlist.js"></script>
-    <script src="JavaScripts/Worker.js"></script>
     <script src="JavaScripts/Footer.js"></script>
   </body>
 </html>
