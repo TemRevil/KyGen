@@ -30,60 +30,63 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 </head>
 <body class="home-body">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary main-nav">
-        <div class="container">
-          <a class="navbar-brand nav-enc" href="Index.html">Encryptor</a>
-          <button class="navbar-toggler nav-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-links-ui">
-              <li class="nav-item">
-                <a class="nav-link nav-link1" aria-current="page" accesskey="H" href="Index.html" style="color: #007BFF;">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-link2" aria-current="page" accesskey="G" href="Generator.html">Generator</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-link3" aria-current="page" accesskey="W" href="WordList.html">Word List</a>
-              </li>
-            </ul>
-            <!-- Button trigger login -->
-            <button type="button" class="btn btn-primary nav-login" data-bs-toggle="modal" data-bs-target="#login">
-              Login
-            </button>
-          </div>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary main-nav">
+    <div class="container">
+    <a class="navbar-brand nav-enc" href="Index.html">Encryptor</a>
+    <button class="navbar-toggler nav-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-links-ui">
+        <li class="nav-item">
+            <a class="nav-link nav-link1" aria-current="page" accesskey="H" href="Index.html" style="color: #007BFF;">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link2" aria-current="page" accesskey="G" href="Generator.html">Generator</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link3" aria-current="page" accesskey="W" href="WordList.html">Word List</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-link4" aria-current="page" accesskey="P" href="WannaPlay.html">Wanna Play</a>
+        </li>
+        </ul>
+        <!-- Button trigger login -->
+        <button type="button" class="btn btn-primary nav-login" data-bs-toggle="modal" data-bs-target="#login">
+        Login
+        </button>
+    </div>
+    </div>
+  </nav>
+  <!-- Login -->
+  <div class="modal fade login-place" id="login" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Login "Only Admin Devolopers"</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      </nav>
-      <!-- Login -->
-      <div class="modal fade login-place" id="login" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Login "Only Admin Devolopers"</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-body login-content">
+        <form id="login-form">
+            <h2 id="login-text">Login</h2>
+            <div id="success-message"></div>
+            <div id="error-message"></div>
+            <div class="input-container">
+                <label for="username" id="LLUsername">Username</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <label for="password" id="LLPassword">Password</label>
+                <input type="password" id="password" name="password" required>
             </div>
-            <div class="modal-body login-content">
-              <form id="login-form">
-                <h2 id="login-text">Login</h2>
-                <div id="success-message"></div>
-                <div id="error-message"></div>
-                <div class="input-container">
-                    <label for="username" id="LLUsername">Username</label>
-                    <input type="text" id="username" name="username" required>
-                    <br>
-                    <label for="password" id="LLPassword">Password</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" id="login-button">Login</button>
-              </form>
-            </div>
-            <div class="modal-footer" style="text-align: center;">
-              <p style="font-family: 'Rubik'; font-size: 18px; font-weight: 300;">Secured By "Still Unkown".</p>
-            </div>
-          </div>
+            <button type="submit" id="login-button">Login</button>
+        </form>
         </div>
-      </div>
+        <div class="modal-footer" style="text-align: center;">
+        <p style="font-family: 'Rubik'; font-size: 18px; font-weight: 300;">Secured By "Still Unkown".</p>
+        </div>
+    </div>
+    </div>
+  </div>
       <header class="h-header">
         <section class="h-title">
           <div class="h-title-div">
@@ -109,6 +112,18 @@
                   </div>
                   <div>
                     <a class="card-footer card-generator-footer card-generator-link" href="Generator.html" accesskey="G">Generator</a> 
+                  </div>
+                </div>
+              </div>
+              <div class="col-gallery">
+                <div class="card h-100">
+                  <div style="overflow: hidden;"><img src="Background/Home/Cards/WannaPlay.jpg" class="card-img-top card-WannaPlay-img" alt="WannaPlay Cover"></div>
+                  <div class="card-body">
+                    <h5 class="card-title">WannaPlay<button type="button" class="btn btn-secondary WannaPlay-new" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="This top tooltip is themed via CSS variables.">New</button></h5>
+                    <p class="card-text">Do You Want To Make Password But More Funny Try This Card Now.</p>
+                  </div>
+                  <div>
+                    <a class="card-footer card-WannaPlay-footer card-WannaPlay-link" href="WannaPlay.html" accesskey="P">WannaPlay</a> 
                   </div>
                 </div>
               </div>
@@ -141,9 +156,10 @@
         <section class="h-gallery-phone">
           <div id="h-gallery-phone-carousel" class="carousel slide">
             <div class="carousel-indicators" style="margin-bottom: -1.5rem;">
-              <button type="button" data-bs-target="#h-gallery-phone-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="background-color: #333;"></button>
+              <button type="button" data-bs-target="#h-gallery-phone-carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true" style="background-color: #333;"></button>
               <button type="button" data-bs-target="#h-gallery-phone-carousel" data-bs-slide-to="1" aria-label="Slide 2" style="background-color: #333;"></button>
               <button type="button" data-bs-target="#h-gallery-phone-carousel" data-bs-slide-to="2" aria-label="Slide 3" style="background-color: #333;"></button>
+              <button type="button" data-bs-target="#h-gallery-phone-carousel" data-bs-slide-to="3" aria-label="Slide 4" style="background-color: #333;"></button>
             </div>
             <div class="carousel-inner h-gallery-phone-inner">
               <div class="carousel-item active h-gallery-phone-card-1">
@@ -160,6 +176,18 @@
               </div>
               <div class="carousel-item h-gallery-phone-card-2">
                 <div class="card h-100">
+                  <div style="overflow: hidden;"><img src="Background/Home/Cards/WannaPlay.jpg" class="card-img-top card-WannaPlay-img" alt="WannaPlay Cover"></div>
+                  <div class="card-body">
+                    <h5 class="card-title">WannaPlay<button type="button" class="btn btn-secondary WannaPlay-new" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="This top tooltip is themed via CSS variables.">New</button></h5>
+                    <p class="card-text">Do You Want To Make Password But More Funny Try This Card Now.</p>
+                  </div>
+                  <div>
+                    <a class="card-footer card-WannaPlay-footer card-WannaPlay-link" href="WannaPlay.html" accesskey="P">WannaPlay</a> 
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item h-gallery-phone-card-3">
+                <div class="card h-100">
                   <div style="overflow: hidden;"><img src="Background/Home/Cards/Word List.jpg" class="card-img-top card-wordlist-img" alt="Word List Cover"></div>
                   <div class="card-body">
                     <h5 class="card-title">Word List<button type="button" class="btn btn-secondary wordlist-new" data-bs-toggle="NewWordList">New</button></h5>
@@ -169,20 +197,20 @@
                     <a class="card-footer card-wordlist-footer card-wordlist-link" href="WordList.html" accesskey="W">Word List</a> 
                   </div>
                 </div>
-            </div>
-              <div class="carousel-item h-gallery-phone-card-3">
-                <div class="card h-100">
-                  <div style="overflow: hidden;"><img src="Background/Home/Cards/Ai.jpg" class="img-fluid rounded-start card-ai-img" alt="Ai Cover"></div>
-                  <div class="card-body">
-                    <h5 class="card-title">Rayan Ai</h5>
-                    <p class="card-text">Ryan is an Artificial Intelligence “Ai” to give you high password security exactly as you require.<br><strong>-Coming Soon-</strong></p>
-                  </div>
-                  <div>
-                    <a class="card-footer card-ai-footer card-ai-link" href="#" accesskey="A">Artificial Intelligence</a> 
+              </div>
+                <div class="carousel-item h-gallery-phone-card-4">
+                  <div class="card h-100">
+                    <div style="overflow: hidden;"><img src="Background/Home/Cards/Ai.jpg" class="img-fluid rounded-start card-ai-img" alt="Ai Cover"></div>
+                    <div class="card-body">
+                      <h5 class="card-title">Rayan Ai</h5>
+                      <p class="card-text">Ryan is an Artificial Intelligence “Ai” to give you high password security exactly as you require.<br><strong>-Coming Soon-</strong></p>
+                    </div>
+                    <div>
+                      <a class="card-footer card-ai-footer card-ai-link" href="#" accesskey="A">Artificial Intelligence</a> 
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
             <button class="carousel-control-prev carousel-control-prev-card" type="button" data-bs-target="#h-gallery-phone-carousel" data-bs-slide="prev">
               <span aria-hidden="true"><i class="fa-solid fa-chevron-left" style="color: #000333;font-size: 42px;"></i></span>
               <span class="visually-hidden">Previous</span>

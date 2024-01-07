@@ -166,7 +166,7 @@
   .h-gallery-phone-inner {
     height: 620px;
   }
-  .h-gallery-phone-card-1, .h-gallery-phone-card-2, .h-gallery-phone-card-3 {
+  .h-gallery-phone-card-1, .h-gallery-phone-card-2, .h-gallery-phone-card-3, .h-gallery-phone-card-4 {
     height: 600px;
   }
   .card-generator-img, .card-wordlist-img, .card-ai-img {
@@ -445,7 +445,7 @@
     #h-gallery-phone-carousel {
       height: 450px;
     }
-    .h-gallery-phone-card-1, .h-gallery-phone-card-2, .h-gallery-phone-card-3 {
+    .h-gallery-phone-card-1, .h-gallery-phone-card-2, .h-gallery-phone-card-3, .h-gallery-phone-card-4 {
       height: 450px;
     }
     .carousel-control-prev-card {
@@ -517,7 +517,7 @@
   .h-gallery-phone-inner {
     height: 570px;
   }
-  .h-gallery-phone-card-1, .h-gallery-phone-card-2, .h-gallery-phone-card-3 {
+  .h-gallery-phone-card-1, .h-gallery-phone-card-2, .h-gallery-phone-card-3, .h-gallery-phone-card-4 {
     height: 570px;
   }
   .card-generator-img, .card-wordlist-img, .card-ai-img {

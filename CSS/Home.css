@@ -44,11 +44,6 @@ body::-webkit-scrollbar-thumb {
     color: #3395ff;
 }
 
-/* flex */
-.col-gallery, .col-information {
-    flex: 1 0 33%;
-}
-
 /* -------------------------------------------------------------------------------------------------- */
 /* header */
 
@@ -110,11 +105,22 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* -------------------------------------------------------------------------------------------------- */
+/* Main Content */
+.h-main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+/* -------------------------------------------------------------------------------------------------- */
 /* Gallery Cards */
 
 .h-gallery {
     display: flex;
-    align-items: stretch;
+    flex-direction: row;
+    justify-content: center;
     width: 1366px;
 }
 
@@ -124,13 +130,17 @@ body::-webkit-scrollbar-thumb {
 }
 
 .h-cards {
-    margin: 100px;
+    width: 85%;
 }
 
 .col-gallery {
     height: 616px;
 }
 
+/* flex */
+.col-gallery, .col-information {
+    flex: 0 0 auto;
+}
 /* --------------------------------------------- */
 /* Generetor Cards */
 .card-generator-img {
@@ -156,6 +166,43 @@ body::-webkit-scrollbar-thumb {
     background-color: #777ae3;
 }
 
+/* --------------------------------------------- */
+/* WannaPlay Card */
+.card-WannaPlay-img {
+    width: 365px;
+    height: 260px;
+    transition: 0.3s 0s linear;
+}
+.card-WannaPlay-img:hover {
+    scale: 1.2;
+}
+.WannaPlay-new {
+    background-color: #232222;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    transform: translate(15%, -5%);
+}
+.WannaPlay-new:hover, .WannaPlay-new:active, .WannaPlay-new:focus-visible {
+    background-color: white !important;
+    outline: 1px #232222 solid !important;
+    color: #232222 !important;
+}
+.card-WannaPlay-footer {
+    display: block;
+    width: 100%;
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 26px;
+    text-decoration: none;
+    text-align: center;
+    background-color: #2de975;
+    color: white;
+    transition: 0.3s 0s linear;
+}
+.card-WannaPlay-footer:hover {
+    background-color: #20ff68;
+}
 /* --------------------------------------------- */
 /* Word List Card */
 .card-wordlist-img {
@@ -231,7 +278,7 @@ body::-webkit-scrollbar-thumb {
 .h-gallery-phone-inner {
     height: 520px;
 }
-.h-gallery-phone-card-1, .h-gallery-phone-card-2, .h-gallery-phone-card-3 {
+.h-gallery-phone-card-1, .h-gallery-phone-card-2, .h-gallery-phone-card-3, .h-gallery-phone-card-4 {
     height: 500px;
 }
 .carousel-control-prev-card {
@@ -239,16 +286,6 @@ body::-webkit-scrollbar-thumb {
 }
 .carousel-control-next-card {
     left: 23.5rem;
-}
-
-/* -------------------------------------------------------------------------------------------------- */
-/* Main Content */
-.h-main-content {
-    display: flex;
-    gap: 50px;
-    margin-bottom: 100px;
-    flex-direction: column;
-    align-items: center;
 }
 
 /* --------------------------------------------- */

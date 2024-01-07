@@ -47,15 +47,10 @@
     font-family: 'Rubik', Arial, sans-serif;
     font-size: 22px;
 }
-.nav-link1:hover {
+.nav-link1:hover, .nav-link2:hover, .nav-link3:hover, .nav-link4:hover {
     color: #007BFF;
 }
-.nav-link2:hover {
-    color: #007BFF;
-}
-.nav-link3:hover {
-    color: #007BFF;
-}
+
 .nav-login {
     padding: 10px;
     font-size: 22px;
