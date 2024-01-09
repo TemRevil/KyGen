@@ -119,7 +119,7 @@ p {
 .p-playpass-surrender:hover, .p-playpass-copy:hover {
     background-color: #0b50b8;
 }
-.p-surrender-message, .p-winner-message {
+.p-surrender-message, .p-copy-message, .p-winner-message {
     font-family: 'Rubik', Arial, sans-serif;
     font-size: 28px;
     font-weight: 100;
