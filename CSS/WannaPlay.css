@@ -84,7 +84,8 @@ p {
 }
 .p-playpass {
     width: 450px;
-    background-color: #123f68;
+    background-color: #08223b;
+    box-shadow: 0 0 150px 0px #DDDDF9;
     padding: 10px;
     border: none;
     border-radius: 8px;
@@ -94,7 +95,7 @@ p {
     color: white;
 }
 .p-playpass:hover {
-    background-color: #266199;
+    background-color: #1b4165;
 }
 .p-playpass:focus-visible {
     background-color: white;
@@ -148,39 +149,4 @@ p {
 }
 .p-rule-box-rule {
     font-size: 20px;
-}
-
-.r1, .r2, .r3, .r4, .r5, .r6, .r7, .r8, .r9, .r10, .r11, .r12 , .r13, .r14, .r15 {
-    
-}
-
-.r8 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 20px 20px 60px 140px;
-    grid-template-areas: 
-    "r8-header r8-header r8-header"
-    "r8-hr r8-hr r8-hr"
-    "r8-rule r8-rule r8-rule"
-    "imgs imgs imgs";
-    height: 260px;
-}
-.r8 .p-rule-box-header {
-    grid-area: r8-header;
-}
-.r8 .p-hr {
-    grid-area: r8-hr;
-}
-.r8 .p-rule-box-rule {
-    grid-area: r8-rule;
-}
-.p-rule-box-div-img {
-    grid-area: imgs;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 50px;
-}
-.p-rule-box-img {
-    width: 130px;
 }
