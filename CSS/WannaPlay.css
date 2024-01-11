@@ -65,10 +65,22 @@ body::-webkit-scrollbar-thumb {
     background-color: #20c997 !important;
 }
 .transition {
-    transition: 0.15s 0s linear;
+    transition: 0.3s 0s linear;
 }
 p {
     margin: 0;
+}
+.rubik {
+    font-family: 'Rubik', Arial, sans-serif;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .p-div-playpass {
@@ -78,7 +90,6 @@ p {
     gap: 10px;
 }
 .p-playpass-header {
-    font-family: 'Rubik', Arial, sans-serif;
     font-size: 28px;
     font-weight: 100;
 }
@@ -90,7 +101,6 @@ p {
     border: none;
     border-radius: 8px;
     outline: none;
-    font-family: 'Rubik', Arial, sans-serif;
     font-size: 22px;
     color: white;
 }
@@ -100,6 +110,10 @@ p {
 .p-playpass:focus-visible {
     background-color: white;
     color: #333;
+}
+.p-playpass-number {
+    font-size: 22px;
+    color: #1a3a53;
 }
 
 .p-div-playpass-div {
@@ -112,7 +126,6 @@ p {
     background-color: #0d6efd;
     border: none;
     border-radius: 5px;
-    font-family: 'Rubik', Arial, sans-serif;
     font-size: 22px;
     color: white;
 }
@@ -120,9 +133,9 @@ p {
     background-color: #0b50b8;
 }
 .p-surrender-message, .p-copy-message, .p-winner-message, .p-country-wrong {
-    font-family: 'Rubik', Arial, sans-serif;
     font-size: 28px;
     font-weight: 100;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .p-playpass-rule {
@@ -131,17 +144,19 @@ p {
     flex-direction: column;
     gap: 20px;
 }
+
 .p-rule-box {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: #ff6d7c;
+    background-color: #6ea8fe;
     border-radius: 15px;
     padding: 10px;
-    font-family: 'Rubik', Arial, sans-serif;
     color: white;
     height: 150px;
+    animation: fadeIn 0.5s ease-in-out;
 }
+
 .p-hr {
     width: 100%;
     margin: 5px -10px 10px 0px;
@@ -152,7 +167,7 @@ p {
 }
 
 .r1, .r2, .r3, .r4, .r5, .r6, .r7, .r8, .r9, .r10, .r11, .r12 , .r13, .r14, .r15 {
-    
+
 }
 
 .r8 {

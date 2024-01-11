@@ -618,7 +618,7 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 0 7px 25px #1234564b;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 50px repeat(1, 1fr);
+    grid-template-rows: 50px 15px repeat(1, 1fr);
 }
 .h-team-title {
     font-family: 'Rubik', Arial, sans-serif;
@@ -638,7 +638,7 @@ body::-webkit-scrollbar-thumb {
 .h-team-div {
     display: grid;
     grid-template-columns: 250px repeat(1, 1fr);
-    grid-template-rows: 80px 45px 110px 70px;
+    grid-template-rows: 80px 45px 110px 75px;
     gap: 10px;
     grid-template-areas:
         "h-team-div-img h-team-name h-team-title"
