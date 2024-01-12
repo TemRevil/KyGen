@@ -1057,3 +1057,79 @@
 }
 
 /* ---------------------------------------------------------------------- */
+
+/* WannaPlay */
+@media (max-width: 768px){
+  .p-main-content {
+    width: 100%;
+  }
+
+  .p-div-playpass {
+    width: 100%;
+  }
+  .p-playpass-header {
+    font-size: 22px;
+  }
+  .p-playpass {
+    width: 95%;
+  }
+  .p-playpass-number {
+    font-size: 18px;
+  }
+  .p-surrender-message, .p-copy-message, .p-winner-message, .p-country-wrong {
+    font-size: 17px;
+  }
+
+  .p-playpass-rule {
+    width: 90%;
+  }
+  .p-rule-box {
+    width: 100%;
+  }
+  .p-rule-box-rule {
+    font-size: 18px;
+  }
+
+  .r8 {
+    grid-template-columns: repeat(3, 33%);
+    height: 230px;
+  }
+  .p-rule-box-div-img {
+    gap: 15px;
+  }
+  .p-rule-box-img {
+    width: 30%;
+  }
+}
+/* ---------------------------------------- Edit Design */
+@media (min-width: 600px) and (max-width: 768px) {
+  .p-surrender-message, .p-copy-message, .p-winner-message, .p-country-wrong {
+    font-size: 22px;
+  }
+
+  .r8 {
+    grid-template-rows: 20px 20px 35px 140px;
+  }
+  .p-rule-box-div-img {
+    gap: 10px;
+  }
+  .p-rule-box-img {
+    width: 21%;
+  }
+}
+/* ---------------------------------------- Edit Design */
+@media (min-width: 410px) and (max-width: 600px) {
+  .p-surrender-message, .p-copy-message, .p-winner-message, .p-country-wrong {
+    font-size: 20px;
+  }
+
+  .p-playpass-rule {
+    width: 80%;
+  }
+
+  .p-rule-box-img {
+    width: 25%;
+  }
+}
+
+/* ---------------------------------------------------------------------- */

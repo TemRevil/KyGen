@@ -116,7 +116,7 @@ p {
     color: #1a3a53;
 }
 
-.p-div-playpass-div {
+.p-div-playpass-buttons {
     display: flex;
     flex-direction: row;
     gap: 10px;
