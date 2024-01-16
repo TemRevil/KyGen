@@ -15,10 +15,10 @@
   .col-gallery {
     height: 580px;
   }
-  .card-generator-img, .card-wordlist-img, .card-ai-img {
+  .card-generator-img, .card-WannaPlay-img, .card-wordlist-img, .card-ai-img {
     width: 100%;
   }
-  .card-generator-footer, .card-wordlist-footer, .card-ai-footer {
+  .card-generator-footer, .card-WannaPlay-footer, .card-wordlist-footer, .card-ai-footer {
     font-size: 25px;
   }
 
@@ -74,16 +74,17 @@
   }
 
   .h-gallery {
-    width: 100%;
+    width: 90%;
   }
   .col-gallery {
-    height: 580px;
+    height: 500px;
   }
-  .card-generator-img, .card-wordlist-img, .card-ai-img {
+  .card-generator-img, .card-WannaPlay-img, .card-wordlist-img, .card-ai-img {
     width: 100%;
+    height: 220px;
   }
-  .card-generator-footer, .card-wordlist-footer, .card-ai-footer {
-    font-size: 25px;
+  .card-generator-footer, .card-WannaPlay-footer, .card-wordlist-footer, .card-ai-footer {
+    font-size: 19px;
   }
 
   .h-grid-information {
@@ -141,7 +142,6 @@
 
   .h-main-content {
     display: grid;
-    height: 1760px;
     justify-items: center;
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: 700px 580px 430px;
@@ -247,7 +247,7 @@
   }
   .h-team {
     width: 100%;
-    height: 404px;
+    height: 490px;
   }
 }
 /* ---------------------------------------- Phones & Tabs */
@@ -310,7 +310,6 @@
 
     .h-main-content {
       width: 100%;
-      height: 2810px;
     }
 
     .h-grid-information {
@@ -371,7 +370,7 @@
     }
     .h-team {
       width: 100%;
-      height: 720px;
+      height: 820px;
       grid-template-rows: 50px 15px 635px;
     }
     .h-team-div {
@@ -379,7 +378,7 @@
       justify-items: center;
       align-items: center;
       text-align: center;
-      grid-template-rows: 250px 65px 0px 40px 100px 70px 70px;
+      grid-template-rows: 250px 65px 0px 40px 185px 70px 70px;
       grid-template-areas: 
       "h-team-div-img h-team-div-img h-team-div-img"
       "h-team-name h-team-name h-team-name"
@@ -391,12 +390,13 @@
     }
     .h-team-div-img {
       height: 250px;
+      width: 100%;
     }
     .h-team-img {
       display: none;
     }
     .h-team-img-2 {
-      display: block;
+      display: flex;
       width: 100%;
     }
     .h-team-name {
@@ -405,6 +405,7 @@
     }
     .h-team-word {
       text-align: center;
+      font-size: 16px;
     }
 }
 /* ---------------------------------------- Edit Design */
@@ -427,7 +428,7 @@
 
     .h-main-content {
       display: grid;
-      height: 1940px;
+      height: 2140px;
       justify-items: center;
       grid-template-columns: repeat(2, 50%);
       grid-template-rows: 580px 580px 760px;
@@ -489,6 +490,10 @@
     .h-grid-team {
       grid-area: h-grid-team;
     }
+    .h-team-word {
+      text-align: center;
+      font-size: 20px;
+    }
 }
 /* ---------------------------------------- Edit Fonts Design */
 @media (min-width: 600px) and (max-width: 668px) {
@@ -523,6 +528,9 @@
   .card-generator-img, .card-wordlist-img, .card-ai-img {
     height: 270px;
   }
+  .h-team-word {
+    font-size: 20px;
+  }
 }
 @media (min-width: 450px) and (max-width: 599px) {
   .h-TitleCard {
@@ -532,7 +540,11 @@
     font-size: 30px;
   }
 }
-
+@media (min-width: 320px) and (max-width: 340px) {
+  .h-reviews {
+    gap: 70px;
+  }
+}
 
 /* ---------------------------------------------------------------------- */
 

@@ -137,7 +137,7 @@ function validateRule6() {
         "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles",
         "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname",
         "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey",
-        "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu",
+        "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "UnitedKingdom", "United States", "UnitedStates", "Uruguay", "Uzbekistan", "Vanuatu",
         "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
     ];
     const countryRegexPattern = new RegExp(`(${countryNames.join('|')})`, 'i');
@@ -167,7 +167,7 @@ function validateRule7() {
 }
 
 function validateRule8() {
-    const sponsors = ['Microsoft', 'Netflix', 'Playstation'];
+    const sponsors = ['Microsoft', 'Netflix', 'Playstation', 'microsoft', 'netflix', 'playstation'];
     const includesSponsor = sponsors.some(sponsor => passwordInput.value.includes(sponsor));
 
     if (rule7.classList.contains('active') && includesSponsor) {
@@ -200,7 +200,7 @@ function validateRule9() {
 function validateRule10() {
     const cityNames = [
         "Cairo", "Lagos", "Cape Town", "Nairobi", "Algiers", "Sydney", "Melbourne", "Brisbane", "Auckland", "Perth",
-        "London", "Paris", "Berlin", "Moscow", "Madrid", "Rome", "Stockholm", "Athens", "Vienna", "Warsaw",
+        "London", "Paris", "Berlin", "Moscow", "Madrid", "Rome", "Stockholm", "Athens", "Vienna", "Warsaw", "Viena",
         "New York", "Los Angeles", "Toronto", "Chicago", "Mexico City", "Bayonne", "Sao Paulo", "Rio de Janeiro", "Buenos Aires", "Lima",
         "Bogota", "Prague", "Tokyo", "Beijing", "Santiago", "Mumbai", "Seoul", "Caracas", "Casablanca", "Montevideo", "Liverpool", "Brighton", "Manchester City",
     ];
