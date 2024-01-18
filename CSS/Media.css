@@ -1,10 +1,5 @@
 /* Home */
 @media (min-width: 1367px) and (max-width: 1679px) {
-  .h-header {
-    width: 100%;
-    height: 600px;
-  }
-
   .h-main-content {
     width: 100%;
   }
@@ -64,11 +59,6 @@
 }
 /* ---------------------------------------- Laptops 1366px 14.inch */
 @media (min-width: 1101px) and (max-width: 1366px) {  
-  .h-header {
-    width: 100%;
-    height: 600px;
-  }
-
   .h-main-content {
     width: 100%;
   }
@@ -129,17 +119,6 @@
 }
 /* ---------------------------------------- Laptops Small 10.inch */
 @media (min-width: 769px) and (max-width: 1100px) {
-  .h-header {
-    height: 500px;
-  }
-
-  .h-TitleCard {
-    font-size: 148px;
-  }
-  .h-TitleAlign {
-    font-size: 46px;
-  }
-
   .h-main-content {
     display: grid;
     justify-items: center;
@@ -245,6 +224,9 @@
     grid-area: h-grid-team;
     width: 90%;
   }
+  .h-team-div {
+    grid-template-rows: 80px 45px 110px 75px;
+  }
   .h-team {
     width: 100%;
     height: 404px;
@@ -255,23 +237,12 @@
   .login-place {
       --bs-modal-margin: 5.75rem !important;
     }
-    .h-header {
-      width: 100%;
-      height: 500px;
+    .waves {
+      height:40px;
+      min-height:40px;
     }
-    .h-title {
-      width: 100%;
-      height: 100%;
-    }
-    .h-title-div {
-      width: 100%;
-      height: 100%;
-    }
-    .h-TitleCard {
-      font-size: 58px;
-    }
-    .h-TitleAlign {
-      font-size: 20px;
+    .h-header-text {
+        font-size:38px;
     }
 
     .h-gallery {
@@ -416,14 +387,6 @@
   }
 }
 @media (min-width: 600px) and (max-width: 768px) {
-
-    .h-TitleCard {
-      font-size: 112px;
-    }
-    .h-TitleAlign {
-      font-size: 34px;
-    }
-
     .h-main-content {
       display: grid;
       height: 2140px;
@@ -523,14 +486,6 @@
     height: 270px;
   }
 }
-@media (min-width: 450px) and (max-width: 599px) {
-  .h-TitleCard {
-    font-size: 90px;
-  }
-  .h-TitleAlign {
-    font-size: 30px;
-  }
-}
 @media (min-width: 320px) and (max-width: 340px) {
   .h-team-title {
     font-size: 38px;
@@ -544,43 +499,8 @@
 
 /* Generator */
 @media (min-width: 1367px) and (max-width: 1679px) {
-  
   .login-place {
     --bs-modal-margin: 6rem !important;
-  }
-
-  .g-header {
-    grid-template-columns: 55% 45%;
-    width: 100%;
-    height: 700px;
-  }
-  .g-title {
-    width: 90%;
-    height: 600px;
-  }
-  .g-title-backdrop {
-    width: 100%;
-    height: 100%;
-  }
-  .g-TitleCard {
-    font-size: 158px;
-    height: 162px;
-  }
-  .g-TitleModel {
-    font-size: 32px;
-  }
-  .g-TitleAlign {
-    font-size: 34px;
-  }
-
-  .g-title-div-img {
-    width: 100%;
-    height: 100%;
-  }
-  .g-title-img {
-    width: 100%;
-    height: 50%;
-    margin-top: 30%;
   }
 
   .g-main-content {
@@ -639,44 +559,9 @@
   }
 }
 /* ---------------------------------------- Laptops 1366px 14.inch */
-@media (min-width: 1050px) and (max-width: 1366px) {
-  
+@media (min-width: 1050px) and (max-width: 1366px) {  
   .login-place {
     --bs-modal-margin: 6rem !important;
-  }
-
-  .g-header {
-    grid-template-columns: 55% 45%;
-    width: 100%;
-    height: 600px;
-  }
-  .g-title {
-    width: 90%;
-    height: 84%;
-  }
-  .g-title-backdrop {
-    width: 100%;
-    height: 100%;
-  }
-  .g-TitleCard {
-    font-size: 148px;
-    height: 162px;
-  }
-  .g-TitleModel {
-    font-size: 24px;
-  }
-  .g-TitleAlign {
-    font-size: 26px;
-  }
-
-  .g-title-div-img {
-    width: 100%;
-    height: 100%;
-  }
-  .g-title-img {
-    width: 100%;
-    height: 45%;
-    margin-top: 30%;
   }
 
   .g-main-content {
@@ -735,45 +620,9 @@
   }
 }
 /* ---------------------------------------- Laptops Small 10.inch */
-@media (min-width: 769px) and (max-width: 1049px) {
-     
+@media (min-width: 769px) and (max-width: 1049px) {  
   .login-place {
     --bs-modal-margin: 2.75rem !important;
-  }
-
-  .g-header {
-    grid-template-columns: 55% 45%;
-    width: 100%;
-    height: 500px;
-  }
-  .g-title {
-    width: 90%;
-    height: 80%;
-    margin: 40px;
-  }
-  .g-title-backdrop {
-    width: 100%;
-    height: 100%;
-  }
-  .g-TitleCard {
-    font-size: 100px;
-    height: 100px;
-  }
-  .g-TitleModel {
-    font-size: 18px;
-  }
-  .g-TitleAlign {
-    font-size: 22px;
-  }
-
-  .g-title-div-img {
-    width: 100%;
-    height: 100%;
-  }
-  .g-title-img {
-    width: 100%;
-    height: 50%;
-    margin-top: 30%;
   }
 
   .g-main-content {
@@ -850,30 +699,14 @@
   }
 
   /* ---------------------------------------- */
-    .g-header {
-      grid-template-columns: 100%;
-      width: 100%;
-      height: 480px;
-    }
-    .g-title {
-      width: 90%;
-      height: 420px;
-      margin: 18px;
-    }
-    .g-title-backdrop {
-      width: 100%;
-      height: 100%;
-    }
-    .g-TitleCard {
-      font-size: 74px;
-      height: 70px;
-      }
-    .g-TitleModel {
-        font-size: 18px;
-    }
-    .g-TitleAlign {
-      font-size: 19px;
-    }
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+  .g-header-text {
+      font-size:48px;
+      margin-bottom: 0;
+  }
 
     .g-main-content {
       grid-template-columns: 100%;
@@ -993,27 +826,6 @@
 }
 /* ---------------------------------------- Edit Design */
 @media (min-width: 490px) and (max-width: 768px) {
-    .g-header {
-      height: 550px;
-    }
-    .g-title {
-      height: 450px;
-      margin: 20px;
-    }
-    .g-title-backdrop {
-      height: 100%;
-    }
-    .g-TitleCard {
-      font-size: 126px;
-      height: 140px;
-      }
-    .g-TitleModel {
-        font-size: 22px;
-    }
-    .g-TitleAlign {
-      font-size: 28px;
-    }
-
     .g-check-text {
       font-size: 27px;
     }
@@ -1031,41 +843,76 @@
 /* ---------------------------------------------------------------------- */
 
 /* Wordlist */
-@media (max-width: 768px) {
-  .w-header {
-    grid-template-columns: 100%;
-    width: 100%;
-    height: 480px;
-  }
-  .w-title {
-    width: 90%;
-    height: 420px;
-    margin: 18px;
-  }
-  .w-title-backdrop {
-    width: 100%;
-    height: 100%;
-  }
-  .w-TitleCard {
-    font-size: 74px;
-    height: 70px;
-    }
-  .w-TitleModel {
-      font-size: 18px;
-  }
-  .w-TitleAlign {
-    font-size: 19px;
+@media (min-width: 1367px) and (max-width: 1679px) {  
+  .login-place {
+    --bs-modal-margin: 6rem !important;
   }
 
-  .w-title-div-img {
-    display: none;
+  .w-main-content {
+    width: 100%;
+  }
+  .w-main-center {
+    width: 35%;
   }
 }
+/* ---------------------------------------- Laptops 1366px 14.inch */
+@media (min-width: 1050px) and (max-width: 1366px) {
+  .login-place {
+    --bs-modal-margin: 6rem !important;
+  }
 
+  .w-main-content {
+    width: 100%;
+  }
+  .w-main-center {
+    width: 35%;
+  }
+}
+/* ---------------------------------------- Laptops Small 10.inch */
+@media (min-width: 769px) and (max-width: 1049px) {
+     
+  .login-place {
+    --bs-modal-margin: 2.75rem !important;
+  }
+  
+  .w-main-content {
+    width: 100%;
+  }
+  .w-main-center {
+    width: 50%;
+  }
+}
+/* ---------------------------------------- Phones & Tabs */
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+  .w-header-text {
+      font-size:48px;
+      margin-bottom: 0;
+  }
+
+  .w-main-content {
+    width: 100%;
+  }
+  .w-main-center {
+    width: 90%;
+  }
+}
 /* ---------------------------------------------------------------------- */
 
 /* WannaPlay */
 @media (max-width: 768px){
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+  .w-header-text {
+      font-size:48px;
+      margin-bottom: 0;
+  }
+
   .p-main-content {
     width: 100%;
   }

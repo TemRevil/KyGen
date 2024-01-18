@@ -11,6 +11,7 @@
     <meta name="author" content="Mohammed Ahmed (Tem Revil)">
     <meta name="company" content="None">
 
+    <link rel="icon" href="Background/E.png" type="image/gif">
     <title>Wanna Play</title>
 
     <link rel="stylesheet" href="CSS/bootstrap.css">
@@ -32,8 +33,8 @@
 <body class="wannaplay-body">
     <nav class="navbar navbar-expand-lg bg-body-tertiary main-nav">
             <div class="container">
-            <a class="navbar-brand nav-enc" href="Index.html">Encryptor</a>
-            <button class="navbar-toggler nav-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand nav-enc" href="Index.html"><img src="Background/E.png" alt="Encryptor Logo" style="width: 50px;"></a>
+                <button class="navbar-toggler nav-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -87,8 +88,29 @@
             </div>
             </div>
     </div>
-        <section class="p-main-content rubik">
-            <section class="p-div-playpass">
+    <header class="p-header">
+        <div class="p-inner-header flex">
+            <img src="Background/WannaPlay/E.svg" alt="Security Logo" style="width: 100px;">
+            <h1 class="p-header-text">ncryptor</h1>
+          </div>
+          <h2 class="p-header-area">WannaPlay Area</h1>
+          <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+              <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" style="fill: #5DADE2;" />
+              <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" style="fill: #9ac7e6;" />
+              <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" style="fill: #bedbee;" />
+              <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" style="fill: #EDF2F7;" />
+            </g>
+            </svg>
+        </div>
+    </header>
+    <section class="p-main-content rubik">
+        <section class="p-div-playpass">
                 <P class="p-playpass-header">Please Choose A Password</P>
                 <div style="display: flex;flex-direction: row;gap: 10px;align-items: center;">
                     <input type="text" class="p-playpass transition">
@@ -102,8 +124,8 @@
                 <p class="p-copy-message transition p-display">Copied!</p>
                 <p class="p-winner-message transition p-display">Done!! Good Luck With Next Update "Soon"</p>
                 <p class="p-country-wrong transition p-display">it's not Even a Country</p>
-            </section>
-            <section class="p-playpass-rule">
+        </section>
+        <section class="p-playpass-rule">
                 <div class="p-rule-box r15 transition p-display">
                     <p class="p-rule-box-header">Rule Number 15</p>
                     <hr class="p-hr">
@@ -184,9 +206,9 @@
                     <hr class="p-hr">
                     <p class="p-rule-box-rule">Your Password Must be at Least 6 Characters.</p>
                 </div>
-            </section>
         </section>
-        <section class="Rights Modal Boxes">
+    </section>
+    <section class="Rights Modal Boxes">
             <div class="modal fade" id="PrivacyModal" tabindex="-1" aria-labelledby="PrivacyModal" aria-hidden="true" style="--bs-modal-margin: 0.75rem;">
             <div class="modal-dialog" style="max-width: 80%;">
                 <div class="modal-content">
@@ -332,8 +354,8 @@
                 </div>
             </div>
             </div>
-        </section>
-        <footer class="h-footer">
+    </section>
+    <footer class="h-footer">
             <h1 class="h-footer-title">Encryptor<i class="fa-solid fa-copyright" style="font-size: 32px;margin-bottom: 30px;"></i></h1>
             <ul class="h-footer-ui">
             <li style="margin-bottom: 10px;">
@@ -373,11 +395,11 @@
             </form>
             </div>
             <p class="h-footer-version">v4.67.3 Dev Edition</p>
-        </footer>
-      <script src="JavaScripts/jquery-3.7.1.min.js"></script>
-      <script src="JavaScripts/bootstrap.js"></script>
-      <script src="JavaScripts/all.js"></script>
-      <script src="JavaScripts/WannaPlay.js"></script>
-      <script src="JavaScripts/Footer.js"></script>
+    </footer>
+    <script src="JavaScripts/jquery-3.7.1.min.js"></script>
+    <script src="JavaScripts/bootstrap.js"></script>
+    <script src="JavaScripts/all.js"></script>
+    <script src="JavaScripts/WannaPlay.js"></script>
+    <script src="JavaScripts/Footer.js"></script>
 </body>
 </html>

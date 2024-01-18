@@ -46,66 +46,75 @@ body::-webkit-scrollbar-thumb {
 
 /* -------------------------------------------------------------------------------------------------- */
 /* Header */
-.w-header {
-    display: grid;
-    grid-template-columns: 51% 49%;
-    grid-template-areas: "w-title w-img";
-    background-image: url(../Background/Word\ List/);
-    width: 100%;
-    height: 800px;
-    align-items: center;
-    justify-items: center;
-}
 
-.w-title {
-    grid-area: w-title;
-    width: 800px;
-    height: 650px;
-    margin: 50px;
-    background-image: url("../Background/Word\ List/");
-    background-repeat: no-repeat;
-    background-size: cover;
+.w-header {
+    position: relative;
+    text-align: center;
+    background: linear-gradient(60deg, #007bff 0%, #0068ff 100%);
+    color: white;
 }
-.w-title-backdrop {
+.w-header-text {
+    font-family: 'Rubik', Arial, sans-serif;
+    font-weight:300;
+    letter-spacing: 2px;
+    font-size: 82px;
+    margin-bottom: 10px;
+}
+.w-header-area {
+    font-family: 'Rubik', Arial, sans-serif;
+    font-weight:100;
+    letter-spacing: 2px;
+    font-size:52px;
+}
+.w-inner-header {
+    height:65vh;
+    width:100%;
+    margin: 0;
+    padding: 0;
+}
+.flex {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+}
+.waves {
+    position:relative;
     width: 100%;
-    height: 100%;
-    backdrop-filter: brightness(0.8) blur(6px);
+    height:15vh;
+    margin-bottom:-7px; /*Fix for safari gap*/
+    min-height:100px;
+    max-height:150px;
 }
-.w-TitleCard {
-    text-align: center;
-    font-weight: bold;
-    font-family: 'Bebas Neue', 'Rubik', Arial, sans-serif;
-    font-size: 162px;
-    color: white;
-    height: 212px;
+/* Animation */
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
 }
-.w-TitleModel {
-    color: white;
-    font-size: 32px;
+    .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
 }
-.w-TitleAlign {
-    text-align: center;
-    font-family: 'Rubik', Arial, sans-serif;
-    font-size: 42px;
-    color: white;
+    .parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+    .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+    .parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+@keyframes move-forever {
+    0% {
+    transform: translate3d(-90px,0,0);
+    }
+    100% { 
+        transform: translate3d(85px,0,0);
+    }
 }
 
-.w-title-div-img {
-    grid-area: w-img;
-    width: 800px;
-    height: 800px;
-    pointer-events: none;
-}
-.w-title-img {
-    width: 100%;
-    height: 55%;
-    margin-top: 145px;
-    pointer-events: none;
-}
 /* --------------------------------------------- */
 /* Main Content */
 
@@ -115,6 +124,9 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     width: 1660px;
     padding: 60px;
+}
+.w-main-center {
+    width: 25%;
 }
 
 .w-wordlist {
@@ -154,13 +166,12 @@ body::-webkit-scrollbar-thumb {
 .w-wordlist-div-range {
     grid-area: div-range;
     display: grid;
-    grid-template-columns: 16% 25% 18% 41%;
+    grid-template-columns: 13% 23% 18% 46%;
     grid-template-rows: 50px 45px;
     grid-template-areas:
         "l-range l-range l-range l-range"
         "label-min range-min label-max range-max";
     align-items: center;
-    width: 100%;
 }
 .w-wordlist-range-l {
     grid-area: l-range;
