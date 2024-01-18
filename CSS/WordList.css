@@ -236,27 +236,17 @@ body::-webkit-scrollbar-thumb {
     font-size: 22px;
     margin-left: 10px;
 }
+.w-wordlist-alert-ready {
+    display: none;
+    font-family: 'Rubik', Arial, sans-serif;
+    font-size: 22px;
+    margin-left: 10px;
+    color: #35dc59;
+}
 .w-wordlist-alert-error-1 , .w-wordlist-alert-error-2, .w-wordlist-alert-error-3, .w-wordlist-alert-error-4, .w-wordlist-alert-error-5, .w-wordlist-alert-error-6 {
+    display: none;
     font-family: 'Rubik', Arial, sans-serif;
     font-size: 18px;
     margin-left: 10px;
     color: #dc3545;
-}
-.w-wordlist-alert-error-1 {
-    display: none;
-}
-.w-wordlist-alert-error-2 {
-    display: none;
-}
-.w-wordlist-alert-error-3 {
-    display: none;
-}
-.w-wordlist-alert-error-4 {
-    display: none;
-}
-.w-wordlist-alert-error-5 {
-    display: none;
-}
-.w-wordlist-alert-error-6 {
-    display: none;
 }

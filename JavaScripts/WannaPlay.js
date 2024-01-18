@@ -149,6 +149,18 @@ function validateRule6() {
     } else {
         rule6.classList.remove('active');
     }
+
+    const countryIsrael = [ "Israel" ]
+    const wrongCountry = document.querySelector('.p-country-wrong');
+    const countryRegexIsrael = new RegExp(`(${countryIsrael.join('|')})`, 'i');
+    const enteredCountryisrael = passwordInput.value.trim().toLowerCase();
+    
+    if (countryRegexIsrael.test(enteredCountryisrael)) {
+        wrongCountry.classList.remove('p-display')
+    }
+    else {
+        wrongCountry.classList.add('p-display')
+    }
 }
 
 function validateRule7() {

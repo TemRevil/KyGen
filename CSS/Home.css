@@ -612,7 +612,7 @@ body::-webkit-scrollbar-thumb {
 
 .h-team {
     width: 1430px;
-    height: 490px;
+    height: 400px;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 7px 25px #1234564b;
@@ -638,7 +638,7 @@ body::-webkit-scrollbar-thumb {
 .h-team-div {
     display: grid;
     grid-template-columns: 250px repeat(1, 1fr);
-    grid-template-rows: 80px 45px 190px 75px;
+    grid-template-rows: 80px 45px 110px 70px;
     gap: 10px;
     grid-template-areas:
         "h-team-div-img h-team-name h-team-title"
@@ -651,21 +651,13 @@ body::-webkit-scrollbar-thumb {
 }
 .h-team-img {
     width: 250px;
-    height: 102%;
+    height: 360px;
     transition: 0.3s 0s linear;
-    background-color: #f6faff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .h-team-img-2 {
-    width: 100%;
-    height: 102%;
+    display: none;
+    width: 430px;
     transition: 0.3s 0s linear;
-    background-color: #f6faff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .h-team-img:hover, .h-team-img-2:hover {
     scale: 1.2;
@@ -684,9 +676,8 @@ body::-webkit-scrollbar-thumb {
 }
 .h-team-word {
     grid-area: h-team-word;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 400;
-    padding: 10px;
 }
 .h-team-1-skills {
     grid-area: h-team-skills;
@@ -706,7 +697,7 @@ body::-webkit-scrollbar-thumb {
 .h-team-1-url {
     grid-area: h-team-url;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 .h-team-2-url {
     grid-area: h-team-url;
