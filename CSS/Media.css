@@ -71,7 +71,6 @@
   }
   .card-generator-img, .card-WannaPlay-img, .card-wordlist-img, .card-ai-img {
     width: 100%;
-    height: 220px;
   }
   .card-generator-footer, .card-WannaPlay-footer, .card-wordlist-footer, .card-ai-footer {
     font-size: 19px;
@@ -148,9 +147,8 @@
   .h-gallery-phone-card-1, .h-gallery-phone-card-2, .h-gallery-phone-card-3, .h-gallery-phone-card-4 {
     height: 600px;
   }
-  .card-generator-img, .card-wordlist-img, .card-ai-img {
+  .card-generator-img, .card-WannaPlay-img, .card-wordlist-img, .card-ai-img {
     width: 100%;
-    height: 300px;
   }
   .carousel-control-prev-card {
     left: 0%;
@@ -256,9 +254,8 @@
       left: 0rem;
       top: 20rem;
     }
-    .card-generator-img, .card-wordlist-img, .card-ai-img {
+    .card-generator-img, .card-WannaPlay-img, .card-wordlist-img, .card-ai-img {
       width: 100%;
-      height: 195px;
     }
     .card-generator-link {
       padding: 12px 29.89%;
@@ -382,9 +379,6 @@
   .col-gallery {
     height: 660px;
   }
-  .card-generator-img,  .card-wordlist-img,  .card-ai-img {
-    height: 300px;
-  }
 }
 @media (min-width: 600px) and (max-width: 768px) {
     .h-main-content {
@@ -454,9 +448,6 @@
 }
 /* ---------------------------------------- Edit Fonts Design */
 @media (min-width: 600px) and (max-width: 668px) {
-  .card-generator-img, .card-wordlist-img, .card-ai-img {
-    height: 180px;
-  }
   .card-generator-footer {
     font-size: 22px;
   }
@@ -481,9 +472,6 @@
   }
   .h-gallery-phone-card-1, .h-gallery-phone-card-2, .h-gallery-phone-card-3, .h-gallery-phone-card-4 {
     height: 570px;
-  }
-  .card-generator-img, .card-wordlist-img, .card-ai-img {
-    height: 270px;
   }
 }
 @media (min-width: 320px) and (max-width: 340px) {

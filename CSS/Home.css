@@ -150,7 +150,6 @@ body::-webkit-scrollbar-thumb {
 /* Generetor Cards */
 .card-generator-img {
     width: 100%;
-    height: 200px;
     transition: 0.3s 0s linear;
 }
 .card-generator-img:hover {
@@ -175,7 +174,6 @@ body::-webkit-scrollbar-thumb {
 /* WannaPlay Card */
 .card-WannaPlay-img {
     width: 100%;
-    height: 200px;
     transition: 0.3s 0s linear;
 }
 .card-WannaPlay-img:hover {
@@ -212,7 +210,6 @@ body::-webkit-scrollbar-thumb {
 /* Word List Card */
 .card-wordlist-img {
     width: 100%;
-    height: 200px;
     transition: 0.3s 0s linear;
 }
 .card-wordlist-img:hover {
@@ -250,7 +247,6 @@ body::-webkit-scrollbar-thumb {
 /* Artificial Intelligence Card */
 .card-ai-img {
     width: 365px;
-    height: 200px;
     transition: 0.3s 0s linear;
 }
 .card-ai-img:hover {
