@@ -21,14 +21,14 @@ function generate() {
 
   const characters = charInput.value.trim().split('');
 
-  if (characters.filter(Boolean).length === 0) {
+  if (!characters.length) {
     errorNoCharacters.style.display = 'block';
     errorProblemInCharacters.style.display = 'none';
     errorMaxLessThanMin.style.display = 'none';
     errorMinMoreThanMax.style.display = 'none';
     errorNoMinMax.style.display = 'none';
     return;
-  }  
+  }
 
   const minRangeInput = document.querySelector('.w-wordlist-range-min');
   const maxRangeInput = document.querySelector('.w-wordlist-range-max');
@@ -62,6 +62,22 @@ function generate() {
     return;
   }
 
+  if (maxRange < minRange || minRange === 0 || maxRange === 0) {
+    errorNoCharacters.style.display = 'none';
+    errorProblemInCharacters.style.display = 'none';
+    errorMaxLessThanMin.style.display = 'none';
+    errorMaxZero.style.display = 'block';
+    errorNoMinMax.style.display = 'none';
+
+    if (minRange === 0 || maxRange === 0) {
+      errorMaxZero.textContent = '0 Can\'t Be in Min or Max';
+    } else {
+      errorMaxZero.textContent = 'Max should be greater than Min';
+    }
+
+    return;
+  }
+
   isGenerating = true;
   generateButton.style.backgroundColor = '#333';
 
@@ -76,20 +92,14 @@ function generate() {
   const worker = new Worker('JavaScripts/wordlist-worker.js');
 
   worker.onmessage = function (event) {
-  const { charactersText, fileName, error, password, finished } = event.data;
+    const { charactersText, fileName, error, password, finished } = event.data;
 
-  if (error) {
-    // Handle specific errors
-    if (error === 'noCharacters') {
-      errorNoCharacters.style.display = 'block';
-      errorProblemInCharacters.style.display = 'none';
-    } else if (error === 'problemInCharacters') {
-      errorNoCharacters.style.display = 'none';
-      errorProblemInCharacters.style.display = 'block';
-    }
+    if (error) {
+      // Handle specific errors
+      console.error('Error:', error);
     } else if (password) {
       // Handle generated password
-      console.log(password);
+      console.log('Generated Password:', password);
     } else if (finished) {
       // Finish generating passwords
       generatedBlob = new Blob([charactersText], { type: 'text/plain;charset=utf-8' });
@@ -97,8 +107,11 @@ function generate() {
       worker.terminate();
       generateButton.style.backgroundColor = '';
       loading.style.display = 'none';
-      downloadButton.disabled = false;
-      readyMessage.style.display = 'block';
+
+      if (charactersText.length > 0) {
+        downloadButton.disabled = false;
+        readyMessage.style.display = 'block';
+      }
     }
   };
 

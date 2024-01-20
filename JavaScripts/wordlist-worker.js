@@ -1,3 +1,4 @@
+// wordlist-worker.js
 function generateAllCombinations(characters, minLength, maxLength, startIndex, endIndex) {
   let combinations = [];
 
@@ -22,13 +23,13 @@ function generateAllCombinations(characters, minLength, maxLength, startIndex, e
 }
 
 self.onmessage = function (event) {
-  const { characters, minRange, maxRange } = event.data;
-  const chunkSize = 1000;  // تعديل حجم الدفعة حسب احتياجاتك
+  const { characters, minRange, maxRange, minLength, maxLength, customChars } = event.data;
+  const chunkSize = 1000;
   let charactersText = '';
 
-  for (let i = 0; i < characters.length; i += chunkSize) {
-    const endIndex = Math.min(i + chunkSize - 1, characters.length - 1);
-    const currentChunk = generateAllCombinations(characters, minRange, maxRange, i, endIndex);
+  for (let i = 0; i < customChars.length; i += chunkSize) {
+    const endIndex = Math.min(i + chunkSize - 1, customChars.length - 1);
+    const currentChunk = generateAllCombinations(customChars, minLength, maxLength, i, endIndex);
 
     for (let j = 0; j < currentChunk.length; j++) {
       charactersText += currentChunk[j] + '\n';
