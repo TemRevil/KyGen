@@ -9,11 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const errorMessage = document.getElementById('error-message');
     const successMessage = document.getElementById('success-message');
 
-    // تأكد من مسح المحتوى الحالي للحقول عند تحميل الصفحة
     usernameInput.value = '';
     passwordInput.value = '';
-    successMessage.value = '';
-    errorMessage.value = '';
+    successMessage.textContent = '';
+    errorMessage.textContent = '';
 
     loginForm.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -21,16 +20,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const username = usernameInput.value;
         const password = passwordInput.value;
 
-        // مسح الرسالتين عند بدء محاولة جديدة
         errorMessage.textContent = '';
         successMessage.textContent = '';
 
-        // قم بإجراء التحقق من صحة اسم المستخدم وكلمة المرور هنا
-        if (username == 'Revil21' && password == 'Revil21') {
-            // إذا نجح تسجيل الدخول، قم بتحديث عنصر الرسالة برسالة النجاح
+        if (username === 'Revil' && password === 'Revil21') {
             successMessage.textContent = 'Welcome Mr.Revil!';
+            window.location.href = 'Dashboard.html';
+        } else {
+            errorMessage.textContent = 'Invalid username or password.';
         }
     });
 });
-
-// --------------------------------------------------------------------------------------
