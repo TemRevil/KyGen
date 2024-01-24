@@ -86,44 +86,79 @@
     justify-content: center;
     font-family: 'Rubik', Arial, sans-serif;
 }
-#login-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+.login-card {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
-#login-text {
-    font-family: 'Rubik', Arial, sans-serif;
-    font-size: 48px;
-    font-weight: bold;
+.card-header {
+    text-align: center;
+    margin-bottom: 20px;
 }
-.input-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 24px;
+.card-header h1 {
+    font-size: 2em;
     color: #333;
-    font-weight: 500;
+    text-shadow: 1px 1px #ddd;
 }
-#username[type="text"],
-#password[type="password"] {
-    font-size: 24px;
-    outline: none;
-    border: 2px #333 solid;
-    border-radius: 8px;
-    transition: 0.2s 0s ease;
+.form-group {
+    margin-bottom: 10px;
 }
-#login-button {
-    background-color: #333;
-    color: #fff;
+.form-group label {
+    display: block;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
     border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 24px;
-    font-family: 'Rubik';
-    padding: 10px 35px;
-    margin-top: 10px;
-    transition: 0.3s 0s linear;
+    background-color: #f0f0f0;
+    font-size: 1.2em;
+    color: #333;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
 }
-#login-button:hover {
-    background-color: black;
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.3);
+    outline: none;
+}
+input[type="submit"] {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+input[type="submit"]:hover {
+    background-color: #0069d9;
+}
+.login-button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 10px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    transition: 0.25s;
+}
+.login-button:hover {
+    background-color: #0155afe7;
 }
