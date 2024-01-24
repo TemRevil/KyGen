@@ -2,14 +2,11 @@
 let isLoaded = false;
 
 document.addEventListener("DOMContentLoaded", function () {
-
     document.getElementById("loadingScreen").style.display = "flex";
-
     isLoaded = false;
 
     window.addEventListener("load", function () {
-
-      isLoaded = true;
+        isLoaded = true;
 
         if (isLoaded) {
             document.getElementById("loadingScreen").style.display = "none";
