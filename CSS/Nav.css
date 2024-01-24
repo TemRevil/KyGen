@@ -114,9 +114,8 @@
     color: #333;
     margin-bottom: 10px;
 }
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+#username,
+#password {
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
@@ -128,13 +127,12 @@ input[type="password"] {
     box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
 }
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
+#username:focus,
+#password:focus {
     box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.3);
     outline: none;
 }
-input[type="submit"] {
+#login-button {
     background-color: #007bff;
     border: none;
     border-radius: 5px;
@@ -144,7 +142,7 @@ input[type="submit"] {
     padding: 10px;
     transition: background-color 0.3s ease;
 }
-input[type="submit"]:hover {
+#login-button:hover {
     background-color: #0069d9;
 }
 .login-button {

@@ -361,12 +361,31 @@ ul li a:focus-within {
 /* -------------------------------------------------------------------------------------------------- */
 /* Charts Content */
 .d-chart-data {
-    width: 50%;
+    width: 49%;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 7px 25px #1234564b;
     padding-top: 20px;
     overflow: hidden;
+}
+/* -------------------------------------------------------------------------------------------------- */
+/* IPS Content */
+.d-ips-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 100%;
+    margin: 10px 0px;
+    gap: 20px;
+    transition: 0.3s 0s linear;
+    margin-left: 90px;
+}
+.d-list:hover ~ .d-ips-content {
+    margin-left: 270px;
+}
+.d-ips-content div {
+    gap: 30px;
 }
 /* -------------------------------------------------------------------------------------------------- */
 /* Table Browsers Content */
@@ -417,26 +436,6 @@ ul li a:focus-within {
 }
 .d-borwser-table tr:last-child td:last-child {
     border-bottom-right-radius: 10px;
-}
-
-/* -------------------------------------------------------------------------------------------------- */
-/* IPS Content */
-.d-ips-content {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    width: 100%;
-    margin: 10px 0px;
-    gap: 20px;
-    transition: 0.3s 0s linear;
-    margin-left: 90px;
-}
-.d-list:hover ~ .d-ips-content {
-    margin-left: 270px;
-}
-.d-ips-content div {
-    gap: 30px;
 }
 /* -------------------------------------------------------------------------------------------------- */
 /* Langs Content */
