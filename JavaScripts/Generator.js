@@ -97,10 +97,15 @@ newPasswordInput.addEventListener('click', handleCopyClick);
 });
 
 // -------------------------------------------------------------------------------
-
 document.addEventListener('DOMContentLoaded', function () {
     const copyButton = document.querySelector('.g-password-copy');
     const passwordInput = document.querySelector('.g-password-input');
+
+    // إنشاء عنصر span لعرض نص "Copied to Clipboard"
+    const copyText = document.createElement('span');
+    copyText.id = 'yourCopyTextID'; // استبدال بالـ ID الصحيح
+    copyText.style.display = 'none'; // يكون مخفيًا في البداية
+    passwordInput.parentNode.insertBefore(copyText, passwordInput.nextSibling);
 
     copyButton.addEventListener('click', function () {
         // تحديد النص في حقل النص
@@ -109,11 +114,12 @@ document.addEventListener('DOMContentLoaded', function () {
         // نسخ النص إلى الحافظة (Clipboard)
         document.execCommand('copy');
 
+        // إظهار عنصر النص المخصص
+        copyText.textContent = 'Copied to Clipboard';
+        copyText.style.display = 'inline';
+
         // إخفاء النص المحدد
         window.getSelection().removeAllRanges();
-
-        // إظهار رسالة أو إجراء إضافي إذا كان ذلك ضروريًا
-        alert('Password copied to clipboard!');
     });
 });
 // -------------------------------------------------------------------------------

@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (username === 'Revil' && password === 'Revil21') {
             successMessage.textContent = 'Welcome Mr.Revil!';
-            window.location.href = 'Dashboard.html';
+            window.location.href = 'Dashboard/Dashboard.html';
         } else {
             errorMessage.textContent = 'Invalid username or password.';
         }

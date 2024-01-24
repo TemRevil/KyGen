@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="origin-when-cross-origin">
+    <meta name="version" content="2.64">
+    <meta name="description" content="A Secure Password Generator and Manager for Enhanced Online Safety">
+    <meta name="keywords" content="password generator, online safety, secure passwords">
+    <meta name="theme-color" content="#eee">
+    <meta name="author" content="Mohammed Ahmed (Tem Revil)">
+    <meta name="company" content="None">
+    
+    <link rel="icon" href="Background/E.png" type="image/gif">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="../CSS/all.css">
+    <link rel="stylesheet" href="CSS/Dashboard.css">
+    <link rel="stylesheet" href="../CSS/Media.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+</head>
+<body class="dashboard-body">
+    <section class="d-main-content">
+        <section class="d-list">
+            <ul>
+                <li class="d-user">
+                    <div class="d-user-img"><img src="Background/User/Mohammed.png" alt="User Photo"></div>
+                    <p class="d-user-name">Mohammed</p>
+                </li>
+                <li class="d-home">
+                    <a href="#" onclick="dashboardOnDisplay()"><i class="fa-solid fa-house d-list-icons" style="color: #3395ff;"></i>
+                    <p>Home</p>
+                    </a>
+                </li>
+                <li class="d-ips">
+                    <a href="#" onclick="ipsOnDisplay()"><i class="fa-solid fa-location-arrow d-list-icons" style="color: #3395ff;"></i>
+                    <p>ips</p>
+                    </a>
+                </li>
+                <li class="d-users">
+                    <a href="#" onclick="usersOnDisplay()"><i class="fa-solid fa-user d-list-icons" style="color: #3395ff;"></i>
+                    <p>Users</p>
+                    </a>
+                </li>
+                <li class="d-notes" onclick="notesOnDisplay()">
+                    <a href="#"><i class="fa-solid fa-note-sticky d-list-icons" style="color: #3395ff;"></i>
+                    <p>Notes</p>
+                    </a>
+                </li>
+                <li class="d-out">
+                    <a href="javascript:history.back();"><i class="fa-solid fa-right-from-bracket d-list-icons" style="color: #3395ff;"></i>
+                    <p>Log Out</p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="d-dashboard-content">
+            <div class="d-data-title">
+                Dashboard<i class="fa-solid fa-chart-line" style="color: #ffffff;"></i>
+            </div>
+            <!-- Dashboard Top Box -->
+            <div class="flex-content">
+                <div class="d-dashboard-data">
+                    <div class="d-box-title">
+                        <span><i class="fa-solid fa-user data-icons" style="color: #ffffff;"></i></span>
+                        <p class="d-box-title-text">Online</p>
+                        <p class="d-box-percent"><i class="fa-solid fa-caret-up" style="color: #3395ff;"></i>34%</p>
+                    </div>
+                    <div class="d-box-data">
+                        <p>2.1K</p>
+                        <div class="d-box-range">
+                            <div class="online-fill"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-dashboard-data">
+                    <div class="d-box-title">
+                        <span><i class="fa-solid fa-lock data-icons" style="color: #ffffff;"></i></i></span>
+                        <p class="d-box-title-text">Work</p>
+                        <p class="d-box-percent"><i class="fa-solid fa-caret-up" style="color: #3395ff;"></i>42%</p>
+                    </div>
+                    <div class="d-box-data">
+                        <p>9042</p>
+                        <div class="d-box-range">
+                            <div class="work-fill"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-dashboard-data">
+                    <div class="d-box-title">
+                        <span><i class="fa-solid fa-eye data-icons" style="color: #ffffff;"></i></span>
+                        <p class="d-box-title-text">Views</p>
+                        <p class="d-box-percent"><i class="fa-solid fa-caret-up" style="color: #3395ff;"></i>87%</p>
+                    </div>
+                    <div class="d-box-data">
+                        <p>10.2K</p>
+                        <div class="d-box-range">
+                            <div class="views-fill"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-dashboard-data">
+                    <div class="d-box-title">
+                        <span><i class="fa-solid fa-comment data-icons" style="color: #ffffff;"></i></span>
+                        <p class="d-box-title-text">Feedbacks</p>
+                        <p class="d-box-percent"><i class="fa-solid fa-caret-up" style="color: #3395ff;"></i>12%</p>
+                    </div>
+                    <div class="d-box-data">
+                        <p>114</p>
+                        <div class="d-box-range">
+                            <div class="feed-fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-data-title">
+                Cards Data<i class="fa-solid fa-database" style="color: #ffffff;"></i>
+            </div>
+            <!-- Dashboard Cards Infor -->
+            <div class="flex-content">
+                <div class="d-card-data Generator-card">
+                    <div class="align">
+                        <span class="red"></span>
+                        <span class="yellow"></span>
+                        <span class="green"></span>
+                    </div>
+                
+                    <h1>Generator</h1>
+                    <ul>
+                        <li>Work : <span>7,5K</span></li>
+                        <li>Re Work : <span>110</span></li>
+                        <li>Views : <span>6K</span></li>
+                        <li>Update : <span>4.36</span></li>
+                    </ul>
+                </div>
+                <div class="d-card-data WannaPlay-card">
+                    <div class="align">
+                        <span class="red"></span>
+                        <span class="yellow"></span>
+                        <span class="green"></span>
+                    </div>
+                
+                    <h1>WannaPlay</h1>
+                    <ul>
+                        <li>Work : <span>124</span></li>
+                        <li>Winners : <span>36</span></li>
+                        <li>Views : <span>124</span></li>
+                        <li>Update : <span>1.01</span></li>
+                    </ul>
+                </div>
+                <div class="d-card-data Wordlist-card">
+                    <div class="align">
+                        <span class="red"></span>
+                        <span class="yellow"></span>
+                        <span class="green"></span>
+                    </div>
+                
+                    <h1>Wordlist</h1>
+                    <ul>
+                        <li>Work : <span>1.4K</span></li>
+                        <li>Downloads : <span>1.1K</span></li>
+                        <li>Views : <span>4.1K</span></li>
+                        <li>Update : <span>2.14</span></li>
+                    </ul>
+                </div>
+                <div class="d-card-data Ai-card">
+                    <div class="align">
+                        <span class="red"></span>
+                        <span class="yellow"></span>
+                        <span class="green"></span>
+                    </div>
+                
+                    <h1>Ryan Ai</h1>
+                    <ul>
+                        <li>Conversation : <span>None</span></li>
+                        <li>Views : <span>None</span></li>
+                        <li>Update : <span>None</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="d-data-title">
+                Graphics Lines<i class="fa-solid fa-chart-simple" style="color: #ffffff;"></i>
+            </div>
+            <div class="flex-content">
+                <!-- Graphics Lines -->
+                <div class="d-chart-data">
+                    <div id="PerDay"></div>
+                </div>
+                <!-- Bowsers Table -->
+                <div class="d-table-data">
+                    <table class="d-borwser-table">
+                        <thead class="d-borwser-header">
+                            <tr>
+                                <th>Browser</th>
+                                <th>Users</th>
+                                <th>Country</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="d-borwser-table-content">
+                                <td><i class="fa-brands fa-chrome"></i> Chrome</td>
+                                <td>4.2K</td>
+                                <td>Egypt</td>
+                            </tr>
+                            <tr class="d-borwser-table-content">
+                                <td><i class="fa-brands fa-edge"></i> Microsoft Edge</td>
+                                <td>3.6K</td>
+                                <td>Egypt</td>
+                            </tr>
+                            <tr class="d-borwser-table-content">
+                                <td><i class="fa-brands fa-firefox-browser"></i> Fire Fox</td>
+                                <td>3.2K</td>
+                                <td>USA</td>
+                            </tr>
+                            <tr class="d-borwser-table-content">
+                                <td><i class="fa-brands fa-opera"></i> Opera</td>
+                                <td>2.7K</td>
+                                <td>UK</td>
+                            </tr>
+                            <tr class="d-borwser-table-content">
+                                <td><i class="fa-brands fa-safari"></i> Safari</td>
+                                <td>1.2K</td>
+                                <td>France</td>
+                            </tr>
+                        </tbody>
+                    </table>                    
+                </div>
+            </div>
+        </section>
+        <section class="d-ips-content d-display">
+            <div class="d-data-title">
+                Langs<i class="fa-solid fa-language" style="color: #ffffff;"></i>
+            </div>
+            <!-- Langs Cards -->
+            <div class="flex-content">
+                <div class="d-data-langs d-english-card">
+                    <div class="d-langs-card">
+                        <p class="d-langs-title">English</p>
+                    <div class="d-langs-data">
+                        <p class="d-langs-data-title">Users</p>
+                        <p class="d-langs-data-text">8.5K</p>
+                        <div id="EnglishUse"></div>
+                    </div>
+                    </div>
+                </div>
+                <div class="d-data-langs d-arabic-card">
+                    <div class="d-langs-card">
+                        <p class="d-langs-title">العربية</p>
+                    <div class="d-langs-data">
+                        <p class="d-langs-data-title">المستخدمون</p>
+                        <p class="d-langs-data-text">1.7K</p>
+                        <div id="ArabicUse"></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="d-users-content d-display">
+            <h1>USERS</h1>
+        </section>
+        <section class="d-notes-content d-display">
+            <h1>NOTES</h1>
+        </section>
+    </section>
+    <script src="../JavaScripts/all.js"></script>
+    <script src="JavaScripts/apexcharts/dist/apexcharts.js"></script>
+    <script src="JavaScripts/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="JavaScripts/Dashboard.js"></script>
+</body>
+</html>

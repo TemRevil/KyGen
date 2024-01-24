@@ -1,23 +1,7 @@
 {
-  "name": "encryptor",
-  "version": "4.3.5",
-  "description": "Security Generation",
-  "main": "wordlist.js",
-  "scripts": {
-    "test": "Gen"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TemRevil/Encryptor.git"
-  },
-  "keywords": [
-    "Encryption",
-    "Security"
-  ],
-  "author": "Temrevil",
-  "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/TemRevil/Encryptor/issues"
-  },
-  "homepage": "https://github.com/TemRevil/Encryptor#readme"
+  "dependencies": {
+    "apexcharts": "^3.45.2",
+    "chart.js": "^4.4.1",
+    "frappe-charts": "^1.6.2"
+  }
 }
