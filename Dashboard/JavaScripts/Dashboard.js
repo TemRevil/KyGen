@@ -1,3 +1,22 @@
+// Loading ON Display
+let isLoaded = false;
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    document.getElementById("loadingScreen").style.display = "flex";
+
+    isLoaded = false;
+
+    window.addEventListener("load", function () {
+
+      isLoaded = true;
+
+        if (isLoaded) {
+            document.getElementById("loadingScreen").style.display = "none";
+        }
+    });
+});
+// --------------------------------------------------------------------------------------------------------------
 // Aside Moving
 document.addEventListener('DOMContentLoaded', function() {
     var homeButton = document.querySelector('.d-home');
