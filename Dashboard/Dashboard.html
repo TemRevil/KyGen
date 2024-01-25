@@ -72,7 +72,7 @@
                 </li>
             </ul>
         </section>
-        <section class="d-dashboard-content">
+        <section class="d-dashboard-content d-display">
             <div class="d-data-title">
                 Dashboard<i class="fa-solid fa-chart-line" style="color: #ffffff;"></i>
             </div>
@@ -209,48 +209,102 @@
                 </div>
             </div>
         </section>
-        <section class="d-ips-content d-display">
+        <section class="d-ips-content">
             <div class="d-data-title">
-                Most Used Browser<i class="fa-solid fa-window-maximize" style="color: #ffffff;"></i>
+                World Wide IPS<i class="fa-solid fa-language" style="color: #ffffff;"></i>
             </div>
-            <!-- Bowsers Table -->
-            <div class="d-table-data">
-                <table class="d-borwser-table">
-                    <thead class="d-borwser-header">
-                        <tr>
-                            <th>Browser</th>
-                            <th>Users</th>
-                            <th>Country</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="d-borwser-table-content">
-                            <td><i class="fa-brands fa-chrome"></i> Chrome</td>
-                            <td>4.2K</td>
-                            <td>Egypt</td>
-                        </tr>
-                        <tr class="d-borwser-table-content">
-                            <td><i class="fa-brands fa-edge"></i> Microsoft Edge</td>
-                            <td>3.6K</td>
-                            <td>Egypt</td>
-                        </tr>
-                        <tr class="d-borwser-table-content">
-                            <td><i class="fa-brands fa-firefox-browser"></i> Fire Fox</td>
-                            <td>3.2K</td>
-                            <td>USA</td>
-                        </tr>
-                        <tr class="d-borwser-table-content">
-                            <td><i class="fa-brands fa-opera"></i> Opera</td>
-                            <td>2.7K</td>
-                            <td>UK</td>
-                        </tr>
-                        <tr class="d-borwser-table-content">
-                            <td><i class="fa-brands fa-safari"></i> Safari</td>
-                            <td>1.2K</td>
-                            <td>France</td>
-                        </tr>
-                    </tbody>
-                </table>                    
+            <div class="d-map-data">
+                <div id="map"></div>
+            </div>
+            <!-- Browser & Date -->
+            <div class="flex-content">
+                <div class="Browser-flex">
+                    <div class="d-data-title">
+                        Most Used Browser<i class="fa-solid fa-window-maximize" style="color: #ffffff;"></i>
+                    </div>
+                    <!-- Bowsers Table & Date -->
+                    <div class="d-borwser-data">
+                        <div class="d-browser-card">
+                        <h3 class="d-bowser-card-title"><i class="fa-brands fa-chrome"></i> Chrome</h3>
+                        <div class="d-browser-bar">
+                            <div class="emptybar"></div>
+                            <div class="filledbar"></div>
+                        </div>
+                        <div class="text">
+                            <p>Users<br>7.6K</p>
+                        </svg>
+                        </div>
+                        </div>
+                        <div class="d-browser-card">
+                        <h3 class="d-bowser-card-title"><i class="fa-brands fa-edge"></i> Microsoft Edge</h3>
+                        <div class="d-browser-bar">
+                            <div class="emptybar"></div>
+                            <div class="filledbar"></div>
+                        </div>
+                        <div class="text">
+                            <p>Users<br>4.6K</p>
+                        </svg>
+                        </div>
+                        </div>
+                        <div class="d-browser-card">
+                        <h3 class="d-bowser-card-title"><i class="fa-brands fa-firefox-browser"></i> Fire Fox</h3>
+                        <div class="d-browser-bar">
+                            <div class="emptybar"></div>
+                            <div class="filledbar"></div>
+                        </div>
+                        <div class="text">
+                            <p>Users<br>2.4K</p>
+                        </svg>
+                        </div>
+                        </div>
+                        <div class="d-browser-card">
+                        <h3 class="d-bowser-card-title"><i class="fa-brands fa-opera"></i> Opera</h3>
+                        <div class="d-browser-bar">
+                            <div class="emptybar"></div>
+                            <div class="filledbar"></div>
+                        </div>
+                        <div class="text">
+                            <p>Users<br>1901</p>
+                        </svg>
+                        </div>
+                        </div>
+                        <div class="d-browser-card">
+                        <h3 class="d-bowser-card-title"><i class="fa-brands fa-safari"></i> Safari</h3>
+                        <div class="d-browser-bar">
+                            <div class="emptybar"></div>
+                            <div class="filledbar"></div>
+                        </div>
+                        <div class="text">
+                            <p>Users<br>1781</p>
+                        </svg>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Calendar-flex">
+                    <div class="d-data-title">
+                        Calendar<i class="fa-solid fa-calendar" style="color: #ffffff;"></i>
+                    </div>
+                    <!-- Calendar Data -->
+                    <div class="d-calendar">
+                        <header class="d-calendar-header">
+                        <div class="d-calendar-month"></div>
+                        <div class="d-calendar-year"></div>
+                        </header>
+                        <div class="d-calendar-grid">
+                        <div class="d-calendar-day-names">
+                            <span class="d-calendar-day-name">S</span>
+                            <span class="d-calendar-day-name">M</span>
+                            <span class="d-calendar-day-name">T</span>
+                            <span class="d-calendar-day-name">W</span>
+                            <span class="d-calendar-day-name">T</span>
+                            <span class="d-calendar-day-name">F</span>
+                            <span class="d-calendar-day-name">S</span>
+                        </div>
+                        <div class="d-calendar-day-numbers"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="d-data-title">
                 Langs<i class="fa-solid fa-language" style="color: #ffffff;"></i>
@@ -263,7 +317,6 @@
                     <div class="d-langs-data">
                         <p class="d-langs-data-title">Users</p>
                         <p class="d-langs-data-text">8.5K</p>
-                        <div id="EnglishUse"></div>
                     </div>
                     </div>
                 </div>
@@ -273,7 +326,6 @@
                     <div class="d-langs-data">
                         <p class="d-langs-data-title">المستخدمون</p>
                         <p class="d-langs-data-text">1.7K</p>
-                        <div id="ArabicUse"></div>
                     </div>
                     </div>
                 </div>
@@ -289,6 +341,9 @@
     <script src="../JavaScripts/all.js"></script>
     <script src="JavaScripts/apexcharts/dist/apexcharts.js"></script>
     <script src="JavaScripts/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="JavaScripts/datamaps-0.5.0/src/js/components/d3/d3.min.js"></script>
+    <script src="JavaScripts/datamaps-0.5.0/src/js/components/topojson/topojson.js"></script>
+    <script src="JavaScripts/datamaps-0.5.0/dist/datamaps.all.min.js"></script>
     <script src="JavaScripts/Dashboard.js"></script>
 </body>
 </html>

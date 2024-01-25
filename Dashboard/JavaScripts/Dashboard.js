@@ -60,10 +60,59 @@ function notesOnDisplay() {
     toggleSectionDisplay('.d-notes-content', 'd-notes');
 }
 // --------------------------------------------------------------------------------------------------------------
+// Date Calender
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const currentDate = new Date();
+let selectedDay = currentDate.getDate();
+const currentYear = currentDate.getFullYear();
+const currentMonth = currentDate.getMonth();
+
+document.querySelector('.d-calendar-month').innerText = months[currentDate.getMonth()];
+document.querySelector('.d-calendar-year').innerText = currentYear;
+
+let daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+let week;
+let container = document.querySelector('.d-calendar-day-numbers');
+
+for (let i = 1; i <= daysInMonth; i++) {
+  if (i === 1 || new Date(currentYear, currentMonth, i).getDay() === 0) {
+    week = document.createElement('div');
+    week.classList.add('d-calendar-day-numbers-row');
+  }
+
+  let day = document.createElement('span');
+  day.classList.add('d-calendar-day-number');
+  day.innerText = i;
+  day.addEventListener('click', () => handleDayClick(i));
+  (i == selectedDay) && day.classList.add('d-calendar-day-number--current');
+  week.append(day);
+
+  if (i === daysInMonth || new Date(currentYear, currentMonth, i).getDay() === 6) {
+    container.append(week);
+  }
+}
+
+function handleDayClick(day) {
+  selectedDay = day;
+  updateSelectedDayVisual();
+}
+
+function updateSelectedDayVisual() {
+  document.querySelectorAll('.d-calendar-day-number').forEach(element => {
+    element.classList.remove('d-calendar-day-number--selected');
+  });
+
+  document.querySelectorAll('.d-calendar-day-number').forEach(element => {
+    if (parseInt(element.innerText) === selectedDay) {
+      element.classList.add('d-calendar-day-number--selected');
+    }
+  });
+}
+// --------------------------------------------------------------------------------------------------------------
 // Per Day Chart
 var options = {
     chart: {
-      type: 'area',
+      type: 'line',
       height: 350
     },
     series: [
@@ -106,7 +155,7 @@ chart.render();
 // Work Chart
 var options = {
   chart: {
-    type: 'area',
+    type: 'line',
     height: 350
   },
   series: [
@@ -155,76 +204,37 @@ var options = {
 }
 var chart = new ApexCharts(document.querySelector("#Work"), options);
 chart.render();
-
-// Langs Users Chart
-var options = {
-  chart: {
-    height: 220,
-    type: "radialBar"
-  },
-  series: [83],
-  plotOptions: {
-    radialBar: {
-      hollow: {
-        margin: 15,
-        size: "70%"
-      },
-      dataLabels: {
-        showOn: "always",
-        name: {
-          offsetY: -10,
-          show: true,
-          color: "#fff",
-          fontSize: "13px"
-        },
-        value: {
-          color: "#fff",
-          fontSize: "30px",
-          show: true
-        }
-      }
-    }
-  },
-  stroke: {
-    lineCap: "round",
-  },
-  labels: ["Progress"]
+// --------------------------------------------------------------------------------------------------------------
+// World Wide
+var mapData = {
+  "USA": { fillKey: 'selected', borderColor: '#EDF2F7', selected: true, views: 2500 },
+  "FRA": { fillKey: 'selected', borderColor: '#EDF2F7', selected: true, views: 1800 },
+  "RUS": { fillKey: 'selected', borderColor: '#EDF2F7', selected: true, views: 1200 },
+  "EGY": { fillKey: 'selected', borderColor: '#3395FF', selected: true, views: 3200 },
+  "OTHER1": { fillKey: 'default', borderColor: '#EDF2F7', selected: false },
+  "OTHER2": { fillKey: 'default', borderColor: '#EDF2F7', selected: false },
+  // قد تقوم بإضافة المزيد من الدول هنا
 };
-var chart = new ApexCharts(document.querySelector("#EnglishUse"), options);
-chart.render();
 
-var options = {
-  chart: {
-    height: 220,
-    type: "radialBar"
-  },
-  series: [17],
-  plotOptions: {
-    radialBar: {
-      hollow: {
-        margin: 15,
-        size: "70%"
-      },
-      dataLabels: {
-        showOn: "always",
-        name: {
-          offsetY: -10,
-          show: true,
-          color: "#fff",
-          fontSize: "13px"
-        },
-        value: {
-          color: "#fff",
-          fontSize: "30px",
-          show: true
-        }
+var map = new Datamap({
+  element: document.getElementById('map'),
+  geographyConfig: {
+    popupTemplate: function (geography, data) {
+      var content = '<div class="hoverinfo"><strong>' + geography.properties.name + '</strong><br>';
+      if (data.selected && data.views !== undefined) {
+        content += 'Views: ' + (data.views ? data.views.toLocaleString() : 'N/A') + '<br>';
       }
-    }
+      content += '</div>';
+      return content;
+    },
+    borderColor: '#EDF2F7',
+    highlightBorderColor: '#3395FF',
+    highlightFillColor: '#3395FF'
   },
-  stroke: {
-    lineCap: "round",
-  },
-  labels: ["Progress"]
-};
-var chart = new ApexCharts(document.querySelector("#ArabicUse"), options);
-chart.render();
+  fills: { defaultFill: 'white', selected: '#3395FF' },
+  data: mapData
+});
+
+window.addEventListener('resize', function() {
+  map.resize();
+});

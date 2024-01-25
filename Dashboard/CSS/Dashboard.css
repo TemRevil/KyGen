@@ -398,7 +398,7 @@ ul li a:focus-within {
     border-bottom: 3px solid #ffffff70;
     border-left: 2px #ffffff8b outset;
     box-shadow: 0 7px 25px #1234564b;
-    transition: .4s;
+    transition: 0.25s 0s linear;
     overflow: hidden;
     color: #162e53;
 }
@@ -496,55 +496,211 @@ ul li a:focus-within {
 .d-ips-content div {
     gap: 30px;
 }
-/* -------------------------------------------------------------------------------------------------- */
-/* Table Browsers Content */
-.d-table-data {
-    width: 48%;
+.d-ips-content .flex-content .Browser-flex .d-data-title, .d-ips-content .flex-content .Calendar-flex .d-data-title {
+    width: 100%;
 }
-.d-borwser-table {
-    border-collapse: separate;
-    border-spacing: 0;
-    overflow: hidden;
+/* -------------------------------------------------------------------------------------------------- */
+/* World Wide Map */
+.d-map-data {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 25vw;
+    max-width: 800px;
+    margin: 0 auto;
+    scale: 1.2;
+}
+#map {
+    width: 100%;
+    height: 20vw;
+    max-width: 1000px;
+}
+.datamaps-subunit {
+    stroke-width: 0.5vw;
+    font-size: 1vw;
+}
+.datamaps-subunit.selected {
+    stroke-width: 1vw;
+}
+/* -------------------------------------------------------------------------------------------------- */
+/* Browsers Data Content */
+.Browser-flex {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.d-borwser-data {
+    height: 280px;
+    width: 95%;
+    display: flex;
+}
+.d-browser-card {
+    display: flex;
+    height: 280px;
+    width: 200px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 7px 25px #1234564b;
+    transition: 0.4s ease-out;
+    position: relative;
+    left: 0px;
+    flex-wrap: wrap;
+}
+.d-browser-card:not(:first-child) {
+      margin-left: -50px;
+}
+.d-browser-card:hover {
+    transform: translateY(-20px);
+    transition: 0.4s ease-out;
+}
+.d-browser-card:hover ~ .d-browser-card {
+    position: relative;
+    left: 50px;
+    transition: 0.4s ease-out;
+}
+.d-bowser-card-title {
+    color: #162e53;
+    font-weight: 300;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+.d-browser-bar {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    height: 5px;
+    width: 150px;
+}
+.emptybar {
+    background-color: #162e53;
     width: 100%;
     height: 100%;
-    box-shadow: 0 7px 25px #1234564b;
 }
-.d-borwser-table th {
-    background-color: white;
-    color: #162e53;
-    transition: 0.3s 0s linear;
+.filledbar {
+    position: absolute;
+    top: 0px;
+    z-index: 3;
+    width: 0px;
+    height: 100%;
+    background: rgb(0,154,217);
+    background: linear-gradient(90deg, rgba(0,154,217,1) 0%, rgb(47, 113, 255) 65%, rgb(0, 110, 255) 100%);
+    transition: 0.6s ease-out;
 }
-.d-borwser-table th:hover {
-    background-color: #007bff;
-    color: white;
+.d-browser-card:hover .filledbar {
+    width: 127px;
+    transition: 0.4s ease-out;
 }
-.d-borwser-table th, td {
+.d-browser-card:hover .text {
+    display: flex;
+}
+.d-browser-card .text {
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    text-align: center;
     font-size: 26px;
-    padding: 10px;
-    border: 1px solid #EDF2F7;
-    transition: 0.15s 0s linear;
+    font-weight: 600;
+    animation: BrowserText 0.4s ease-in-out forwards;
 }
-.d-borwser-table th, td:hover {
+@keyframes BrowserText {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+}
+/* -------------------------------------------------------------------------------------------------- */
+/* Date Content */
+.Calendar-flex {
+    width: 37%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.d-calendar {
+    width: 75%;
+    background-color: #FFF;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(35, 131, 157, 0.2);
+    padding: 32px;
+    max-height: 280px;
+    overflow-y: auto;
+}
+.d-calendar::-webkit-scrollbar {
+    width: 2px;
+}
+.d-calendar::-webkit-scrollbar-track {
+    background: #fff;
+}
+.d-calendar::-webkit-scrollbar-thumb {
+    background-color: #007bffb4;
+    border-radius: 20px;
+}
+.d-calendar-header {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: 2px;
+    padding: 0 4px 12px;
+    text-transform: uppercase;
+}
+.d-calendar-day-names {
+    border-bottom: 1px solid #828889;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+    padding: 8px 0;
+}
+.d-calendar-day-name {
+    aspect-ratio: 1;
+    color: #828889;
+    font-weight: normal;
+    text-align: center;
+    width: 24px;
+}
+.d-calendar-day-numbers {
+    display: flex;
+    flex-direction: column;
+}
+.d-calendar-day-numbers-row {
+    display: flex;
+    gap: 12px;
+    padding: 6px 0;
+
+    &:first-child {
+        justify-content: flex-end;
+    }
+}
+.d-calendar-day-number {
+    align-content: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    color: #000;
+    display: flex;
+    line-height: 1.4;
+    text-align: center;
+    width: 24px;
+    cursor: pointer;
+}
+.d-calendar-day-number--current {
+    background-color: #23839D;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #23839D;
+    color: #FFF;
+}
+.d-calendar-day-number--selected {
     background-color: #007bff;
-    color: white;
-}
-.d-borwser-table-content {
-    background-color: white;
-}
-.d-borwser-table tr:nth-child(even) {
-    background-color: white;
-}
-.d-borwser-table tr:first-child th:first-child {
-    border-top-left-radius: 10px;
-}
-.d-borwser-table tr:first-child th:last-child {
-    border-top-right-radius: 10px;
-}
-.d-borwser-table tr:last-child td:first-child {
-    border-bottom-left-radius: 10px;
-}
-.d-borwser-table tr:last-child td:last-child {
-    border-bottom-right-radius: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #007bff;
+    color: #FFF;
 }
 /* -------------------------------------------------------------------------------------------------- */
 /* Langs Content */
@@ -620,4 +776,3 @@ ul li a:focus-within {
     opacity: 1;
 }
 /* -------------------------------------------------------------------------------------------------- */
-/* Content */
