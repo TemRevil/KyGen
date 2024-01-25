@@ -207,10 +207,10 @@ chart.render();
 // --------------------------------------------------------------------------------------------------------------
 // World Wide
 var mapData = {
+  "EGY": { fillKey: 'selected', borderColor: '#047dff', selected: true, views: 3200 },
   "USA": { fillKey: 'selected', borderColor: '#EDF2F7', selected: true, views: 2500 },
-  "FRA": { fillKey: 'selected', borderColor: '#EDF2F7', selected: true, views: 1800 },
-  "RUS": { fillKey: 'selected', borderColor: '#EDF2F7', selected: true, views: 1200 },
-  "EGY": { fillKey: 'selected', borderColor: '#3395FF', selected: true, views: 3200 },
+  "FRA": { fillKey: 'selected', borderColor: '#59a7fb', selected: true, views: 1800 },
+  "RUS": { fillKey: 'selected', borderColor: '#6bb2ff', selected: true, views: 1200 },
   "OTHER1": { fillKey: 'default', borderColor: '#EDF2F7', selected: false },
   "OTHER2": { fillKey: 'default', borderColor: '#EDF2F7', selected: false },
   // قد تقوم بإضافة المزيد من الدول هنا

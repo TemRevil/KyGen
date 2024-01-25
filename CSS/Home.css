@@ -346,6 +346,7 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     background-image: url("../Background/Home/Informations/Card\ 1.png");
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     transition: 0.3s 0s linear;
 }
@@ -379,6 +380,7 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     background-image: url("../Background/Home/Informations/Card\ 2.png");
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     transition: 0.3s 0s linear;
 }
@@ -412,6 +414,7 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     background-image: url("../Background/Home/Informations/Card\ 3.png");
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     transition: 0.3s 0s linear;
 }

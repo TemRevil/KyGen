@@ -198,7 +198,7 @@
   .h-rating {
     grid-area: h-rating;
     height: 500px;
-    width: 90%;
+    width: 100%;
   }
   .h-rating-header {
     font-size: 28px;
@@ -212,7 +212,7 @@
   .h-imp-rating {
     grid-area: h-imp-rating;
     height: 500px;
-    width: 90%;
+    width: 100%;
   }
   .h-imp-rating-view {
     grid-template-rows: 40px 100px 15px 15px 15px 250px;
