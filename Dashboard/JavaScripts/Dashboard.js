@@ -16,48 +16,52 @@ document.addEventListener("DOMContentLoaded", function () {
 // --------------------------------------------------------------------------------------------------------------
 // Aside Moving
 document.addEventListener('DOMContentLoaded', function() {
-    var homeButton = document.querySelector('.d-home');
-    homeButton.classList.add('active');
+  var homeButton = document.querySelector('.d-home');
+  homeButton.classList.add('active');
+
+  // إخفاء d-ips-content عند بدء التشغيل
+  var ipsContent = document.querySelector('.d-ips-content');
+  ipsContent.style.display = 'none';
 });
 
 function toggleSectionDisplay(showSection, activeButton) {
-    var sections = ['.d-dashboard-content', '.d-ips-content', '.d-users-content', '.d-notes-content'];
+  var sections = ['.d-dashboard-content', '.d-ips-content', '.d-users-content', '.d-notes-content'];
 
-    sections.forEach(function (section) {
-        var currentSection = document.querySelector(section);
-        if (section === showSection) {
-            currentSection.classList.remove('d-display');
-        } else {
-            currentSection.classList.add('d-display');
-        }
-    });
+  sections.forEach(function (section) {
+      var currentSection = document.querySelector(section);
+      if (section === showSection) {
+          currentSection.style.display = 'flex';
+      } else {
+          currentSection.style.display = 'none';
+      }
+  });
 
-    var buttons = ['d-home', 'd-ips', 'd-users', 'd-notes'];
+  var buttons = ['d-home', 'd-ips', 'd-users', 'd-notes'];
 
-    buttons.forEach(function (button) {
-        var currentButton = document.querySelector('.' + button);
-        if (button === activeButton) {
-            currentButton.classList.add('active');
-        } else {
-            currentButton.classList.remove('active');
-        }
-    });
+  buttons.forEach(function (button) {
+      var currentButton = document.querySelector('.' + button);
+      if (button === activeButton) {
+          currentButton.classList.add('active');
+      } else {
+          currentButton.classList.remove('active');
+      }
+  });
 }
 
 function dashboardOnDisplay() {
-    toggleSectionDisplay('.d-dashboard-content', 'd-home');
+  toggleSectionDisplay('.d-dashboard-content', 'd-home');
 }
 
 function ipsOnDisplay() {
-    toggleSectionDisplay('.d-ips-content', 'd-ips');
+  toggleSectionDisplay('.d-ips-content', 'd-ips');
 }
 
 function usersOnDisplay() {
-    toggleSectionDisplay('.d-users-content', 'd-users');
+  toggleSectionDisplay('.d-users-content', 'd-users');
 }
 
 function notesOnDisplay() {
-    toggleSectionDisplay('.d-notes-content', 'd-notes');
+  toggleSectionDisplay('.d-notes-content', 'd-notes');
 }
 // --------------------------------------------------------------------------------------------------------------
 // Date Calender
@@ -112,7 +116,7 @@ function updateSelectedDayVisual() {
 // Per Day Chart
 var options = {
     chart: {
-      type: 'line',
+      type: 'area',
       height: 350
     },
     series: [
@@ -155,7 +159,7 @@ chart.render();
 // Work Chart
 var options = {
   chart: {
-    type: 'line',
+    type: 'area',
     height: 350
   },
   series: [
@@ -238,3 +242,92 @@ var map = new Datamap({
 window.addEventListener('resize', function() {
   map.resize();
 });
+// --------------------------------------------------------------------------------------------------------------
+// IP Box
+// Control Scroll UP
+document.addEventListener("DOMContentLoaded", function () {
+  var dIpsData = document.querySelector('.d-ips-data');
+  var searchBox = document.querySelector('.d-ips-data-control');
+
+  dIpsData.addEventListener("scroll", function () {
+      if (dIpsData.scrollTop <= 0) {
+          searchBox.style.display = "flex";
+          searchBox.style.height = "60px";
+      } else {
+          searchBox.style.height = "0";
+      }
+  });
+});
+// --------------------------------------------------------------------------------------------------------------
+// Search Box Script
+$(document).ready(function(){
+  $("#searchField").on("input", function(){
+      var searchTerm = $(this).val().toLowerCase();
+
+      $(".d-ips-data-line").hide();
+
+      $(".d-ips-data-line:containsCity(" + searchTerm + ")").show();
+      $(".d-ips-data-line:containsIP(" + searchTerm + ")").show();
+      $(".d-ips-data-line:containsDevice(" + searchTerm + ")").show();
+  });
+});
+
+$.expr[':'].containsCity = function(a, i, m) {
+  return $(a).find(".P4").text().toLowerCase().indexOf(m[3].toLowerCase()) >= 0;
+};
+
+$.expr[':'].containsIP = function(a, i, m) {
+  return $(a).find(".P3").text().toLowerCase().indexOf(m[3].toLowerCase()) >= 0;
+};
+
+$.expr[':'].containsDevice = function(a, i, m) {
+  return $(a).find(".P5").text().toLowerCase().indexOf(m[3].toLowerCase()) >= 0;
+};
+// --------------------------------------------------------------------------------------------------------------
+// Block Script Adds
+$('.d-ips-data-block-button').on('click', function() {
+  var ipToBlock = $('.d-ips-data-block-input').val();
+
+  if (ipToBlock.trim() !== "") {
+      var blockedElement = $('.d-ips-data-content .d-ips-data-line:contains(' + ipToBlock + ')');
+
+      if (blockedElement.length > 0) {
+          var fullInfo = blockedElement.html();
+
+          $('.d-ips-data-blocks').append('<div class="d-ips-data-line">' + fullInfo + '</div>');
+
+          blockedElement.remove();
+          $('.d-ips-data-alert').text("IP Blocked");
+      } else {
+          $('.d-ips-data-blocks').append('<div class="d-ips-data-line">' +
+              '<p class="P1">-</p>' +
+              '<p class="P2"></p>' +
+              '<p class="P3">' + ipToBlock + '</p>' +
+              '<p class="P4">-</p>' +
+              '<p class="P5"></p>' +
+              '<p class="P6"></p>' +
+              '<p class="P7">-</p>' +
+              '<p class="P8">-</p>' +
+              '</div>');
+          $('.d-ips-data-alert').text("IP Added to Block List");
+      }
+  } else {
+      $('.d-ips-data-alert').text("Enter IP");
+  }
+  setTimeout(function() {
+      $('.d-ips-data-alert').text('');
+  }, 3000);
+});
+// --------------------------------------------------------------------------------------------------------------
+// IPS & Blocks Display
+const ipsContentButton = document.querySelector('.show-ips-content');
+const ipsBlocksButton = document.querySelector('.show-ips-blocks');
+const ipsContent = document.querySelector('.d-ips-data-content');
+const ipsBlocks = document.querySelector('.d-ips-data-blocks');
+
+function toggleDisplay(elementToShow, elementToHide) {
+    elementToShow.style.display = 'flex';
+    elementToHide.style.display = 'none';
+}
+ipsContentButton.addEventListener('click', () => toggleDisplay(ipsContent, ipsBlocks));
+ipsBlocksButton.addEventListener('click', () => toggleDisplay(ipsBlocks, ipsContent));

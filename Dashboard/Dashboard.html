@@ -209,7 +209,7 @@
                 </div>
             </div>
         </section>
-        <section class="d-ips-content d-display">
+        <section class="d-ips-content">
             <div class="d-data-title">
                 World Wide IPS<i class="fa-solid fa-language" style="color: #ffffff;"></i>
             </div>
@@ -340,6 +340,20 @@
                         IPS<i class="fa-solid fa-wifi" style="color: #ffffff;"></i>
                     </div>
                     <div class="d-ips-data">
+                        <div class="d-ips-data-control">
+                            <div class="search-box">
+                                <input class="search-txt" type="text" name="" id="searchField" placeholder="Type to Search">
+                                <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
+                            </div>
+                            <button class="d-ips-data-button show-ips-content"><span>IPS</span></button>
+                            <button class="d-ips-data-button show-ips-blocks"><span>Blocks</span></button>
+                            <div class="d-ips-data-blocks-div">
+                                <input type="text" class="d-ips-data-block-input" name="Block" placeholder="Enter IP" autocomplete="off">
+                                <input class="d-ips-data-block-button" value="Block" type="submit">
+                                <input class="d-ips-data-unblock-button" value="UN Block" type="submit">
+                            </div>
+                            <div class="d-ips-data-alert"></div>
+                        </div>
                         <div class="d-ips-data-header">
                             <p class="P1">Num</p>
                             <p class="P2">Browser</p>
@@ -350,7 +364,7 @@
                             <p class="P7">Visits Time</p>
                             <p class="P8">Time IN/OUT</p>
                         </div>
-                        <div class="d-ips-data-content">
+                        <div class="d-ips-data-content" id="searchResults">
                             <div class="d-ips-data-line">
                                 <p class="P1">1</p>
                                 <p class="P2"><i class="fa-brands fa-chrome"></i></p>
@@ -376,7 +390,7 @@
                                 <p class="P2"><i class="fa-brands fa-safari"></i></p>
                                 <p class="P3">88.198.82.33</p>
                                 <p class="P4">Canada</p>
-                                <p class="P5"><i class="fa-solid fa-tablet"></i></p>
+                                <p class="P5"><i class="fa-solid fa-mobile-alt"></i></p>
                                 <p class="P6"><i class="fa-brands fa-apple"></i></p>
                                 <p class="P7">2</p>
                                 <p class="P8">3:20 PM/4:10 PM</p>
@@ -522,6 +536,108 @@
                                 <p class="P8">9:15 AM/10:00 AM</p>
                             </div>
                         </div>
+                        <div class="d-ips-data-blocks" id="searchResults">
+                            <div class="d-ips-data-line">
+                                <p class="P1">1</p>
+                                <p class="P2"><i class="fa-brands fa-chrome"></i></p>
+                                <p class="P3">192.168.137.107</p>
+                                <p class="P4">Egypt</p>
+                                <p class="P5"><i class="fa-solid fa-mobile-screen-button"></i></p>
+                                <p class="P6"><i class="fa-brands fa-android"></i></p>
+                                <p class="P7">2</p>
+                                <p class="P8">9:17 PM/9:25 PM</p>
+                            </div>
+                            <div class="d-ips-data-line">
+                                <p class="P1">2</p>
+                                <p class="P2"><i class="fa-brands fa-firefox"></i></p>
+                                <p class="P3">192.168.137.215</p>
+                                <p class="P4">Germany</p>
+                                <p class="P5"><i class="fa-solid fa-laptop"></i></p>
+                                <p class="P6"><i class="fa-brands fa-windows"></i></p>
+                                <p class="P7">4</p>
+                                <p class="P8">10:30 AM/11:15 AM</p>
+                            </div>
+                            <div class="d-ips-data-line">
+                                <p class="P1">3</p>
+                                <p class="P2"><i class="fa-brands fa-safari"></i></p>
+                                <p class="P3">192.168.137.42</p>
+                                <p class="P4">United States</p>
+                                <p class="P5"><i class="fa-solid fa-tablet"></i></p>
+                                <p class="P6"><i class="fa-brands fa-android"></i></p>
+                                <p class="P7">1</p>
+                                <p class="P8">3:45 PM/4:10 PM</p>
+                            </div>
+                            <div class="d-ips-data-line">
+                                <p class="P1">4</p>
+                                <p class="P2"><i class="fa-brands fa-edge"></i></p>
+                                <p class="P3">192.168.137.89</p>
+                                <p class="P4">Canada</p>
+                                <p class="P5"><i class="fa-solid fa-desktop"></i></p>
+                                <p class="P6"><i class="fa-brands fa-windows"></i></p>
+                                <p class="P7">3</p>
+                                <p class="P8">6:20 AM/7:05 AM</p>
+                            </div>
+                            <div class="d-ips-data-line">
+                                <p class="P1">5</p>
+                                <p class="P2"><i class="fa-brands fa-opera"></i></p>
+                                <p class="P3">192.168.137.173</p>
+                                <p class="P4">Brazil</p>
+                                <p class="P5"><i class="fa-solid fa-laptop"></i></p>
+                                <p class="P6"><i class="fa-brands fa-windows"></i></p>
+                                <p class="P7">5</p>
+                                <p class="P8">8:55 PM/9:30 PM</p>
+                            </div>
+                            <div class="d-ips-data-line">
+                                <p class="P1">6</p>
+                                <p class="P2"><i class="fa-brands fa-chrome"></i></p>
+                                <p class="P3">192.168.137.205</p>
+                                <p class="P4">Australia</p>
+                                <p class="P5"><i class="fa-solid fa-mobile-screen-button"></i></p>
+                                <p class="P6"><i class="fa-brands fa-android"></i></p>
+                                <p class="P7">2</p>
+                                <p class="P8">11:40 AM/12:15 PM</p>
+                            </div>
+                            <div class="d-ips-data-line">
+                                <p class="P1">7</p>
+                                <p class="P2"><i class="fa-brands fa-firefox"></i></p>
+                                <p class="P3">192.168.137.71</p>
+                                <p class="P4">France</p>
+                                <p class="P5"><i class="fa-solid fa-tablet"></i></p>
+                                <p class="P6"><i class="fa-brands fa-android"></i></p>
+                                <p class="P7">1</p>
+                                <p class="P8">4:50 PM/5:25 PM</p>
+                            </div>
+                            <div class="d-ips-data-line">
+                                <p class="P1">8</p>
+                                <p class="P2"><i class="fa-brands fa-safari"></i></p>
+                                <p class="P3">192.168.137.150</p>
+                                <p class="P4">United Kingdom</p>
+                                <p class="P5"><i class="fa-solid fa-desktop"></i></p>
+                                <p class="P6"><i class="fa-brands fa-windows"></i></p>
+                                <p class="P7">3</p>
+                                <p class="P8">1:15 PM/1:50 PM</p>
+                            </div>
+                            <div class="d-ips-data-line">
+                                <p class="P1">9</p>
+                                <p class="P2"><i class="fa-brands fa-edge"></i></p>
+                                <p class="P3">192.168.137.120</p>
+                                <p class="P4">Japan</p>
+                                <p class="P5"><i class="fa-solid fa-mobile-screen-button"></i></p>
+                                <p class="P6"><i class="fa-brands fa-android"></i></p>
+                                <p class="P7">4</p>
+                                <p class="P8">7:30 AM/8:05 AM</p>
+                            </div>
+                            <div class="d-ips-data-line">
+                                <p class="P1">10</p>
+                                <p class="P2"><i class="fa-brands fa-opera"></i></p>
+                                <p class="P3">192.168.137.195</p>
+                                <p class="P4">South Korea</p>
+                                <p class="P5"><i class="fa-solid fa-laptop"></i></p>
+                                <p class="P6"><i class="fa-brands fa-windows"></i></p>
+                                <p class="P7">5</p>
+                                <p class="P8">10:05 PM/10:40 PM</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -534,6 +650,7 @@
         </section>
     </section>
     <script src="../JavaScripts/all.js"></script>
+    <script src="../JavaScripts/jquery-3.7.1.min.js"></script>
     <script src="JavaScripts/apexcharts/dist/apexcharts.js"></script>
     <script src="JavaScripts/apexcharts/dist/apexcharts.min.js"></script>
     <script src="JavaScripts/datamaps-0.5.0/src/js/components/d3/d3.min.js"></script>
