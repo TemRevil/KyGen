@@ -182,7 +182,7 @@ body::-webkit-scrollbar-thumb {
     color: white;
 }
 .flex-content {
-    width: 94%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -192,7 +192,7 @@ body::-webkit-scrollbar-thumb {
 /* side bar */
 .d-list {
     background-color: white;
-    width: 90px;
+    width: 80px;
     height: 100vh;
     padding: 20px;
     overflow: hidden;
@@ -988,7 +988,7 @@ ul li a:focus-within {
     transition: background-color .3s ease-in-out;
 }
 .d-ips-data-unblock-button:hover {
-    background-color: rgb(255, 75, 75);
+    background-color: #0bb64f;
 }
 .d-ips-data-alert {
     font-size: 22px;
@@ -1084,5 +1084,513 @@ ul li a:focus-within {
 }
 .d-ips-data-line .P8 {
     font-size: 15px;
+}
+/* -------------------------------------------------------------------------------------------------- */
+/* User Content */
+.d-users-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 10px 0px;
+    gap: 20px;
+    transition: 0.3s 0s linear;
+    margin-left: 60px;
+}
+.d-list:hover ~ .d-users-content {
+    margin-left: 270px;
+}
+.d-user-opacity {
+    display: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    backdrop-filter: brightness(0.5);
+}
+/* -------------------------------------------------------------------------------------------------- */
+/* Top User Content */
+.d-user-hello {
+    width: 90%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 7px 25px #1234564b;
+}
+.d-user-img-content {
+    max-width: 320px;
+    min-width: 300px;
+    width: 30%;
+    height: 310px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.d-user-hello-img {
+    width: 100%;
+    height: 100%;
+    border: 5px #EDF2F7 solid;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.d-user-hello-img img {
+    width: 100%;
+    transition: 0.3s 0s linear;
+}
+.d-user-hello-img img:hover {
+    scale: 1.2;
+}
+.d-user-img-change{
+    width: 50%;
+    height: 40px;
+    border: unset;
+    border-radius: 8px;
+    color: #162e53;
+    z-index: 1;
+    background: #edf2f7;
+    position: relative;
+    font-size: 17px;
+    transition: 0.2s 0s linear;
+    cursor: pointer;
+    overflow: hidden;
+}
+.d-user-img-change::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 8px;
+    background-color: #162e53;
+    z-index: -1;
+    transition: 0.2s 0s linear;
+}
+.d-user-img-change:hover {
+    color: white;
+}
+.d-user-img-change:hover::before {
+    width: 100%;
+}
+.d-user-flex-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    margin-top: 40px;
+    justify-content: flex-start;
+}
+.d-user-hello-title {
+    font-size: 72px;
+    font-weight: 600;
+    color: #162e53;
+}
+.d-user-hello-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 400;
+    color: #162e53;
+}
+/* -------------------------------------------------------------------------------------------------- */
+/* Time Card */
+.Time-flex {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.Time-flex .d-data-title {
+    width: 100%;
+}
+.d-user-time {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 7px 25px #1234564b;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(to right, #0059ff, #4da0ff);
+}
+.d-user-time:hover {
+    box-shadow: 0 7px 30px #1234564b;
+}
+.d-user-time-text {
+    font-size: 72px;
+    margin-top: 0px;
+    margin-left: 15px;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.d-user-time-text-sub {
+    font-size: 34px;
+}
+.d-user-date-text {
+    font-size: 42px;
+    margin-top: 0px;
+    margin-left: 15px;
+    font-weight: 500;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.sun {
+    display: none;
+    font-size: 52px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    transition: all 0.3s ease-in-out;
+}
+.d-user-time:hover > .sun {
+    font-size: 90px;
+}
+.cloud {
+    display: none;
+    font-size: 52px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    transition: all 0.3s ease-in-out;
+}
+.d-user-time:hover > .cloud {
+    font-size: 90px;
+}
+.moon {
+    display: none;
+    font-size: 52px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    transition: all 0.3s ease-in-out;
+}
+.d-user-time:hover > .moon {
+    font-size: 90px;
+}
+
+.d-time-light {
+    background: linear-gradient(to right, #0059ff, #4da0ff);
+}
+.d-time-night {
+    background: linear-gradient(to right, #141e30, #243b55);
+}
+/* -------------------------------------------------------------------------------------------------- */
+/* To Do List Users */
+.List-flex {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.List-flex .d-data-title {
+    width: 100%;
+}
+.d-user-todo {
+    display: grid;
+    grid-template-columns: 30px auto;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 300px;
+    position: relative;
+    margin-top: -75px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05);
+    overflow: auto;
+}
+.d-user-todo::-webkit-scrollbar {
+    width: 4px;
+}
+.d-user-todo::-webkit-scrollbar-track {
+    background: #fff;
+}
+.d-user-todo::-webkit-scrollbar-thumb {
+    background-color: #007bffb4;
+    border-radius: 20px;
+}
+
+.d-user-todo label {
+    display: grid;
+    align-items: center;
+    width: fit-content;
+    color: #414856;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.d-user-todo label::before, .d-user-todo label::after {
+    content: "";
+    position: absolute;
+}
+.d-user-todo label::before {
+    height: 2px;
+    width: 8px;
+    left: -27px;
+    background: #4f29f0;
+    border-radius: 2px;
+    transition: background 0.3s ease;
+}
+.d-user-todo label:after {
+    height: 4px;
+    width: 4px;
+    top: 8px;
+    left: -25px;
+    border-radius: 50%;
+}
+
+.d-user-todo-form-open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 5%;
+    left: 40%;
+    width: 55px;
+    height: 55px;
+    border-radius: 8px;
+    border: none;
+    background-color: white;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.123);
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+.d-user-todo-form-open::before {
+    content: "";
+    width: 200%;
+    height: 200%;
+    background-color: #fafafa;
+    position: absolute;
+    z-index: 1;
+    transform: scale(0);
+    transition: all 0.3s;
+    border-radius: 50%;
+    filter: blur(10px);
+}
+.d-user-todo-form-open:hover::before {
+    transform: scale(1);
+}
+.d-user-todo-form-open:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.336);
+}
+.d-user-todo-form-open svg {
+    height: 17px;
+    fill: #162e53;
+    z-index: 3;
+    transition: all 0.2s;
+    transform-origin: bottom;
+}
+.d-user-todo-form-open:hover svg {
+    transform: rotate(-15deg) translateX(5px);
+}
+.d-user-todo-form-open::after {
+    content: "";
+    width: 25px;
+    height: 1.5px;
+    position: absolute;
+    bottom: 19px;
+    left: -5px;
+    background-color: #162e53;
+    border-radius: 2px;
+    z-index: 2;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-out;
+}
+.d-user-todo-form-open:hover::after {
+    transform: scaleX(1);
+    left: 0px;
+    transform-origin: right;
+}
+.d-user-todo-form {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 300px;
+    border-radius: 5px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.d-user-todo-note input, .d-user-todo-form button {
+    outline: none;
+    border: 1px solid #e5e7eb;
+    margin: 8px 0;
+}
+.d-user-todo-note input {
+    background-color: #fff;
+    padding: 10px;
+    padding-right: 20px;
+    font-size: 18px;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.d-user-todo-add {
+    padding: 10px 20px;
+    background-color: #162e53;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s 0s linear;
+}
+.d-user-todo-add:hover {
+    background-color: #112441;
+}
+
+.d-user-todo input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    height: 15px;
+    width: 15px;
+    outline: none;
+    border: 0;
+    margin: 0 15px 0 0;
+    cursor: pointer;
+    background: white;
+    display: grid;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.d-user-todo input[type="checkbox"]::before,
+.d-user-todo input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    top: auto;
+    background: #4f29f0;
+    border-radius: 2px;
+}
+.d-user-todo input[type="checkbox"]::before {
+    width: 0px;
+    right: 60%;
+    transform-origin: right bottom;
+}
+.d-user-todo input[type="checkbox"]::after {
+    width: 0px;
+    left: 40%;
+    transform-origin: left bottom;
+}
+.d-user-todo input[type="checkbox"]:checked::before {
+    animation: check-01 0.4s ease forwards;
+}
+.d-user-todo input[type="checkbox"]:checked::after {
+    animation: check-02 0.4s ease forwards;
+}
+.d-user-todo input[type="checkbox"]:checked + label {
+    color: #c3c8de;
+    animation: move 0.3s ease 0.1s forwards;
+}
+.d-user-todo input[type="checkbox"]:checked + label::before {
+    background: #c3c8de;
+    animation: slice 0.4s ease forwards;
+}
+.d-user-todo input[type="checkbox"]:checked + label::after {
+    animation: firework 0.5s ease forwards 0.1s;
+}
+
+@keyframes move {
+    50% {
+        padding-left: 8px;
+        padding-right: 0px;
+    }
+    100% {
+        padding-right: 4px;
+    }
+    }
+    @keyframes slice {
+    60% {
+        width: 100%;
+        left: 4px;
+    }
+    100% {
+        width: 100%;
+        left: -2px;
+        padding-left: 0;
+    }
+}
+@keyframes check-01 {
+    0% {
+        width: 4px;
+        top: auto;
+        transform: rotate(0);
+    }
+    50% {
+        width: 0px;
+        top: auto;
+        transform: rotate(0);
+    }
+    51% {
+        width: 0px;
+        top: 8px;
+        transform: rotate(45deg);
+    }
+    100% {
+        width: 5px;
+        top: 8px;
+        transform: rotate(45deg);
+    }
+}
+@keyframes check-02 {
+    0% {
+        width: 4px;
+        top: auto;
+        transform: rotate(0);
+    }
+    50% {
+        width: 0px;
+        top: auto;
+        transform: rotate(0);
+    }
+    51% {
+        width: 0px;
+        top: 8px;
+        transform: rotate(-45deg);
+    }
+    100% {
+        width: 10px;
+        top: 8px;
+        transform: rotate(-45deg);
+    }
+}
+@keyframes firework {
+    0% {
+        opacity: 1;
+        box-shadow: 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        box-shadow: 0 -15px 0 0px #4f29f0, 14px -8px 0 0px #4f29f0, 14px 8px 0 0px #4f29f0, 0 15px 0 0px #4f29f0, -14px 8px 0 0px #4f29f0, -14px -8px 0 0px #4f29f0;
+    }
 }
 /* -------------------------------------------------------------------------------------------------- */

@@ -3,26 +3,6 @@
 
 // ----------------------------------------------------------------------
 // Rating Event
-
-let totalRatings = [0, 0, 0, 0, 0];
-let totalReviews = 0;
-
-function rate(rating) {
-  // Update the total ratings
-  totalRatings[rating - 1]++;
-  totalReviews++;
-
-  // Update the average rating
-  const averageRating = calculateAverageRating();
-  document.getElementById('average-rating').innerHTML = `${averageRating.toFixed(1)} based on ${totalReviews} reviews.`;
-
-  // Update the rating statistics
-  updateRatingStatistics();
-
-  // Change star color on click
-  changeStarColor(rating);
-}
-
 function calculateAverageRating() {
   let sum = 0;
   for (let i = 0; i < totalRatings.length; i++) {
@@ -68,8 +48,49 @@ function changeStarColor(rating) {
     }
   }
 }
+// ----------------------------------------------------------------------
+// Save Data Event
+// Load previous state from localStorage
+let savedState = localStorage.getItem('ratingState');
+let totalRatings, totalReviews;
 
-// Initial update
+if (savedState) {
+  let parsedState = JSON.parse(savedState);
+  totalRatings = parsedState.totalRatings;
+  totalReviews = parsedState.totalReviews;
+} else {
+  // Set initial state if no previous state found
+  totalRatings = [0, 0, 0, 0, 0];
+  totalReviews = 0;
+}
+
+function rate(rating) {
+  // Update the total ratings
+  totalRatings[rating - 1]++;
+  totalReviews++;
+
+  // Update the average rating
+  const averageRating = calculateAverageRating();
+  document.getElementById('average-rating').innerHTML = `${averageRating.toFixed(1)} based on ${totalReviews} reviews.`;
+
+  // Update the rating statistics
+  updateRatingStatistics();
+
+  // Change star color on click
+  changeStarColor(rating);
+
+  // Save current state to localStorage
+  saveState();
+}
+
+function saveState() {
+  // Save current state to localStorage
+  let currentState = {
+    totalRatings: totalRatings,
+    totalReviews: totalReviews
+  };
+  localStorage.setItem('ratingState', JSON.stringify(currentState));
+}
+
 updateRatingStatistics();
-
 // ----------------------------------------------------------------------

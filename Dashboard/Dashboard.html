@@ -220,7 +220,7 @@
             <!-- Browser & Date -->
             <div class="flex-content">
                 <div class="Browser-flex">
-                    <!-- Bowsers Table & Date -->
+                <!-- Browser Table -->
                     <div class="d-data-title">
                         Most Used Browser<i class="fa-solid fa-window-maximize" style="color: #ffffff;"></i>
                     </div>
@@ -278,7 +278,7 @@
                     </div>
                 </div>
                 <div class="Calendar-flex">
-                    <!-- Calendar Data -->
+                <!-- Calendar Date -->
                     <div class="d-data-title">
                         Calendar<i class="fa-solid fa-calendar" style="color: #ffffff;"></i>
                     </div>
@@ -643,11 +643,60 @@
             </div>
         </section>
         <section class="d-users-content d-display">
-            <h1>USERS</h1>
+            <div class="d-user-hello">
+                <div class="d-user-img-content">
+                    <div class="d-user-hello-img">
+                        <img src="Background/User/Mohammed.png" alt="Hello User">
+                    </div>
+                    <button class="d-user-img-change">Change Photo</button>
+                </div>
+                <div class="d-user-flex-content">
+                    <p class="d-user-hello-title">Welcome <span>Mohammed</span>!</p>
+                    <div class="d-user-hello-info">
+                        <p>Last Login : <span class="d-user-info-date">27/01/2024 - 9:42 AM</span></p>
+                        <p>Status : <span class="class="d-user-status">Active</span></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Date & Time -->
+            <div class="Time-flex">
+                <div class="d-data-title">
+                    Time<i class="fa-solid fa-hourglass-start" style="color: #ffffff;"></i>
+                </div>
+                <div class="d-user-time d-time-light">
+                    <p class="d-user-time-text" id="time">
+                        <span></span>
+                        <span class="d-user-time-text-sub"></span>
+                    </p>
+                    <p class="d-user-date-text" id="date"></p>
+                    <i class="fa-solid fa-sun sun" style="color: #ffffff;"></i>
+                    <i class="fa-solid fa-cloud cloud" style="color: #ffffff;"></i>
+                    <i class="fa-solid fa-moon moon" style="color: #ffffff;"></i>
+                </div>
+            </div>
+            <!-- To Do List -->
+            <div class="List-flex">
+                <div class="d-data-title">
+                    To Do List<i class="fa-solid fa-list" style="color: #ffffff;"></i>
+                </div>
+                <button class="d-user-todo-form-open" onclick="addItem()"><i class="fa-solid fa-pencil" style="color: #162e53;"></i></button>
+                <div class="d-user-todo">
+                    <!-- List Here -->
+                </div>
+            </div>
         </section>
         <section class="d-notes-content d-display">
             <h1>NOTES</h1>
         </section>
+        <!-- To Do Llist Modal -->
+        <div class="d-user-opacity">
+            <form class="d-user-todo-form">
+                <div class="d-user-todo-note">
+                    <input id="noteInput" placeholder="Enter Note" type="text">
+                </div>
+                <button class="d-user-todo-add" type="button" onclick="addNote()">Add Note</button>
+            </form>            
+        </div>
     </section>
     <script src="../JavaScripts/all.js"></script>
     <script src="../JavaScripts/jquery-3.7.1.min.js"></script>

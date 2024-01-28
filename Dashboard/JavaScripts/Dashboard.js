@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
   var homeButton = document.querySelector('.d-home');
   homeButton.classList.add('active');
 
-  // إخفاء d-ips-content عند بدء التشغيل
   var ipsContent = document.querySelector('.d-ips-content');
   ipsContent.style.display = 'none';
 });
@@ -46,6 +45,20 @@ function toggleSectionDisplay(showSection, activeButton) {
           currentButton.classList.remove('active');
       }
   });
+
+  var usersSection = document.querySelector('.d-users-content');
+  if (showSection === '.d-users-content') {
+    usersSection.classList.remove('d-display');
+  } else {
+    usersSection.classList.add('d-display');
+  }
+
+  var notesSection = document.querySelector('.d-notes-content');
+  if (showSection === '.d-notes-content') {
+    notesSection.classList.remove('d-display');
+  } else {
+    notesSection.classList.add('d-display');
+  }
 }
 
 function dashboardOnDisplay() {
@@ -284,38 +297,79 @@ $.expr[':'].containsDevice = function(a, i, m) {
   return $(a).find(".P5").text().toLowerCase().indexOf(m[3].toLowerCase()) >= 0;
 };
 // --------------------------------------------------------------------------------------------------------------
-// Block Script Adds
-$('.d-ips-data-block-button').on('click', function() {
+// Block & UN Block Script
+function checkIPStatus(ip) {
+  var blockedElement = $('.d-ips-data-content .d-ips-data-line:contains(' + ip + ')');
+  var unblockedElement = $('.d-ips-data-blocks .d-ips-data-line:contains(' + ip + ')');
+
+  if (blockedElement.length > 0) {
+    $('.d-ips-data-block-button').css('display', 'block');
+    $('.d-ips-data-unblock-button').css('display', 'none');
+  } else if (unblockedElement.length > 0) {
+    $('.d-ips-data-block-button').css('display', 'none');
+    $('.d-ips-data-unblock-button').css('display', 'block');
+  } else {
+    $('.d-ips-data-block-button').css('display', 'block');
+    $('.d-ips-data-unblock-button').css('display', 'none');
+  }
+}
+
+checkIPStatus($('.d-ips-data-block-input').val());
+
+$('.d-ips-data-block-input').on('input', function() {
+  var ipToBlock = $(this).val();
+  checkIPStatus(ipToBlock);
+});
+
+$('.d-ips-data-block-button, .d-ips-data-unblock-button').on('click', function() {
   var ipToBlock = $('.d-ips-data-block-input').val();
 
   if (ipToBlock.trim() !== "") {
-      var blockedElement = $('.d-ips-data-content .d-ips-data-line:contains(' + ipToBlock + ')');
+    var blockedElement = $('.d-ips-data-content .d-ips-data-line:contains(' + ipToBlock + ')');
+    var unblockedElement = $('.d-ips-data-blocks .d-ips-data-line:contains(' + ipToBlock + ')');
 
-      if (blockedElement.length > 0) {
-          var fullInfo = blockedElement.html();
+    if (blockedElement.length > 0) {
+      var fullInfo = blockedElement.html();
 
-          $('.d-ips-data-blocks').append('<div class="d-ips-data-line">' + fullInfo + '</div>');
+      $('.d-ips-data-blocks').append('<div class="d-ips-data-line">' + fullInfo + '</div>');
 
-          blockedElement.remove();
-          $('.d-ips-data-alert').text("IP Blocked");
-      } else {
-          $('.d-ips-data-blocks').append('<div class="d-ips-data-line">' +
-              '<p class="P1">-</p>' +
-              '<p class="P2"></p>' +
-              '<p class="P3">' + ipToBlock + '</p>' +
-              '<p class="P4">-</p>' +
-              '<p class="P5"></p>' +
-              '<p class="P6"></p>' +
-              '<p class="P7">-</p>' +
-              '<p class="P8">-</p>' +
-              '</div>');
-          $('.d-ips-data-alert').text("IP Added to Block List");
-      }
+      blockedElement.remove();
+      $('.d-ips-data-alert').text("IP Blocked");
+
+      $('.d-ips-data-unblock-button').css('display', 'block');
+      $('.d-ips-data-block-button').css('display', 'none');
+    } else if (unblockedElement.length > 0) {
+      var fullInfo = unblockedElement.html();
+
+      $('.d-ips-data-content').append('<div class="d-ips-data-line">' + fullInfo + '</div>');
+
+      unblockedElement.remove();
+      $('.d-ips-data-alert').text("IP UNBlocked");
+
+      $('.d-ips-data-unblock-button').css('display', 'none');
+      $('.d-ips-data-block-button').css('display', 'block');
+    } else {
+      $('.d-ips-data-blocks').append('<div class="d-ips-data-line">' +
+        '<p class="P1">-</p>' +
+        '<p class="P2"></p>' +
+        '<p class="P3">' + ipToBlock + '</p>' +
+        '<p class="P4">-</p>' +
+        '<p class="P5"></p>' +
+        '<p class="P6"></p>' +
+        '<p class="P7">-</p>' +
+        '<p class="P8">-</p>' +
+        '</div>');
+      $('.d-ips-data-alert').text("IP Blocked");
+
+      $('.d-ips-data-unblock-button').css('display', 'block');
+      $('.d-ips-data-block-button').css('display', 'none');
+    }
   } else {
-      $('.d-ips-data-alert').text("Enter IP");
+    $('.d-ips-data-alert').text("Enter IP");
   }
+
   setTimeout(function() {
-      $('.d-ips-data-alert').text('');
+    $('.d-ips-data-alert').text('');
   }, 3000);
 });
 // --------------------------------------------------------------------------------------------------------------
@@ -331,3 +385,113 @@ function toggleDisplay(elementToShow, elementToHide) {
 }
 ipsContentButton.addEventListener('click', () => toggleDisplay(ipsContent, ipsBlocks));
 ipsBlocksButton.addEventListener('click', () => toggleDisplay(ipsBlocks, ipsContent));
+// --------------------------------------------------------------------------------------------------------------
+// Time Update
+document.addEventListener('DOMContentLoaded', function () {
+  function updateDateTime() {
+    const now = new Date();
+    const hours = now.getHours();
+    const isDaytime = hours >= 6 && hours < 18;
+    const isAM = hours < 12;
+
+    const timeElement = document.getElementById('time');
+    if (timeElement) {
+      const timeText = timeElement.querySelector('span');
+      const timeSubText = timeElement.querySelector('.d-user-time-text-sub');
+      if (timeText && timeSubText) {
+        timeText.textContent = `${hours % 12 || 12}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
+        timeSubText.textContent = isAM ? 'AM' : 'PM';
+      }
+    }
+
+    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const dateElement = document.getElementById('date');
+    if (dateElement) {
+      dateElement.innerHTML = `${daysOfWeek[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}<br>${now.getFullYear()}`;
+    }
+
+    const timeCard = document.querySelector('.d-user-time');
+    if (timeCard) {
+      const sunIcon = timeCard.querySelector('.fa-sun');
+      const cloudIcon = timeCard.querySelector('.fa-cloud');
+      const moonIcon = timeCard.querySelector('.fa-moon');
+
+      sunIcon.style.display = 'none';
+      cloudIcon.style.display = 'none';
+      moonIcon.style.display = 'none';
+
+      const sunriseTime = new Date();
+      sunriseTime.setHours(5, 0, 0);
+
+      const sunsetTime = new Date();
+      sunsetTime.setHours(18, 0, 0);
+
+      const cloudStartTime = new Date();
+      cloudStartTime.setHours(15, 0, 0);
+
+      const moonAppearTime = new Date();
+      moonAppearTime.setHours(5, 0, 0);
+
+      if (now >= sunriseTime && now < sunsetTime) {
+        sunIcon.style.display = 'block';
+      } else if (now >= sunsetTime && now < cloudStartTime) {
+        cloudIcon.style.display = 'block';
+      } else if (now >= cloudStartTime && now < moonAppearTime) {
+        cloudIcon.style.display = 'block';
+      } else {
+        moonIcon.style.display = 'block';
+        timeCard.classList.add('d-time-night');
+      }
+
+      timeCard.classList.toggle('d-time-light', isDaytime && isAM);
+    }
+  }
+
+  setInterval(updateDateTime, 1000);
+  updateDateTime();
+});
+// --------------------------------------------------------------------------------------------------------------
+// To Do List
+var todoList = [];
+function addItem() {
+    document.querySelector(".d-user-opacity").style.display = "flex";
+}
+function addNote() {
+    var noteInput = document.getElementById("noteInput");
+    var newNote = noteInput.value;
+
+    if (newNote !== null && newNote.trim() !== "") {
+        var checkboxId = "0" + (todoList.length + 1);
+        var checkbox = document.createElement("input");
+        checkbox.setAttribute("type", "checkbox");
+        checkbox.setAttribute("id", checkboxId);
+        checkbox.addEventListener("change", function () {
+            var index = parseInt(checkboxId) - 1;
+            if (this.checked) {
+                var parent = this.parentNode;
+                setTimeout(function () {
+                    parent.removeChild(checkbox);
+                    parent.removeChild(label);
+                    todoList.splice(index, 1);
+                }, 3000);
+            }
+        });
+
+        var label = document.createElement("label");
+        label.setAttribute("for", checkboxId);
+        label.appendChild(document.createTextNode(newNote));
+
+        todoList.push({ checkbox, label });
+        document.querySelector(".d-user-todo").appendChild(checkbox);
+        document.querySelector(".d-user-todo").appendChild(label);
+
+        noteInput.value = "";
+    }
+}
+document.querySelector(".d-user-opacity").addEventListener("click", function (event) {
+    if (event.target.classList.contains("d-user-opacity")) {
+        document.querySelector(".d-user-opacity").style.display = "none";
+    }
+});
+// --------------------------------------------------------------------------------------------------------------
