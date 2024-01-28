@@ -9,8 +9,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         usernameInput.value = '';
         passwordInput.value = '';
+
         successMessage.textContent = '';
         errorMessage.textContent = '';
+
+        const savedPassword = localStorage.getItem('userPassword');
+
+        if (savedPassword) {
+            passwordInput.value = '';
+        }
 
         loginForm.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -21,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
             errorMessage.textContent = '';
             successMessage.textContent = '';
 
-            if (username === 'Revil' && password === 'Revil21') {
+            if (username === 'Revil' && password === savedPassword) {
                 successMessage.textContent = 'Welcome Mr.Revil!';
                 window.location.href = 'Dashboard/Dashboard.html';
             } else {

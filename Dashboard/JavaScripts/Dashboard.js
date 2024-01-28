@@ -286,15 +286,15 @@ $(document).ready(function(){
 });
 
 $.expr[':'].containsCity = function(a, i, m) {
-  return $(a).find(".P4").text().toLowerCase().indexOf(m[3].toLowerCase()) >= 0;
+  return $(a).find(".P4").text().toLowerCase().indexOf(m[3].toLowerCase()) === 0;
 };
 
 $.expr[':'].containsIP = function(a, i, m) {
-  return $(a).find(".P3").text().toLowerCase().indexOf(m[3].toLowerCase()) >= 0;
+  return $(a).find(".P3").text().toLowerCase().indexOf(m[3].toLowerCase()) === 0;
 };
 
 $.expr[':'].containsDevice = function(a, i, m) {
-  return $(a).find(".P5").text().toLowerCase().indexOf(m[3].toLowerCase()) >= 0;
+  return $(a).find(".P5").text().toLowerCase().indexOf(m[3].toLowerCase()) === 0;
 };
 // --------------------------------------------------------------------------------------------------------------
 // Block & UN Block Script
@@ -454,9 +454,12 @@ document.addEventListener('DOMContentLoaded', function () {
 // --------------------------------------------------------------------------------------------------------------
 // To Do List
 var todoList = [];
+
 function addItem() {
     document.querySelector(".d-user-opacity").style.display = "flex";
+    disableScroll();
 }
+
 function addNote() {
     var noteInput = document.getElementById("noteInput");
     var newNote = noteInput.value;
@@ -489,9 +492,130 @@ function addNote() {
         noteInput.value = "";
     }
 }
+
+function disableScroll() {
+    document.body.style.overflow = "hidden";
+}
+
+function enableScroll() {
+    document.body.style.overflow = "";
+}
+
 document.querySelector(".d-user-opacity").addEventListener("click", function (event) {
     if (event.target.classList.contains("d-user-opacity")) {
         document.querySelector(".d-user-opacity").style.display = "none";
+        enableScroll(); // استئناف التمرير عند إخفاء .d-user-opacity
     }
 });
+// --------------------------------------------------------------------------------------------------------------
+// Alert IPS Blocker
+$('.d-user-alert-block-button').on('click', function () {
+  const currentRow = $(this).closest('.d-user-alert-line');
+  const ipToBlock = currentRow.find('.P2').text();
+  const country = currentRow.find('.P3').text();
+  const time = currentRow.find('.P4').text();
+
+  const ipExists = isIPBlocked(ipToBlock);
+
+  if (ipExists) {
+      unblockIP(currentRow, ipToBlock);
+  } else {
+      addToBlockedIPList(currentRow, ipToBlock, country, time);
+      startContinuousCheck(currentRow, ipToBlock);
+      currentRow.css('color', 'red');
+      // تعطيل زر الحظر بمجرد إضافة IP إلى قائمة المحظورات
+      $(this).prop('disabled', true);
+  }
+});
+
+function isIPBlocked(ip) {
+  return $('.d-ips-data-blocks .P3:contains(' + ip + ')').length > 0;
+}
+
+function startContinuousCheck(row, ip) {
+  setInterval(function () {
+      const ipStillExists = isIPBlocked(ip);
+
+      if (!ipStillExists) {
+          console.log('IP Removed:', ip);
+          row.css('color', '#162e53');
+          // إعادة تفعيل زر الحظر بمجرد إزالة IP من قائمة المحظورات
+          row.find('.d-user-alert-block-button').prop('disabled', false);
+      }
+  }, 10);
+}
+
+function unblockIP(row, ip) {
+  row.find('.d-user-alert-block-button').prop('disabled', false);
+}
+
+function addToBlockedIPList(row, ip, country, time) {
+  $('.d-ips-data-blocks').append('<div class="d-ips-data-line">' +
+      '<p class="P1">-</p>' +
+      '<p class="P2">-</p>' +
+      '<p class="P3">' + ip + '</p>' +
+      '<p class="P4">' + country + '</p>' +
+      '<p class="P5">-</p>' +
+      '<p class="P6">-</p>' +
+      '<p class="P7">-</p>' +
+      '<p class="P8">' + time + '</p>' +
+      '</div>');
+  console.log('IP Blocked:', ip);
+}
+// --------------------------------------------------------------------------------------------------------------
+// Log Delete & Download
+function downloadLog() {
+  var logLines = document.querySelectorAll('.d-user-log-line');
+  var logContent = Array.from(logLines).map(function(line) {
+      var user = line.querySelector('.P1').innerText;
+      var action = line.querySelector('.P2').innerText;
+      var timestamp = line.querySelector('.P3').innerText;
+      return user + ',' + action + ',' + timestamp;
+  }).join('\n');
+
+  var blob = new Blob([logContent], { type: 'text/plain' });
+
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'EncryptorLog.txt';
+
+  document.body.appendChild(a);
+  a.click();
+
+  document.body.removeChild(a);
+}
+
+function clearLog() {
+  document.querySelector('.d-user-log-content').innerText = '';
+}
+// --------------------------------------------------------------------------------------------------------------
+// Password Change Form
+function changePassword() {
+  var oldPassword = document.querySelector(".d-user-old-pass-input").value;
+  var newPassword = document.querySelector(".d-user-new-pass-input").value;
+  var checkPassword = document.querySelector(".d-user-check-pass-input").value;
+
+  var passwordAlert = document.querySelector(".d-user-pass-alert");
+
+  var currentPassword = localStorage.getItem('userPassword');
+
+  if (oldPassword === "" || newPassword === "" || checkPassword === "") {
+      passwordAlert.innerText = "Fill Inputs";
+      return;
+  }
+
+  if (currentPassword !== oldPassword) {
+      passwordAlert.innerText = "Old Password is incorrect.";
+      return;
+  }
+
+  if (newPassword !== checkPassword) {
+      passwordAlert.innerText = "New Password Does Not Match.";
+      return;
+  }
+
+  localStorage.setItem('userPassword', newPassword);
+
+  passwordAlert.innerText = "Password Done!";
+}
 // --------------------------------------------------------------------------------------------------------------

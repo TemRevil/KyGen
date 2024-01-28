@@ -229,6 +229,9 @@ ul li a {
     color: #162e53;
     transition: 0.15s 0s linear;
 }
+ul li a:hover {
+    background-color: #EDF2F7;
+}
 ul li a:focus-within {
     color: #3395ff;
 }
@@ -1295,7 +1298,7 @@ ul li a:focus-within {
 /* -------------------------------------------------------------------------------------------------- */
 /* To Do List Users */
 .List-flex {
-    width: 30%;
+    width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1317,7 +1320,7 @@ ul li a:focus-within {
     margin-top: -75px;
     border-radius: 8px;
     background: white;
-    box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05);
+    box-shadow: 0 7px 25px #1234564b;
     overflow: auto;
 }
 .d-user-todo::-webkit-scrollbar {
@@ -1471,7 +1474,7 @@ ul li a:focus-within {
     width: 15px;
     outline: none;
     border: 0;
-    margin: 0 15px 0 0;
+    margin: 3px 0px 15px 9px;
     cursor: pointer;
     background: white;
     display: grid;
@@ -1591,6 +1594,270 @@ ul li a:focus-within {
     100% {
         opacity: 0;
         box-shadow: 0 -15px 0 0px #4f29f0, 14px -8px 0 0px #4f29f0, 14px 8px 0 0px #4f29f0, 0 15px 0 0px #4f29f0, -14px 8px 0 0px #4f29f0, -14px -8px 0 0px #4f29f0;
+    }
+}
+/* -------------------------------------------------------------------------------------------------- */
+/* Alert Box */
+.Alert-flex {
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.Alert-flex .d-data-title {
+    width: 100%;
+}
+
+.d-user-alert {
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 7px 25px #1234564b;
+    overflow: auto;
+}
+.d-user-alert::-webkit-scrollbar {
+    width: 4px;
+}
+.d-user-alert::-webkit-scrollbar-track {
+    background: #fff;
+}
+.d-user-alert::-webkit-scrollbar-thumb {
+    background-color: #007bffb4;
+    border-radius: 20px;
+}
+.d-user-alert-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background-color: #EDF2F7;
+    border-radius: 8px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.d-user-alert-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    color: #162e53;
+}
+.d-user-alert-block-button {
+    border-radius: 5px;
+    border: none;
+    min-height: 40px;
+    padding: 5px 10px;
+    background-color: red;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+}
+.d-user-alert-block-button:hover {
+    background-color: rgb(255, 75, 75);
+}
+/* -------------------------------------------------------------------------------------------------- */
+/* User Log Box */
+.User-log-flex {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.User-log-flex .d-data-title {
+    width: 100%;
+}
+
+.d-user-log {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 350px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 7px 25px #1234564b;
+    overflow: auto;
+}
+.d-user-log::-webkit-scrollbar {
+    width: 6px;
+}
+.d-user-log::-webkit-scrollbar-track {
+    background: #fff;
+}
+.d-user-log::-webkit-scrollbar-thumb {
+    background-color: #007bffb4;
+    border-radius: 20px;
+}
+.d-user-log-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 40px;
+    font-size: 26px;
+    color: #162e53;
+    background-color: #edf2f7;
+}
+.d-user-log-header .P1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+.d-user-log-header .P2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.d-user-log-header .B1, .d-user-log-header .B2 {
+    background-color: transparent;
+    border: none;
+    font-size: 28px;
+    color: #162e53;
+    cursor: pointer;
+    transition: 0.3s 0s linear;
+}
+.d-user-log-header .B1:hover, .d-user-log-header .B2:hover {
+    color: #0e203b;
+}
+
+.d-user-log-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.d-user-log-line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 95%;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 18px;
+    box-shadow: 0px 0px 5px #1234564b;
+}
+.d-user-log-line .P1 {
+    width: 30%;
+    text-align: center;
+}
+.d-user-log-line .P2 {
+    width: 50%;
+    text-align: center;
+}
+.d-user-log-line .P3 {
+    width: 20%;
+    text-align: center;
+}
+/* -------------------------------------------------------------------------------------------------- */
+/* Password Box */
+.Pass-flex {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.Pass-flex .d-data-title {
+    width: 100%;
+}
+
+.d-user-pass {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 30px; */
+    width: 100%;
+    height: 350px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 7px 25px #1234564b;
+    padding: 20px;
+}
+.d-user-pass-title {
+    font-size: 32px;
+    color: #162e53;
+}
+.d-user-old-pass-input, .d-user-new-pass-input, .d-user-check-pass-input {
+    width: 90%;
+    padding: 10px;
+    background-color: white;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #162e53;
+    transition: 0.3s 0s linear;
+}
+.d-user-old-pass-input:hover, .d-user-new-pass-input:hover, .d-user-check-pass-input:hover,
+.d-user-old-pass-input:focus-within, .d-user-new-pass-input:focus-within, .d-user-check-pass-input:focus-within {
+    background-color: #EDF2F7;
+    border-bottom: 1px #007bff solid;
+}
+.d-user-pass-alert {
+    font-size: 28px;
+    color: #162e53;
+}
+.d-user-pass-change {
+    width: 30%;
+    height: 30px;
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid #3d6aff;
+    font-size: 22px;
+    background-color: #0077ff;
+    color: white;
+    transition: all 0.2s ease-in;
+}
+.d-user-pass-change:hover {
+    background: #3d6aff;
+    color: white;
+    box-shadow: 0 0 5px 1px #008eecd0;
+    transition: all 0.2s ease-out;
+}
+.d-user-pass-change:hover::before {
+    animation: changeButton 0.5s 0s linear;
+}
+.d-user-pass-change:active {
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow 0.2s ease-in;
+}
+.d-user-pass-change::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+}
+@keyframes changeButton {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        left: 100%;
     }
 }
 /* -------------------------------------------------------------------------------------------------- */

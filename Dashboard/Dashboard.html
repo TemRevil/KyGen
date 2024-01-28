@@ -539,13 +539,13 @@
                         <div class="d-ips-data-blocks" id="searchResults">
                             <div class="d-ips-data-line">
                                 <p class="P1">1</p>
-                                <p class="P2"><i class="fa-brands fa-chrome"></i></p>
-                                <p class="P3">192.168.137.107</p>
-                                <p class="P4">Egypt</p>
-                                <p class="P5"><i class="fa-solid fa-mobile-screen-button"></i></p>
-                                <p class="P6"><i class="fa-brands fa-android"></i></p>
-                                <p class="P7">2</p>
-                                <p class="P8">9:17 PM/9:25 PM</p>
+                                <p class="P2"><i class="fa-brands fa-firefox"></i></p>
+                                <p class="P3">578.411.887.745</p>
+                                <p class="P4">Netherlands</p>
+                                <p class="P5"><i class="fa-solid fa-laptop"></i></p>
+                                <p class="P6"><i class="fa-brands fa-windows"></i></p>
+                                <p class="P7">4</p>
+                                <p class="P8">10:30 AM/11:15 AM</p>
                             </div>
                             <div class="d-ips-data-line">
                                 <p class="P1">2</p>
@@ -682,6 +682,99 @@
                 <button class="d-user-todo-form-open" onclick="addItem()"><i class="fa-solid fa-pencil" style="color: #162e53;"></i></button>
                 <div class="d-user-todo">
                     <!-- List Here -->
+                    <input type="checkbox" id="01">
+                    <label for="01">Welcome To Do List</label>
+                </div>
+            </div>
+            <!-- Alert Logs -->
+            <div class="Alert-flex">
+                <div class="d-data-title">
+                    Alerts<i class="fa-solid fa-triangle-exclamation" style="color: #ffffff;"></i>
+                </div>
+                <div class="d-user-alert">
+                    <div class="d-user-alert-header">
+                        <p class="P1">Num</p>
+                        <p class="P2">IP</p>
+                        <p class="P3">Country</p>
+                        <p class="P4">Time</p>
+                        <p class="P5">Block</p>
+                    </div>
+                    <div class="d-user-alert-line">
+                        <p class="P1">2</p>
+                        <p class="P2">303.568.937</p>
+                        <p class="P3">Egypt</p>
+                        <p class="P4">4PM</p>
+                        <input class="d-user-alert-block-button" value="Block" type="submit">
+                    </div>
+                    <div class="d-user-alert-line">
+                        <p class="P1">3</p>
+                        <p class="P2">478.647.917</p>
+                        <p class="P3">Germany</p>
+                        <p class="P4">12PM</p>
+                        <input class="d-user-alert-block-button" value="Block" type="submit">
+                    </div>
+                    <div class="d-user-alert-line">
+                        <p class="P1">4</p>
+                        <p class="P2">842.166.488</p>
+                        <p class="P3">France</p>
+                        <p class="P4">4AM</p>
+                        <input class="d-user-alert-block-button" value="Block" type="submit">
+                    </div>
+                    <div class="d-user-alert-line">
+                        <p class="P1">5</p>
+                        <p class="P2">129.258.667</p>
+                        <p class="P3">Russia</p>
+                        <p class="P4">9PM</p>
+                        <input class="d-user-alert-block-button" value="Block" type="submit">
+                    </div>
+                </div>
+            </div>
+            <div class="User-log-flex">
+                <div class="d-data-title">
+                    User Log<i class="fa-solid fa-file" style="color: #ffffff;"></i>
+                </div>
+                <div class="d-user-log">
+                    <div class="d-user-log-header">
+                        <p class="P1">User</p>
+                        <p class="P2">Log</p>
+                        <button class="B1" onclick="downloadLog()"><i class="fa-solid fa-arrow-down"></i></button>
+                        <button class="B2" onclick="clearLog()"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                    <div class="d-user-log-content">
+                        <div class="d-user-log-line">
+                            <p class="P1">Mohammed</p>
+                            <p class="P2">Block IP 578.411.887.745</p>
+                            <p class="P3">28/01/2024 6:42 PM</p>
+                        </div>
+                        <div class="d-user-log-line">
+                            <p class="P1">Mohammed</p>
+                            <p class="P2">Change User Password</p>
+                            <p class="P3">29/01/2024 10:42 AM</p>
+                        </div>
+                        <div class="d-user-log-line">
+                            <p class="P1">Eslam</p>
+                            <p class="P2">Add Note</p>
+                            <p class="P3">28/01/2024 8:02 PM</p>
+                        </div>
+                        <div class="d-user-log-line">
+                            <p class="P1">Mohammed</p>
+                            <p class="P2">Log IN 4:34 PM</p>
+                            <p class="P3">29/01/2024 4:34 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Pass-flex">
+                <div class="d-data-title">
+                    Password Reset<i class="fa-solid fa-lock" style="color: #ffffff;"></i>
+                </div>
+                <div class="d-user-pass">
+                    <p class="d-user-pass-title">Password Reset</p>
+                    <input type="password" placeholder="Old Password" class="d-user-old-pass-input" id="oldPassword">
+                    <input type="password" placeholder="New Password" class="d-user-new-pass-input" id="newPassword">
+                    <input type="password" placeholder="Check New Password" class="d-user-check-pass-input" id="checkPassword">
+                    <p class="d-user-pass-alert"></p>
+                    <button class="d-user-pass-change" onclick="changePassword()">Change</button>
                 </div>
             </div>
         </section>
