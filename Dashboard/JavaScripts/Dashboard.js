@@ -386,6 +386,33 @@ function toggleDisplay(elementToShow, elementToHide) {
 ipsContentButton.addEventListener('click', () => toggleDisplay(ipsContent, ipsBlocks));
 ipsBlocksButton.addEventListener('click', () => toggleDisplay(ipsBlocks, ipsContent));
 // --------------------------------------------------------------------------------------------------------------
+// Change User Photo
+function openFileInput() {
+  document.getElementById('imageInput').click();
+}
+function handleImageChange() {
+  var input = document.getElementById('imageInput');
+  var newPhoto = input.files[0];
+
+  if (newPhoto && newPhoto.type.startsWith('image/')) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+          document.getElementById('userImage').src = e.target.result;
+
+          localStorage.setItem("userPhoto", e.target.result);
+      };
+      reader.readAsDataURL(newPhoto);
+  } else {
+      alert("Please select a valid image file.");
+  }
+}
+document.addEventListener("DOMContentLoaded", function() {
+  var storedPhoto = localStorage.getItem("userPhoto");
+  if (storedPhoto) {
+      document.getElementById("userImage").src = storedPhoto;
+  }
+});
+// --------------------------------------------------------------------------------------------------------------
 // Time Update
 document.addEventListener('DOMContentLoaded', function () {
   function updateDateTime() {
@@ -619,3 +646,236 @@ function changePassword() {
   passwordAlert.innerText = "Password Done!";
 }
 // --------------------------------------------------------------------------------------------------------------
+// Notes Script
+window.onload = function () {
+  console.log("Page loaded");
+  restoreNotes();
+  setupDownloadButton();
+  switchView("notes"); // عند تحميل الصفحة يكون العرض على "Notes"
+};
+
+var recentlyDeleted = [];
+
+function restoreNotes() {
+  var storedNotes = localStorage.getItem('notes');
+  if (storedNotes) {
+    document.querySelector('.d-notes-box').innerHTML = storedNotes;
+    setupNoteSelection();
+  }
+}
+
+function saveNotes() {
+  var notesContent = document.querySelector(".d-notes-box").innerHTML;
+  localStorage.setItem('notes', notesContent);
+}
+
+function setupNoteSelection() {
+  document.querySelectorAll(".d-notes-check").forEach(function (checkBoxInput) {
+    checkBoxInput.addEventListener("change", function () {
+      updateSelectedNotesCount();
+      updateDeleteButtonStatus();
+      saveNotes();
+    });
+  });
+
+  setupDeleteButton();
+}
+
+function updateSelectedNotesCount() {
+  var selectedNotes = document.querySelectorAll(".d-notes-check:checked").length;
+  var selectedNotesCountElement = document.querySelector(".d-notes-selected-calc");
+  selectedNotesCountElement.textContent = "Selected " + selectedNotes + " Notes";
+  selectedNotesCountElement.style.display = selectedNotes > 0 ? "block" : "none";
+}
+
+function updateDeleteButtonStatus() {
+  var selectedNotes = document.querySelectorAll(".d-notes-check:checked");
+  if (selectedNotes.length > 0) {
+    showDeleteButton();
+  } else {
+    hideDeleteButton();
+  }
+  saveNotes();
+}
+
+function showDeleteButton() {
+  document.querySelector(".d-notes-delete").style.display = "flex";
+}
+
+function hideDeleteButton() {
+  document.querySelector(".d-notes-delete").style.display = "none";
+}
+
+function setupDeleteButton() {
+  var deleteButton = document.querySelector(".d-notes-delete");
+  deleteButton.addEventListener("click", function () {
+    var selectedNotes = document.querySelectorAll(".d-notes-check:checked");
+    selectedNotes.forEach(function (selectedNote) {
+      var noteElement = selectedNote.closest(".d-notes-note");
+      if (noteElement.dataset.deleted !== "true") {
+        moveToRecentlyDeleted(noteElement);
+      } else {
+        deletePermanently(noteElement);
+      }
+    });
+    updateSelectedNotesCount();
+    hideDeleteButton();
+    updateDeleteButtonStatus();
+    saveNotes();
+  });
+}
+
+function moveToRecentlyDeleted(noteElement) {
+  noteElement.dataset.deleted = "true";
+  recentlyDeleted.push(noteElement.outerHTML);
+  noteElement.remove();
+  saveNotes();
+}
+
+function deletePermanently(noteElement) {
+  var index = recentlyDeleted.indexOf(noteElement.outerHTML);
+  if (index !== -1) {
+    recentlyDeleted.splice(index, 1);
+  }
+  saveNotes();
+}
+
+function setupDownloadButton() {
+  document.querySelector(".d-notes-download").addEventListener("click", function () {
+    var selectedNotes = document.querySelectorAll(".d-notes-check:checked");
+
+    if (selectedNotes.length > 0) {
+      var notesContent = Array.from(selectedNotes).map(function (selectedNote) {
+        return selectedNote.closest(".d-notes-note").querySelector(".d-notes-text").textContent;
+      }).join("\n");
+
+      var blob = new Blob([notesContent], { type: "text/plain" });
+      var downloadLink = document.createElement("a");
+      downloadLink.href = URL.createObjectURL(blob);
+      downloadLink.download = "selected_notes.txt";
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+
+      selectedNotes.forEach(function (selectedNote) {
+        selectedNote.checked = false;
+      });
+      updateSelectedNotesCount();
+      updateDeleteButtonStatus();
+    } else {
+      showSelectSomethingAlert();
+    }
+  });
+}
+
+function showSelectSomethingAlert() {
+  var alertElement = document.querySelector(".d-notes-alert");
+  alertElement.textContent = "Select something!";
+  alertElement.style.display = "block";
+  setTimeout(function () {
+    alertElement.style.display = "none";
+  }, 2000);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOMContentLoaded");
+  setupNoteSelection();
+  setupDownloadButton();
+});
+
+function addNote() {
+  var notesBox = document.querySelector(".d-notes-box");
+  var newNote = document.createElement("div");
+  newNote.classList.add("d-notes-note");
+
+  var noteTitle = document.createElement("div");
+  noteTitle.classList.add("d-notes-note-title");
+
+  var checkBoxLabel = document.createElement("label");
+  checkBoxLabel.classList.add("d-notes-check-label");
+
+  var checkBoxInput = document.createElement("input");
+  checkBoxInput.classList.add("d-notes-check");
+  checkBoxInput.setAttribute("type", "checkbox");
+
+  var checkBoxSpan = document.createElement("span");
+  checkBoxSpan.classList.add("d-notes-check-span");
+
+  var editButton = document.createElement("button");
+  editButton.classList.add("d-notes-note-edit");
+  var editIcon = document.createElement("i");
+  editIcon.classList.add("fa-solid", "fa-pencil");
+  editIcon.style.color = "#162e53";
+  editButton.appendChild(editIcon);
+
+  editButton.addEventListener("click", function () {
+    var noteText = newNote.querySelector(".d-notes-text");
+    noteText.contentEditable = true;
+    noteText.focus();
+  });
+
+  checkBoxLabel.appendChild(checkBoxInput);
+  checkBoxLabel.appendChild(checkBoxSpan);
+  noteTitle.appendChild(checkBoxLabel);
+  noteTitle.appendChild(editButton);
+
+  newNote.appendChild(noteTitle);
+
+  var noteText = document.createElement("p");
+  noteText.classList.add("d-notes-text");
+  noteText.contentEditable = true;
+  newNote.appendChild(noteText);
+
+  notesBox.appendChild(newNote);
+
+  noteText.addEventListener("blur", function () {
+    noteText.contentEditable = false;
+    if (noteText.textContent.trim() === "") {
+      notesBox.removeChild(newNote);
+    }
+    updateSelectedNotesCount();
+    updateDeleteButtonStatus();
+    saveNotes();
+  });
+
+  noteText.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      noteText.contentEditable = false;
+      if (noteText.textContent.trim() === "") {
+        notesBox.removeChild(newNote);
+      }
+      updateSelectedNotesCount();
+      updateDeleteButtonStatus();
+      saveNotes();
+    }
+  });
+
+  noteText.focus();
+
+  checkBoxInput.addEventListener("change", function () {
+    updateSelectedNotesCount();
+    updateDeleteButtonStatus();
+    saveNotes();
+  });
+}
+
+function switchView(view) {
+  var notesBox = document.querySelector(".d-notes-box");
+  var recentlyDeletedBox = document.querySelector(".d-notes-bin");
+  var addButton = document.querySelector(".d-notes-new");
+  var downloadButton = document.querySelector(".d-notes-download");
+
+  if (view === "notes") {
+    notesBox.style.display = "flex";
+    recentlyDeletedBox.style.display = "none";
+    addButton.style.display = "block";
+    downloadButton.style.display = "block";
+  } else if (view === "recentlyDeleted") {
+    notesBox.style.display = "none";
+    recentlyDeletedBox.style.display = "flex";
+    recentlyDeletedBox.innerHTML = recentlyDeleted.join("");
+    addButton.style.display = "none";
+    downloadButton.style.display = "none";
+  }
+}

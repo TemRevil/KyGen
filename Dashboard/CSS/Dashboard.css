@@ -1750,11 +1750,11 @@ ul li a:focus-within {
     box-shadow: 0px 0px 5px #1234564b;
 }
 .d-user-log-line .P1 {
-    width: 30%;
+    width: 27%;
     text-align: center;
 }
 .d-user-log-line .P2 {
-    width: 50%;
+    width: 53%;
     text-align: center;
 }
 .d-user-log-line .P3 {
@@ -1859,5 +1859,251 @@ ul li a:focus-within {
         opacity: 0;
         left: 100%;
     }
+}
+/* -------------------------------------------------------------------------------------------------- */
+/* Notes Content */
+.d-notes-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0px;
+    gap: 20px;
+    transition: 0.3s 0s linear;
+    margin-left: 90px;
+}
+.d-list:hover ~ .d-notes-content {
+    margin-left: 270px;
+}
+.d-notes-content div {
+    gap: 25px;
+}
+/* -------------------------------------------------------------------------------------------------- */
+.d-notes-header {
+    position: sticky;
+    top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 90px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 7px 25px #1234564b;
+    z-index: 2;
+}
+.d-notes-header-title {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 900;
+    color: #162e53;
+    cursor: default;
+}
+.d-notes-selected-calc, .d-notes-alert {
+    display: none;
+    font-size: 24px;
+    font-weight: 500;
+    color: #162e53;
+}
+.d-notes-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px !important;
+}
+.d-notes-download, .d-notes-new {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    font-size: 32px;
+    cursor: pointer;
+    transition: 0.3s 0s linear;
+}
+.d-notes-download:hover, .d-notes-new:hover {
+    background-color: #EDF2F7;
+    color: black;
+}
+.d-notes-delete {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #162e53;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s 0s linear;
+    overflow: hidden;
+    position: relative;
+}
+.delete-icon {
+    width: 12px;
+    color: #ffffff;
+    font-size: 54px;
+    transition: 0.2s 0s linear;
+}
+.d-notes-delete:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition: 0.2s 0s linear;
+    background-color: rgb(255, 69, 69);
+    align-items: center;
+}
+.d-notes-delete:hover .delete-icon {
+    width: 50px;
+    transition: 0.2s 0s linear;
+    transform: translateY(60%);
+}
+.d-notes-delete::before {
+    position: absolute;
+    top: -20px;
+    content: "Delete";
+    color: white;
+    transition: 0.2s 0s linear;
+    font-size: 6px;
+}
+.d-notes-delete:hover::before {
+    font-size: 14px;
+    opacity: 1;
+    transform: translateY(30px);
+    transition: 0.3s 0s linear;
+}
+
+.d-notes-radio {
+    position: sticky;
+    top: 125px;
+    display: flex;
+    gap: 5px !important;
+    border-radius: 8px;
+    background-color: white;
+    box-sizing: border-box;
+    box-shadow: 0 0 0px 1px #0000000f;
+    padding: 10px;
+    width: 35%;
+    font-size: 16px;
+    z-index: 1;
+}
+.d-notes-radio .radio {
+    flex: 1 1 auto;
+    text-align: center;
+}
+.d-notes-radio .radio input {
+    display: none;
+}
+.d-notes-radio .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 0;
+    color: #334155;
+    transition: all .15s ease-in-out;
+}
+.d-notes-radio .radio input:checked + .name {
+    background-color: #EDF2F7;
+    font-weight: 600;
+}
+
+.d-notes-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    width: 90%;
+}
+.d-notes-bin {
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    width: 90%;
+}
+.d-notes-note {
+    width: 337px;
+    max-width: 337px;
+    height: 280px;
+    padding: 15px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 25px #1234564b;
+}
+.d-notes-note-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.d-notes-text {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.d-notes-note-edit {
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s 0s linear;
+}
+.d-notes-note-edit:hover {
+    background-color: #EDF2F7;
+}
+.d-notes-check-label {
+    position: relative;
+    cursor: pointer;
+}
+.d-notes-check-span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.d-notes-check-span:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+.d-notes-check:checked ~ .d-notes-check-span {
+    background-color: #2196F3;
+    box-shadow: 0 3px 7px rgba(33, 150, 243, 0.3);
+}
+.d-notes-check:checked ~ .d-notes-check-span:after {
+    display: block;
+}
+@keyframes checkAnim {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 10px;
+    }
+}
+.d-notes-check:checked ~ .d-notes-check-span:after {
+    animation: checkAnim 0.2s forwards;
 }
 /* -------------------------------------------------------------------------------------------------- */
