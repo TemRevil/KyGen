@@ -624,7 +624,7 @@ function changePassword() {
 
   var passwordAlert = document.querySelector(".d-user-pass-alert");
 
-  var currentPassword = localStorage.getItem('userPassword');
+  var currentPassword = oldPassword; // Assuming oldPassword is already fetched from some source
 
   if (oldPassword === "" || newPassword === "" || checkPassword === "") {
       passwordAlert.innerText = "Fill Inputs";
@@ -641,241 +641,160 @@ function changePassword() {
       return;
   }
 
-  localStorage.setItem('userPassword', newPassword);
+  var passwordChangeEvent = new CustomEvent('passwordChange', { detail: { newPassword: newPassword } });
+  document.dispatchEvent(passwordChangeEvent);
 
   passwordAlert.innerText = "Password Done!";
 }
 // --------------------------------------------------------------------------------------------------------------
 // Notes Script
-window.onload = function () {
-  console.log("Page loaded");
-  restoreNotes();
-  setupDownloadButton();
-  switchView("notes"); // عند تحميل الصفحة يكون العرض على "Notes"
-};
+function switchView(view) {
+  var notesBox = document.querySelector('.d-notes-box');
+  var notesBin = document.querySelector('.d-notes-bin');
+  var downloadButton = document.querySelector('.d-notes-download');
+  var addButton = document.querySelector('.d-notes-new');
+  var deleteForEverButton = document.querySelector('.d-notes-delete-forever');
 
-var recentlyDeleted = [];
-
-function restoreNotes() {
-  var storedNotes = localStorage.getItem('notes');
-  if (storedNotes) {
-    document.querySelector('.d-notes-box').innerHTML = storedNotes;
-    setupNoteSelection();
+  if (view === 'notes') {
+      notesBox.style.display = 'flex';
+      notesBin.style.display = 'none';
+      downloadButton.style.display = 'flex';
+      addButton.style.display = 'flex';
+      deleteForEverButton.style.display = 'none';
+  } else if (view === 'recentlyDeleted') {
+      notesBox.style.display = 'none';
+      notesBin.style.display = 'flex';
+      downloadButton.style.display = 'none';
+      addButton.style.display = 'none';
+      deleteForEverButton.style.display = 'block';
   }
 }
-
-function saveNotes() {
-  var notesContent = document.querySelector(".d-notes-box").innerHTML;
-  localStorage.setItem('notes', notesContent);
-}
-
-function setupNoteSelection() {
-  document.querySelectorAll(".d-notes-check").forEach(function (checkBoxInput) {
-    checkBoxInput.addEventListener("change", function () {
-      updateSelectedNotesCount();
-      updateDeleteButtonStatus();
-      saveNotes();
-    });
-  });
-
-  setupDeleteButton();
-}
-
-function updateSelectedNotesCount() {
-  var selectedNotes = document.querySelectorAll(".d-notes-check:checked").length;
-  var selectedNotesCountElement = document.querySelector(".d-notes-selected-calc");
-  selectedNotesCountElement.textContent = "Selected " + selectedNotes + " Notes";
-  selectedNotesCountElement.style.display = selectedNotes > 0 ? "block" : "none";
-}
-
-function updateDeleteButtonStatus() {
-  var selectedNotes = document.querySelectorAll(".d-notes-check:checked");
-  if (selectedNotes.length > 0) {
-    showDeleteButton();
-  } else {
-    hideDeleteButton();
-  }
-  saveNotes();
-}
-
-function showDeleteButton() {
-  document.querySelector(".d-notes-delete").style.display = "flex";
-}
-
-function hideDeleteButton() {
-  document.querySelector(".d-notes-delete").style.display = "none";
-}
-
-function setupDeleteButton() {
-  var deleteButton = document.querySelector(".d-notes-delete");
-  deleteButton.addEventListener("click", function () {
-    var selectedNotes = document.querySelectorAll(".d-notes-check:checked");
-    selectedNotes.forEach(function (selectedNote) {
-      var noteElement = selectedNote.closest(".d-notes-note");
-      if (noteElement.dataset.deleted !== "true") {
-        moveToRecentlyDeleted(noteElement);
-      } else {
-        deletePermanently(noteElement);
-      }
-    });
-    updateSelectedNotesCount();
-    hideDeleteButton();
-    updateDeleteButtonStatus();
-    saveNotes();
-  });
-}
-
-function moveToRecentlyDeleted(noteElement) {
-  noteElement.dataset.deleted = "true";
-  recentlyDeleted.push(noteElement.outerHTML);
-  noteElement.remove();
-  saveNotes();
-}
-
-function deletePermanently(noteElement) {
-  var index = recentlyDeleted.indexOf(noteElement.outerHTML);
-  if (index !== -1) {
-    recentlyDeleted.splice(index, 1);
-  }
-  saveNotes();
-}
-
-function setupDownloadButton() {
-  document.querySelector(".d-notes-download").addEventListener("click", function () {
-    var selectedNotes = document.querySelectorAll(".d-notes-check:checked");
-
-    if (selectedNotes.length > 0) {
-      var notesContent = Array.from(selectedNotes).map(function (selectedNote) {
-        return selectedNote.closest(".d-notes-note").querySelector(".d-notes-text").textContent;
-      }).join("\n");
-
-      var blob = new Blob([notesContent], { type: "text/plain" });
-      var downloadLink = document.createElement("a");
-      downloadLink.href = URL.createObjectURL(blob);
-      downloadLink.download = "selected_notes.txt";
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
-
-      selectedNotes.forEach(function (selectedNote) {
-        selectedNote.checked = false;
-      });
-      updateSelectedNotesCount();
-      updateDeleteButtonStatus();
-    } else {
-      showSelectSomethingAlert();
-    }
-  });
-}
-
-function showSelectSomethingAlert() {
-  var alertElement = document.querySelector(".d-notes-alert");
-  alertElement.textContent = "Select something!";
-  alertElement.style.display = "block";
-  setTimeout(function () {
-    alertElement.style.display = "none";
-  }, 2000);
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOMContentLoaded");
-  setupNoteSelection();
-  setupDownloadButton();
-});
 
 function addNote() {
+  var template = document.getElementById("note-template");
+  var clone = document.importNode(template.content, true);
+
+  var textElement = clone.querySelector(".d-notes-text");
+  textElement.textContent = "";
+  textElement.contentEditable = true;
+
   var notesBox = document.querySelector(".d-notes-box");
-  var newNote = document.createElement("div");
-  newNote.classList.add("d-notes-note");
+  notesBox.appendChild(clone);
 
-  var noteTitle = document.createElement("div");
-  noteTitle.classList.add("d-notes-note-title");
+  textElement.focus();
 
-  var checkBoxLabel = document.createElement("label");
-  checkBoxLabel.classList.add("d-notes-check-label");
+  textElement.addEventListener("keydown", handleKeyDown);
 
-  var checkBoxInput = document.createElement("input");
-  checkBoxInput.classList.add("d-notes-check");
-  checkBoxInput.setAttribute("type", "checkbox");
-
-  var checkBoxSpan = document.createElement("span");
-  checkBoxSpan.classList.add("d-notes-check-span");
-
-  var editButton = document.createElement("button");
-  editButton.classList.add("d-notes-note-edit");
-  var editIcon = document.createElement("i");
-  editIcon.classList.add("fa-solid", "fa-pencil");
-  editIcon.style.color = "#162e53";
-  editButton.appendChild(editIcon);
-
-  editButton.addEventListener("click", function () {
-    var noteText = newNote.querySelector(".d-notes-text");
-    noteText.contentEditable = true;
-    noteText.focus();
-  });
-
-  checkBoxLabel.appendChild(checkBoxInput);
-  checkBoxLabel.appendChild(checkBoxSpan);
-  noteTitle.appendChild(checkBoxLabel);
-  noteTitle.appendChild(editButton);
-
-  newNote.appendChild(noteTitle);
-
-  var noteText = document.createElement("p");
-  noteText.classList.add("d-notes-text");
-  noteText.contentEditable = true;
-  newNote.appendChild(noteText);
-
-  notesBox.appendChild(newNote);
-
-  noteText.addEventListener("blur", function () {
-    noteText.contentEditable = false;
-    if (noteText.textContent.trim() === "") {
-      notesBox.removeChild(newNote);
+  textElement.addEventListener("blur", function() {
+    if (textElement.textContent.trim() === "") {
+      var noteElement = textElement.closest(".d-notes-note");
+      noteElement.remove();
     }
-    updateSelectedNotesCount();
-    updateDeleteButtonStatus();
-    saveNotes();
-  });
 
-  noteText.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      noteText.contentEditable = false;
-      if (noteText.textContent.trim() === "") {
-        notesBox.removeChild(newNote);
-      }
-      updateSelectedNotesCount();
-      updateDeleteButtonStatus();
-      saveNotes();
-    }
-  });
-
-  noteText.focus();
-
-  checkBoxInput.addEventListener("change", function () {
-    updateSelectedNotesCount();
-    updateDeleteButtonStatus();
-    saveNotes();
+    textElement.contentEditable = false;
   });
 }
 
-function switchView(view) {
-  var notesBox = document.querySelector(".d-notes-box");
-  var recentlyDeletedBox = document.querySelector(".d-notes-bin");
-  var addButton = document.querySelector(".d-notes-new");
-  var downloadButton = document.querySelector(".d-notes-download");
+function editNote(button) {
+  var noteTextElement = button.closest(".d-notes-note").querySelector(".d-notes-text");
 
-  if (view === "notes") {
-    notesBox.style.display = "flex";
-    recentlyDeletedBox.style.display = "none";
-    addButton.style.display = "block";
-    downloadButton.style.display = "block";
-  } else if (view === "recentlyDeleted") {
-    notesBox.style.display = "none";
-    recentlyDeletedBox.style.display = "flex";
-    recentlyDeletedBox.innerHTML = recentlyDeleted.join("");
-    addButton.style.display = "none";
-    downloadButton.style.display = "none";
+  if (noteTextElement.contentEditable === "false") {
+    noteTextElement.contentEditable = "true";
+    noteTextElement.focus();
+  } else {
+    noteTextElement.contentEditable = "false";
   }
+}
+
+function handleKeyDown(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    var noteTextElement = event.target;
+    noteTextElement.contentEditable = false;
+  }
+}
+
+function selectNote(note) {
+  var checkbox = note.querySelector(".d-notes-check");
+  toggleDeleteButton(checkbox);
+}
+
+function toggleDeleteButton(checkbox) {
+  var closestNote = checkbox.closest(".d-notes-note");
+
+  if (closestNote) {
+    var deleteButton = closestNote.querySelector(".d-notes-delete");
+
+    if (deleteButton) {
+      var isFromBin = closestNote.closest(".d-notes-bin") !== null;
+
+      if (isFromBin) {
+        deleteButton.style.display = "none";
+      } else {
+        deleteButton.style.display = checkbox.checked ? "flex" : "none";
+      }
+    }
+  }
+}
+
+function deleteNote() {
+  var selectedNotes = document.querySelectorAll('.d-notes-note input:checked');
+  var notesBin = document.querySelector('.d-notes-bin');
+
+  selectedNotes.forEach(function (note) {
+    note.checked = false;
+
+    var clonedNote = note.closest('.d-notes-note').cloneNode(true);
+    var noteTitle = clonedNote.querySelector(".d-notes-note-title");
+    
+    noteTitle.parentNode.removeChild(noteTitle);
+
+    notesBin.appendChild(clonedNote);
+    note.closest('.d-notes-note').remove();
+  });
+}
+function deleteForEver() {
+  var notesBin = document.querySelector('.d-notes-bin');
+  notesBin.innerHTML = "";
+}
+
+function downloadNote() {
+  var selectedNotes = document.querySelectorAll('.d-notes-note input:checked');
+  var notesText = "";
+
+  if (selectedNotes.length > 0) {
+    selectedNotes.forEach(function (note) {
+      var text = note.closest('.d-notes-note').querySelector(".d-notes-text").textContent;
+      notesText += text + "\n";
+    });
+
+    var blob = new Blob([notesText], { type: "text/plain" });
+    var link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "Notes.txt";
+    link.click();
+  } else {
+    var alertMessage = document.querySelector(".d-notes-alert");
+    alertMessage.textContent = "يرجى تحديد ملاحظات للتحميل.";
+  }
+}
+
+setInterval(checkSelectedNotesPeriodically, 1);
+
+function checkSelectedNotesPeriodically() {
+  var selectedNotesCount = document.querySelectorAll('.d-notes-note input:checked').length;
+  var selectedCalc = document.getElementById("selectedCalc");
+  var deleteButton = document.querySelector(".d-notes-delete");
+  var alertMessage = document.querySelector(".d-notes-alert");
+
+  if (selectedNotesCount > 0) {
+    selectedCalc.style.display = "block";
+    deleteButton.style.display = "flex";
+  } else {
+    selectedCalc.style.display = "none";
+    deleteButton.style.display = "none";
+    alertMessage.textContent = "";
+  }
+
+  selectedCalc.textContent = "Selected " + selectedNotesCount + " Note" + (selectedNotesCount !== 1 ? "s" : "");
 }

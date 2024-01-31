@@ -28,7 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
             errorMessage.textContent = '';
             successMessage.textContent = '';
 
-            if (username === 'Revil' && password === savedPassword) {
+            localStorage.setItem('userPassword', 'Revil21');
+
+            if (username === 'Revil' && password === 'Revil21') {
                 successMessage.textContent = 'Welcome Mr.Revil!';
                 window.location.href = 'Dashboard/Dashboard.html';
             } else {

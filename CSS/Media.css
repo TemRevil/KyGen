@@ -881,6 +881,20 @@
       margin-bottom: 0;
   }
 
+  .w-why-how {
+    width: 100%;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .w-wordlist-why {
+    width: 100%;
+    font-size: 19px;
+  }
+  .w-wordlist-how {
+      width: 100%;
+      font-size: 19px;
+  }
+
   .w-main-content {
     width: 100%;
   }
@@ -903,6 +917,20 @@
 
   .p-main-content {
     width: 100%;
+  }
+
+  .p-why-how {
+    width: 100%;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .p-playpass-why {
+    width: 100%;
+    font-size: 19px;
+  }
+  .p-playpass-how {
+      width: 100%;
+      font-size: 19px;
   }
 
   .p-div-playpass {

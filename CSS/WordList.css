@@ -129,6 +129,28 @@ body::-webkit-scrollbar-thumb {
     width: 25%;
 }
 
+.w-why-how {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+.w-title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+}
+.w-wordlist-why {
+    width: 50%;
+    font-size: 19px;
+}
+.w-wordlist-how {
+    width: 50%;
+    font-size: 19px;
+}
+
 .w-wordlist {
     width: 100%;
     display: grid;

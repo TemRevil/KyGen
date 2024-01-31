@@ -151,6 +151,27 @@ p {
     }
 }
 
+.p-why-how {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.p-title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+}
+.p-playpass-why {
+    width: 50%;
+    font-size: 19px;
+}
+.p-playpass-how {
+    width: 50%;
+    font-size: 19px;
+}
+
 .p-div-playpass {
     display: flex;
     flex-direction: column;

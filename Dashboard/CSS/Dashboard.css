@@ -1944,6 +1944,20 @@ ul li a:focus-within {
     overflow: hidden;
     position: relative;
 }
+.d-notes-delete-forever {
+    display: none;
+    padding: 10px 20px;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    color: #162e53;
+    font-size: 22px;
+    transition: 0.3s 0s linear;
+    cursor: pointer;
+}
+.d-notes-delete-forever:hover {
+    background-color: #EDF2F7;
+}
 .delete-icon {
     width: 12px;
     color: #ffffff;

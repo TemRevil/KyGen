@@ -782,11 +782,12 @@
         <section class="d-notes-content d-display">
             <div class="d-notes-header">
                 <h1 class="d-notes-header-title">Notes</h1>
-                <p class="d-notes-selected-calc">Selected 0 Notes</p>
+                <p class="d-notes-selected-calc" id="selectedCalc">Selected 0 Notes</p>
                 <p class="d-notes-alert"></p>
                 <div class="d-notes-buttons">
-                    <button class="d-notes-delete"><i class="fa-solid fa-trash delete-icon"></i></button>
-                    <button class="d-notes-download"><i class="fa-solid fa-arrow-down"></i></button>
+                    <button class="d-notes-delete" onclick="deleteNote()"><i class="fa-solid fa-trash delete-icon"></i></button>
+                    <button class="d-notes-delete-forever" onclick="deleteForEver()">Delete</button>
+                    <button class="d-notes-download"  onclick="downloadNote()"><i class="fa-solid fa-arrow-down"></i></button>
                     <button class="d-notes-new" onclick="addNote()"><i class="fa-solid fa-plus"></i></button>
                 </div>
             </div>
@@ -799,18 +800,20 @@
                   <input type="radio" name="radio">
                   <span class="name">Recently Deleted</span>
                 </label>
-            </div>              
+            </div>
             <div class="d-notes-box">
-                <div class="d-notes-note">
-                    <div class="d-notes-note-title">
-                        <label class="d-notes-check-label">
-                            <input class="d-notes-check" type="checkbox">
-                            <span class="d-notes-check-span"></span>
-                        </label>
-                        <button class="d-notes-note-edit"><i class="fa-solid fa-pencil" style="color: #162e53;"></i></button>
+                <template id="note-template">
+                    <div class="d-notes-note" onclick="selectNote(this)">
+                        <div class="d-notes-note-title">
+                            <label class="d-notes-check-label">
+                                <input class="d-notes-check" type="checkbox">
+                                <span class="d-notes-check-span"></span>
+                            </label>
+                            <button class="d-notes-note-edit" onclick="editNote(this)"><i class="fas fa-pencil" style="color: #162e53;"></i></button>
+                        </div>
+                        <p class="d-notes-text" contenteditable="false" onkeydown="handleKeyDown(event)"></p>
                     </div>
-                    <p class="d-notes-text">Hi Welcome To Our<br>Fucking Dashboard</p>
-                </div>
+                </template>
             </div>
             <div class="d-notes-bin">
 
