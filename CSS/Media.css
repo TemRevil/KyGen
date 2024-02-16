@@ -373,6 +373,9 @@
     .h-team-word {
       text-align: center;
     }
+    .h-team-1-skills, .h-team-2-skills {
+      font-size: 52px;
+    }
 }
 /* ---------------------------------------- Edit Design */
 @media (min-width: 1500px) and (max-width: 1679px) {
@@ -462,6 +465,9 @@
     font-size: 24px;
   }
 
+  .h-team-1-skills, .h-team-2-skills {
+    font-size: 72px;
+  }
 }
 @media (min-width: 500px) and (max-width: 599px) {
   .h-gallery-phone {
@@ -472,6 +478,10 @@
   }
   .h-gallery-phone-card-1, .h-gallery-phone-card-2, .h-gallery-phone-card-3, .h-gallery-phone-card-4 {
     height: 570px;
+  }
+
+  .h-team-1-skills, .h-team-2-skills {
+    font-size: 72px;
   }
 }
 @media (min-width: 320px) and (max-width: 340px) {

@@ -685,15 +685,17 @@ body::-webkit-scrollbar-thumb {
 }
 .h-team-1-skills {
     grid-area: h-team-skills;
-    display: grid;
-    grid-template-columns: repeat(2, 50px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 10px;
     font-size: 72px;
 }
 .h-team-2-skills {
     grid-area: h-team-skills;
-    display: grid;
-    grid-template-columns: repeat(4, 60px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 10px;
     font-size: 72px;
 }
